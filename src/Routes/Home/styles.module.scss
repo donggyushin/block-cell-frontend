@@ -1,4 +1,11 @@
 .home {
+  .nav-var {
+    position: absolute;
+    top: 10px;
+    z-index: 3;
+    width: 100%;
+  }
+
   .carousel {
     width: 100%;
     position: absolute;
