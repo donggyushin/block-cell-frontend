@@ -1,0 +1,30 @@
+.IntroCompany {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .row {
+    &:first-child {
+      margin-bottom: 40px;
+      h1 {
+        color: black;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      .column {
+        color: rgba(0, 0, 0, 0.5);
+        word-wrap: break-word;
+        &:first-child {
+          padding-right: 30px;
+          width: 50%;
+        }
+        &:last-child {
+          padding-left: 30px;
+          width: 50%;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,9 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .nav-var {
-    position: absolute;
+    position: fixed;
     top: 10px;
     z-index: 3;
     width: 100%;
@@ -8,7 +11,36 @@
 
   .carousel {
     width: 100%;
-    position: absolute;
-    top: 0;
+  }
+
+  .blue-var {
+    width: 100%;
+    margin-bottom: 200px;
+  }
+
+  .body {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .IntroPresident {
+      margin-top: 110px;
+    }
+
+    .IntroCompany {
+      margin-top: 77px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .BlockCellToken {
+      margin-top: 170px;
+      width: 100%;
+    }
   }
 }

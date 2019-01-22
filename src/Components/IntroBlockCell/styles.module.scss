@@ -1,0 +1,26 @@
+.IntroBlockCell {
+  display: flex;
+  justify-content: center;
+  .column {
+    width: 50%;
+    word-wrap: break-word;
+    &:first-child {
+      padding-right: 60px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    .row {
+      h1 {
+        color: black;
+      }
+
+      p {
+        padding-top: 15px;
+        font-size: 17px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}

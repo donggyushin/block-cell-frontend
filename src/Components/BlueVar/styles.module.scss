@@ -1,0 +1,42 @@
+.bluevar {
+  width: 100%;
+  height: 200px;
+  background-color: #0b2361;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .big-text {
+    width: 511px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    .row {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 600;
+      &:first-child {
+        color: #f6b93b;
+      }
+    }
+  }
+  .just-line {
+    border-top: 1px solid white;
+    width: 237px;
+    margin-bottom: 15px;
+  }
+  .small-text {
+    width: 511px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .row {
+      text-align: center;
+    }
+  }
+}
