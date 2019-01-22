@@ -32,17 +32,22 @@
           opacity: 0;
           border-top: 1px solid white;
           border-bottom: 1px solid white;
-          width: 100px;
           transition: visibility 0.5s, opacity 0.5s linear;
           display: flex;
           flex-direction: column;
+          width: 0px;
           .menu-item {
             margin-top: 7px;
           }
         }
-        &:hover .menu {
-          visibility: visible;
-          opacity: 1;
+        &:hover {
+          .menu {
+            visibility: visible;
+            opacity: 1;
+            animation-name: upToDown;
+            animation-duration: 0.4s;
+            width: 100px;
+          }
         }
       }
     }
@@ -58,5 +63,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes upToDown {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100px;
   }
 }
