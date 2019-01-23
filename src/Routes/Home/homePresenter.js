@@ -9,6 +9,7 @@ import IntroPresident from "Components/IntroPresident";
 import IntroCompany from "Components/IntroCompany";
 import BlockCellToken from "Components/BlockCellToken";
 import CeoGreeting from "Components/CeoGreeting";
+import FunnyLine from "Components/FunnyLine";
 
 const cx = classNames.bind(styles);
 
@@ -34,6 +35,9 @@ const homePresenter = () => {
         </div>
         <div className={cx("IntroPresident")}>
           <IntroPresident />
+        </div>
+        <div className={cx("funny-line__under-IntroPresident")}>
+          <FunnyLine />
         </div>
         <div className={cx("IntroCompany")}>
           <IntroCompany />

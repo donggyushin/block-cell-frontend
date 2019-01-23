@@ -16,11 +16,12 @@ const IntroPresident = () => {
           <div className={cx("row")} />
           <div className={cx("row")}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehende
+              블럭셀은 블럭셀이다블럭셀은 블럭셀이다블럭셀은 블럭셀이다 블럭셀은
+              블럭셀이다블럭셀은 블럭셀이다 블럭셀은
+              <br />
+              <br />
+              블럭셀이다블럭셀은 블럭셀이다블럭셀은 블럭셀이다 블럭셀은
+              블럭셀이다블럭셀은 블럭셀이다
             </p>
           </div>
         </div>

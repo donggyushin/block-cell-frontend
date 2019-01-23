@@ -1,26 +1,36 @@
 .IntroBlockCell {
   display: flex;
-  justify-content: center;
-  .column {
-    width: 50%;
-    word-wrap: break-word;
-    &:first-child {
-      padding-right: 60px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  .first-row {
+    display: flex;
+    margin-bottom: 50px;
+    color: rgba(0, 0, 0, 0.5);
+    .left {
+      width: 50%;
+      text-align: center;
     }
-
-    .row {
-      h1 {
+    .right {
+      width: 50%;
+      .title {
+        font-weight: 500;
         color: black;
+        margin-bottom: 35px;
       }
+      .right-text {
+        line-height: 1.7;
+      }
+    }
+  }
 
-      p {
-        padding-top: 15px;
-        font-size: 17px;
-        color: rgba(0, 0, 0, 0.6);
-      }
+  .second-row {
+    color: rgba(0, 0, 0, 0.5);
+    .top {
+      margin-bottom: 35px;
+    }
+    .middle {
+      margin-bottom: 35px;
     }
   }
 }
