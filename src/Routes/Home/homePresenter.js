@@ -11,6 +11,8 @@ import CeoGreeting from "Components/CeoGreeting";
 import FunnyLine from "Components/FunnyLine";
 import History from "Components/History";
 import Vision from "Components/Vision";
+import PartnerShip from "Components/PartnerShip";
+import CopyRight from "Components/CopyRight";
 
 const cx = classNames.bind(styles);
 
@@ -51,6 +53,12 @@ const homePresenter = () => {
         <div className={cx("BlockCellToken")}>
           <BlockCellToken />
         </div>
+        <div className={cx("partnership")}>
+          <PartnerShip />
+        </div>
+      </div>
+      <div className={cx("copyright")}>
+        <CopyRight />
       </div>
     </div>
   );

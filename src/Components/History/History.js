@@ -23,7 +23,7 @@ const History = () => {
       <Slide left>
         <div className={cx("body")}>
           <img
-            width={"145%"}
+            width={"142%"}
             alt={"history"}
             src={require("../../media/images/history.png")}
           />

@@ -1,0 +1,98 @@
+.partnership {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sub-title {
+      color: rgba($color: #000000, $alpha: 0.6);
+      font-size: 2rem;
+    }
+
+    .line-container {
+      margin-top: 20px;
+      margin-bottom: 60px;
+      .line {
+        width: 50px;
+        height: 1px;
+        border: 2px solid rgba($color: #000000, $alpha: 0.9);
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    .partner-box {
+      width: 22%;
+      background-color: rgba($color: #000000, $alpha: 0.1);
+      -webkit-box-shadow: 10px 13px 15px 1px rgba(0, 0, 0, 0.52);
+      -moz-box-shadow: 10px 13px 15px 1px rgba(0, 0, 0, 0.52);
+      box-shadow: 10px 13px 15px 1px rgba(0, 0, 0, 0.52);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgba($color: #000000, $alpha: 0.5);
+      height: 489px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      .partner-image {
+        margin-top: 50px;
+        width: 140px;
+        height: 140px;
+        border-radius: 20%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .partner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .little-text {
+          span {
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+
+        .big-text {
+          span {
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+
+        .line__container {
+          margin-top: 20px;
+          margin-bottom: 10px;
+          .thin-line {
+            width: 50px;
+            height: 1px;
+            border: 1px solid rgba($color: #000000, $alpha: 0.8);
+          }
+        }
+      }
+
+      .partner-info {
+        width: 70%;
+        p {
+          font-size: 12px;
+          line-height: 1.6;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
