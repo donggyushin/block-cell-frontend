@@ -15,7 +15,7 @@
 
   .blue-var {
     width: 100%;
-    margin-bottom: 200px;
+    margin-bottom: 130px;
   }
 
   .body {
@@ -23,6 +23,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .ceo-greeting {
+      margin-bottom: 50px;
+    }
 
     .IntroPresident {
       margin-top: 110px;

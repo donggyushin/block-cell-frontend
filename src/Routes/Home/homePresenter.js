@@ -8,6 +8,7 @@ import IntroBlockCell from "Components/IntroBlockCell";
 import IntroPresident from "Components/IntroPresident";
 import IntroCompany from "Components/IntroCompany";
 import BlockCellToken from "Components/BlockCellToken";
+import CeoGreeting from "Components/CeoGreeting";
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +24,11 @@ const homePresenter = () => {
       <div className={cx("blue-var")}>
         <BlueVar />
       </div>
+
       <div className={cx("body")}>
+        <div className={cx("ceo-greeting")}>
+          <CeoGreeting />
+        </div>
         <div className={cx("IntroBlockCell")}>
           <IntroBlockCell />
         </div>
