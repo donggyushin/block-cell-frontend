@@ -6,10 +6,11 @@ import classNames from "classnames/bind";
 import BlueVar from "Components/BlueVar";
 import IntroBlockCell from "Components/IntroBlockCell";
 import IntroPresident from "Components/IntroPresident";
-import IntroCompany from "Components/IntroCompany";
 import BlockCellToken from "Components/BlockCellToken";
 import CeoGreeting from "Components/CeoGreeting";
 import FunnyLine from "Components/FunnyLine";
+import History from "Components/History";
+import Vision from "Components/Vision";
 
 const cx = classNames.bind(styles);
 
@@ -39,8 +40,11 @@ const homePresenter = () => {
         <div className={cx("funny-line__under-IntroPresident")}>
           <FunnyLine />
         </div>
-        <div className={cx("IntroCompany")}>
-          <IntroCompany />
+        <div className={cx("history")}>
+          <History />
+        </div>
+        <div className={cx("vision")}>
+          <Vision />
         </div>
       </div>
       <div className={cx("bottom")}>

@@ -1,0 +1,91 @@
+.BlockCellToken {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  .header {
+    width: 100%;
+    height: 600px;
+    background-color: #036eb6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 27px;
+    .circle {
+      position: absolute;
+      width: 700px;
+    }
+    .text {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+      height: 100%;
+      .level4 {
+        margin-top: 40px;
+      }
+      .level3 {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+        .left {
+          padding-right: 180px;
+          text-align: right;
+          width: 50%;
+        }
+        .right {
+          width: 50%;
+          padding-left: 180px;
+        }
+      }
+
+      .level2 {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 220px;
+        .left {
+          text-align: right;
+          padding-right: 220px;
+          width: 50%;
+        }
+        .right {
+          padding-left: 220px;
+          width: 50%;
+        }
+      }
+
+      .level1 {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 100px;
+        .left {
+          text-align: right;
+          width: 50%;
+          padding-right: 100px;
+        }
+        .right {
+          width: 50%;
+          padding-left: 100px;
+        }
+      }
+    }
+  }
+  .bottom {
+    span {
+      color: #036eb6;
+      font-size: 150px;
+      font-weight: 500;
+      position: relative;
+      bottom: 60px;
+    }
+  }
+}

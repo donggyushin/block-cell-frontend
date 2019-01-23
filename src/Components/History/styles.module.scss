@@ -1,0 +1,62 @@
+.history {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    margin-bottom: 80px;
+
+    .sub-title {
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .ugly-line {
+      width: 50px;
+      height: 1px;
+      border: 2px solid rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  .body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.6;
+    .column {
+      width: 24%;
+      .item {
+        width: 100%;
+        color: rgba(0, 0, 0, 0.5);
+        .year {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 25px;
+
+          &:not(:first-child) {
+            margin-top: 25px;
+          }
+          span {
+            color: rgba(0, 0, 0, 0.9);
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+
+        .small {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.Vision {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .row {
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sub-title {
+      span {
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+      }
+    }
+
+    .ugly-line {
+      width: 50px;
+      height: 1px;
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      margin-top: 15px;
+    }
+
+    p {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+      span {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 70px;
+    }
+  }
+}
