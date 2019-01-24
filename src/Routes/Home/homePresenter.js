@@ -13,14 +13,27 @@ import History from "Components/History";
 import Vision from "Components/Vision";
 import PartnerShip from "Components/PartnerShip";
 import CopyRight from "Components/CopyRight";
+import ButtonToTop from "Components/ButtonToTop";
+import { Element } from "react-scroll";
 
 const cx = classNames.bind(styles);
 
-const homePresenter = () => {
+const homePresenter = ({
+  scrollToCeoGreeting,
+  scrollToHistory,
+  scrollToVision,
+  scrollToPartnerShip,
+  scrollToTop
+}) => {
   return (
     <div className={cx("home")}>
       <div className={cx("nav-var")}>
-        <NavVar />
+        <NavVar
+          scrollToCeoGreeting={scrollToCeoGreeting}
+          scrollToHistory={scrollToHistory}
+          scrollToVision={scrollToVision}
+          scrollToPartnerShip={scrollToPartnerShip}
+        />
       </div>
       <div className={cx("carousel")}>
         <Carousel height={550} />
@@ -30,9 +43,12 @@ const homePresenter = () => {
       </div>
 
       <div className={cx("body")}>
-        <div className={cx("ceo-greeting")}>
-          <CeoGreeting />
-        </div>
+        <Element name={"scroll-to-element"}>
+          <div className={cx("ceo-greeting")}>
+            <CeoGreeting />
+          </div>
+        </Element>
+
         <div className={cx("IntroBlockCell")}>
           <IntroBlockCell />
         </div>
@@ -59,6 +75,9 @@ const homePresenter = () => {
       </div>
       <div className={cx("copyright")}>
         <CopyRight />
+      </div>
+      <div className={cx("top-button")}>
+        <ButtonToTop scrollToTop={scrollToTop} />
       </div>
     </div>
   );

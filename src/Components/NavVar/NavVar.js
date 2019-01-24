@@ -4,7 +4,12 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const NavVar = () => {
+const NavVar = ({
+  scrollToCeoGreeting,
+  scrollToHistory,
+  scrollToVision,
+  scrollToPartnerShip
+}) => {
   return (
     <div className={cx("nav-var")}>
       <div className={cx("column")}>BLOCKCELL</div>
@@ -15,11 +20,24 @@ const NavVar = () => {
               About us <i class="fas fa-caret-down" />
             </div>
             <div className={cx("menu")}>
-              <span className={cx("menu-item")}>Item</span>
-              <span className={cx("menu-item")}>Item</span>
-              <span className={cx("menu-item")}>Item</span>
-              <span className={cx("menu-item")}>Item</span>
-              <span className={cx("menu-item")}>Item</span>
+              <span
+                className={cx("menu-item")}
+                onClick={() => {
+                  scrollToCeoGreeting();
+                }}
+              >
+                CEO 인삿말
+              </span>
+
+              <span className={cx("menu-item")} onClick={scrollToHistory}>
+                연혁
+              </span>
+              <span onClick={scrollToVision} className={cx("menu-item")}>
+                비전
+              </span>
+              <span onClick={scrollToPartnerShip} className={cx("menu-item")}>
+                파트너사
+              </span>
             </div>
           </span>
         </div>
