@@ -42,13 +42,13 @@ const NavVar = () => {
                 </span>
               </Link>
             </div>
-            {/* <div className={cx("menu")}>
+            <div className={cx("menu")}>
               <span className={cx("menu-item")}>Item</span>
               <span className={cx("menu-item")}>Item</span>
               <span className={cx("menu-item")}>Item</span>
               <span className={cx("menu-item")}>Item</span>
               <span className={cx("menu-item")}>Item</span>
-            </div> */}
+            </div>
           </span>
         </div>
         <div className={cx("item-container")}>

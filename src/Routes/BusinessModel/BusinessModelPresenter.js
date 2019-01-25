@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import NavVar from "Components/BusinessModelComponents/NavVar";
 import CopyRight from "Components/CopyRight";
 import BlockChainImage from "Components/BusinessModelComponents/BlockChainImage";
+import Contents from "Components/BusinessModelComponents/Contents";
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,11 @@ const BusinessModelPresenter = () => {
       <div className={cx("blockchainimage-container")}>
         <BlockChainImage />
       </div>
-      <div className={cx("body")}>business model explain</div>
+      <div className={cx("body")}>
+        <div className={cx("body-contents")}>
+          <Contents />
+        </div>
+      </div>
       <div className={cx("bottom")}>
         <CopyRight />
       </div>
