@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nanum+Gothic");
 
 .nav-var {
-  margin-top: 27px;
   color: white;
   width: 100%;
   height: 100px;
@@ -11,7 +10,6 @@
   font-weight: 600;
   font-size: 14px;
   z-index: 100;
-  background-color: rgba($color: #000000, $alpha: 0.4);
   padding-bottom: 15px;
   .column {
     display: flex;

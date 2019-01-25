@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .navvar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+  }
+
+  .blockchain-image {
+    width: 100%;
+  }
+
+  .contents {
+    width: 60%;
+    margin-top: 70px;
+    min-height: 700px;
+  }
+
+  .bottom {
+    width: 100%;
+  }
+}

@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    width: 80%;
+    border-left: 7px solid rgba($color: #000000, $alpha: 0.6);
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    .column-title-in-korean {
+      span {
+        font-size: 2.7rem;
+        color: black;
+        font-weight: 500;
+      }
+      margin-left: 25px;
+    }
+    .column-title-in-eng {
+      margin-left: 5px;
+      span {
+        font-size: 13px;
+      }
+    }
+  }
+}

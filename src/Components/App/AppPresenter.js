@@ -4,6 +4,7 @@ import HomeContainer from "../../Routes/Home";
 import IntroContainer from "../../Routes/Intro";
 import BusinessContainer from "Routes/BusinessModel";
 import WayToBlockCellContainer from "Routes/WayToBlockCell";
+import RecruitContainer from "Routes/Recruit";
 
 const AppPresenter = () => {
   return (
@@ -17,6 +18,7 @@ const AppPresenter = () => {
           path={"/way-to-blockcell"}
           component={WayToBlockCellContainer}
         />
+        <Route exact path={"/recruit"} component={RecruitContainer} />
       </div>
     </Router>
   );

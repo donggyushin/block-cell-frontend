@@ -51,11 +51,7 @@ const NavVar = () => {
         <div className={cx("item-container")}>
           <span className={cx("item")}>
             <div>
-              <Link to={"/recruit"} style={{ textDecoration: "none" }}>
-                <span className={cx("span-in-link")}>
-                  Recruit <i class="fas fa-caret-down" />
-                </span>
-              </Link>
+              Recruit <i class="fas fa-caret-down" />
             </div>
           </span>
         </div>
