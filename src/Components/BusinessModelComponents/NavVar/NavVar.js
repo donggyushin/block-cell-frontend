@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const NavVar = ({
-  scrollToCeoGreeting,
-  scrollToHistory,
-  scrollToVision,
-  scrollToPartnerShip
-}) => {
+const NavVar = () => {
   return (
     <div className={cx("nav-var")}>
       <div className={cx("column")}>
@@ -29,26 +24,13 @@ const NavVar = ({
                 </span>
               </Link>
             </div>
-            <div className={cx("menu")}>
-              <span
-                className={cx("menu-item")}
-                onClick={() => {
-                  scrollToCeoGreeting();
-                }}
-              >
-                CEO 인삿말
-              </span>
+            {/* <div className={cx("menu")}>
+              <span className={cx("menu-item")}>CEO 인삿말</span>
 
-              <span className={cx("menu-item")} onClick={scrollToHistory}>
-                연혁
-              </span>
-              <span onClick={scrollToVision} className={cx("menu-item")}>
-                비전
-              </span>
-              <span onClick={scrollToPartnerShip} className={cx("menu-item")}>
-                파트너사
-              </span>
-            </div>
+              <span className={cx("menu-item")}>연혁</span>
+              <span className={cx("menu-item")}>비전</span>
+              <span className={cx("menu-item")}>파트너사</span>
+            </div> */}
           </span>
         </div>
         <div className={cx("item-container")}>

@@ -15,6 +15,7 @@ import PartnerShip from "Components/PartnerShip";
 import CopyRight from "Components/CopyRight";
 import ButtonToTop from "Components/ButtonToTop";
 import { Element } from "react-scroll";
+import BlockChainImg from "Components/BlockChainImg/BlockChainImg";
 
 const cx = classNames.bind(styles);
 
@@ -35,11 +36,9 @@ const homePresenter = ({
           scrollToPartnerShip={scrollToPartnerShip}
         />
       </div>
-      <div className={cx("carousel")}>
-        <Carousel height={550} />
-      </div>
-      <div className={cx("blue-var")}>
-        <BlueVar />
+
+      <div className={cx("block-chain-image-container")}>
+        <BlockChainImg />
       </div>
 
       <div className={cx("body")}>
