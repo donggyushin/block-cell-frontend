@@ -68,7 +68,11 @@ const NavVar = () => {
         <div className={cx("item-container")}>
           <span className={cx("item")}>
             <div>
-              오시는 길 <i class="fas fa-caret-down" />
+              <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}>
+                <span className={cx("span-in-link")}>
+                  오시는 길 <i class="fas fa-caret-down" />
+                </span>
+              </Link>
             </div>
 
             {/* <div className={cx("menu")}>

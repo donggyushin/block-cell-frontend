@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const NavVar2 = () => {
+const NavVar = () => {
   return (
     <div className={cx("nav-var")}>
-      <div className={cx("column")}>BLOCKCELL</div>
+      <div className={cx("column")}>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <span className={cx("span-in-link")}>BLOCKCELL</span>
+        </Link>
+      </div>
       <div className={cx("column")}>
         <div className={cx("item-container")}>
           <Link to={"/about-us"} style={{ textDecoration: "none" }}>
@@ -60,4 +64,4 @@ const NavVar2 = () => {
   );
 };
 
-export default NavVar2;
+export default NavVar;

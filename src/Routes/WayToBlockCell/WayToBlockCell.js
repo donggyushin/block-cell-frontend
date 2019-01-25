@@ -1,16 +1,28 @@
 import React from "react";
-import styles from "./stlyes.module.scss";
+import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import NavVar from "Components/WayToBlockCellComponents/NavVar";
+import BlockChainImage from "Components/WayToBlockCellComponents/BlockChainImage";
+import Contents from "Components/WayToBlockCellComponents/Contents";
+import CopyRight from "Components/CopyRight";
 
 const cx = classNames.bind(styles);
 
 const WayToBlockCell = () => {
   return (
     <div className={cx("container")}>
-      <div className={cx("nav-var")}>nav-var</div>
-      <div className={cx("deck")}>deck</div>
-      <div className={cx("contents")}>contents</div>
-      <div className={cx("bottom")}>bottom</div>
+      <div className={cx("nav-var")}>
+        <NavVar />
+      </div>
+      <div className={cx("deck")}>
+        <BlockChainImage />
+      </div>
+      <div className={cx("contents")}>
+        <Contents />
+      </div>
+      <div className={cx("bottom")}>
+        <CopyRight />
+      </div>
     </div>
   );
 };
