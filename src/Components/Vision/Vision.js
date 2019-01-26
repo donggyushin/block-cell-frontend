@@ -10,13 +10,12 @@ const Vision = () => {
     <Fade bottom>
       <div className={cx("Vision")}>
         <div className={cx("row")}>
-          <div className={cx("title")}>
-            <h1>비전</h1>
+          <div className={cx("korean-title")}>
+            <span>비전</span>
           </div>
-          <div className={cx("sub-title")}>
+          <div className={cx("english-subtitle")}>
             <span>Vision</span>
           </div>
-          <div className={cx("ugly-line")} />
         </div>
         <div className={cx("row")}>
           <p>

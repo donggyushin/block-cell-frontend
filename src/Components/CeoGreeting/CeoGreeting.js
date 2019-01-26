@@ -10,21 +10,15 @@ const CeoGreeting = () => {
   return (
     <Fade bottom>
       <div className={cx("CeoGreeting")}>
-        <div className={cx("row")}>
-          <h1>CEO의 인삿말</h1>
+        <div className={cx("column", "top")}>
+          <div className={cx("row-korean")}>
+            <span>CEO의 인삿말</span>
+          </div>
+          <div className={cx("row-english")}>
+            <span>CEO greeting</span>
+          </div>
         </div>
-        <div className={cx("row")}>
-          <span>CEO greeting</span>
-        </div>
-        <div className={cx("row")}>
-          <div />
-        </div>
-        {/* <div className={cx("row-last")}>
-          <div className={cx("column1")} />
-          <div className={cx("column2")} />
-          <div className={cx("column1")} />
-        </div> */}
-        <div className={cx("funny-line")}>
+        <div className={cx("column")}>
           <FunnyLine />
         </div>
       </div>

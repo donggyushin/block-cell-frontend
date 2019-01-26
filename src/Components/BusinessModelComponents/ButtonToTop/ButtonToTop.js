@@ -4,12 +4,12 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const CopyRight = () => {
+const ButtonToTop = ({ scrollToTop }) => {
   return (
-    <div className={cx("copy-right")}>
-      <span>COPYRIGHT &copy; BLOCKCELL. ALL RIGHTS RESERVED</span>
+    <div className={cx("button-to-top")}>
+      <span onClick={scrollToTop}>TOP</span>
     </div>
   );
 };
 
-export default CopyRight;
+export default ButtonToTop;

@@ -54,6 +54,9 @@ const IntroBlockCell = () => {
             <div className={cx("bottom-text")}>함께 걸어가겠습니다</div>
           </div>
         </div>
+        <div className={cx("last-row")}>
+          <span>블록셀 회장&nbsp; &nbsp;최 창 식</span>
+        </div>
       </Fade>
     </div>
   );

@@ -105,7 +105,7 @@
         background-color: rgba($color: #000000, $alpha: 0.7);
         line-height: 1.6;
         padding: 10px;
-        width: 250px;
+        width: 130px;
         display: flex;
         flex-direction: column;
         font-size: 13px;
@@ -120,10 +120,10 @@
 
 @keyframes expandWidh {
   from {
-    width: 190px;
+    width: 60px;
   }
 
   to {
-    width: 250px;
+    width: 130px;
   }
 }

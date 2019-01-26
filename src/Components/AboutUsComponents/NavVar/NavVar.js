@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 
 const NavVar = ({
-  toFirstItem,
-  toSecondItem,
-  toThirdItem,
-  toFourthItem,
-  toFifthItem
+  scrollToGreeting,
+  scrollToPresidentIntroduction,
+  scrollToHistory,
+  scrollToVision,
+  scrollToPartnership
 }) => {
   return (
     <div className={cx("nav-var")}>
@@ -21,29 +21,29 @@ const NavVar = ({
       </div>
       <div className={cx("column")}>
         <div className={cx("item-container")}>
-          <Link to={"/about-us"} style={{ textDecoration: "none" }}>
-            <span className={cx("item", "testtest")}>
-              <div>
-                About us <i class="fas fa-caret-down" />
-              </div>
-            </span>
-          </Link>
-        </div>
-        <div className={cx("item-container")}>
           <span className={cx("item", "testtest")}>
             <div>
-              사업모델 <i class="fas fa-caret-down" />
+              About us <i class="fas fa-caret-down" />
             </div>
             <div className={cx("dropdown-container")}>
               <DropDownItems
-                toFirstItem={toFirstItem}
-                toSecondItem={toSecondItem}
-                toThirdItem={toThirdItem}
-                toFourthItem={toFourthItem}
-                toFifthItem={toFifthItem}
+                scrollToGreeting={scrollToGreeting}
+                scrollToPresidentIntroduction={scrollToPresidentIntroduction}
+                scrollToHistory={scrollToHistory}
+                scrollToVision={scrollToVision}
+                scrollToPartnership={scrollToPartnership}
               />
             </div>
           </span>
+        </div>
+        <div className={cx("item-container")}>
+          <Link to={"/business-model"} style={{ textDecoration: "none" }}>
+            <span className={cx("item")}>
+              <div>
+                사업모델 <i class="fas fa-caret-down" />
+              </div>
+            </span>
+          </Link>
         </div>
         <div className={cx("item-container")}>
           <span className={cx("item")}>
@@ -82,19 +82,19 @@ const NavVar = ({
 };
 
 const DropDownItems = ({
-  toFirstItem,
-  toSecondItem,
-  toThirdItem,
-  toFourthItem,
-  toFifthItem
+  scrollToGreeting,
+  scrollToPresidentIntroduction,
+  scrollToHistory,
+  scrollToVision,
+  scrollToPartnership
 }) => {
   return (
     <div className={cx("dropdownitems-container")}>
-      <span onClick={toFirstItem}>금융상품 및 직접투자 방식</span>
-      <span onClick={toSecondItem}>부동산 개발 사업</span>
-      <span onClick={toThirdItem}>개입 개발 사업 및 IT 관련 사업</span>
-      <span onClick={toFourthItem}>투자 대상 범위</span>
-      <span onClick={toFifthItem}>파트너사 및 제휴 업무</span>
+      <span onClick={scrollToGreeting}>인삿말</span>
+      <span onClick={scrollToPresidentIntroduction}>ceo 소개</span>
+      <span onClick={scrollToHistory}>연혁</span>
+      <span onClick={scrollToVision}>비전</span>
+      <span onClick={scrollToPartnership}>파트너사</span>
     </div>
   );
 };

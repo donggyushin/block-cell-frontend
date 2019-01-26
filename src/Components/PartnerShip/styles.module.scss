@@ -5,30 +5,31 @@
   align-items: center;
 
   .header {
+    border-left: 6px solid rgba($color: #000000, $alpha: 0.6);
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .sub-title {
-      color: rgba($color: #000000, $alpha: 0.6);
-      font-size: 2rem;
+    height: 45px;
+    align-items: flex-end;
+    margin-bottom: 100px;
+    .korean-title {
+      margin-left: 20px;
+      font-size: 28px;
+      font-weight: 500;
+      color: #000000;
     }
 
-    .line-container {
-      margin-top: 20px;
-      margin-bottom: 60px;
-      .line {
-        width: 50px;
-        height: 1px;
-        border: 2px solid rgba($color: #000000, $alpha: 0.9);
-      }
+    .english-subtitle {
+      margin-left: 7px;
+      margin-bottom: 4px;
+      color: rgba($color: #000000, $alpha: 0.6);
     }
   }
 
   .bottom {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
     .partner-box {
       width: 22%;
       background-color: rgba($color: #000000, $alpha: 0.1);
@@ -42,6 +43,14 @@
       height: 489px;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+
+      &:last-child {
+        margin-left: 15px;
+      }
 
       .partner-image {
         margin-top: 50px;

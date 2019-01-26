@@ -11,19 +11,18 @@ const History = () => {
     <div className={cx("history")}>
       <Fade bottom>
         <div className={cx("header")}>
-          <div className={cx("title")}>
-            <h1>연혁</h1>
+          <div className={cx("korean-title")}>
+            <span>연혁</span>
           </div>
-          <div className={cx("sub-title")}>
+          <div className={cx("english-subtitle")}>
             <span>History</span>
           </div>
-          <div className={cx("ugly-line")} />
         </div>
       </Fade>
       <Slide left>
         <div className={cx("body")}>
           <img
-            width={"142%"}
+            width={"100%"}
             alt={"history"}
             src={require("../../media/images/history.png")}
           />

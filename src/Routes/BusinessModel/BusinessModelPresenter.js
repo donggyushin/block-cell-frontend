@@ -5,6 +5,7 @@ import NavVar from "Components/BusinessModelComponents/NavVar";
 import CopyRight from "Components/CopyRight";
 import BlockChainImage from "Components/BusinessModelComponents/BlockChainImage";
 import Contents from "Components/BusinessModelComponents/Contents";
+import ButtonToTop from "Components/BusinessModelComponents/ButtonToTop";
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +25,9 @@ const BusinessModelPresenter = () => {
       </div>
       <div className={cx("bottom")}>
         <CopyRight />
+      </div>
+      <div className={cx("button-to-top-container")}>
+        <ButtonToTop />
       </div>
     </div>
   );

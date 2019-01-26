@@ -1,40 +1,35 @@
 .CeoGreeting {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  .row {
+  .column {
     width: 100%;
+  }
+
+  .top {
+    border-left: 6px solid rgba($color: #000000, $alpha: 0.6);
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
+    height: 45px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    &:first-child {
-      h1 {
-        font-size: 45px;
-        color: black;
-      }
-      margin-bottom: 10px;
+    align-items: flex-end;
+
+    .row-korean {
+      font-size: 30px;
+      margin-left: 20px;
+      font-weight: 500;
+      color: black;
     }
 
-    &:nth-child(2) {
-      span {
-        font-size: 20px;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 0.5);
-      }
-    }
-
-    &:nth-child(3) {
-      div {
-        margin-top: 20px;
-        width: 70px;
-        border: 2px solid rgba(0, 0, 0, 0.9);
-      }
+    .row-english {
+      margin-left: 7px;
+      margin-bottom: 4px;
     }
   }
 
-  .funny-line {
-    margin-top: 130px;
-    width: 100%;
+  .column {
+    &:last-child {
+      margin-top: 80px;
+    }
   }
 }

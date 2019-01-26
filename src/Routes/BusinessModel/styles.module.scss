@@ -5,6 +5,9 @@
   align-items: center;
 
   .nav-var {
+    position: absolute;
+    top: 0;
+    z-index: 3;
     width: 100%;
   }
 
@@ -22,5 +25,12 @@
 
   .bottom {
     width: 100%;
+  }
+
+  .button-to-top-container {
+    position: fixed;
+    z-index: 3;
+    bottom: 100px;
+    right: 50px;
   }
 }

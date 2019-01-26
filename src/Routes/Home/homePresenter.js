@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import Carousel from "Components/Carousel/Carousel";
-import NavVar from "Components/NavVar";
 import classNames from "classnames/bind";
-import BlueVar from "Components/BlueVar";
 import IntroBlockCell from "Components/IntroBlockCell";
 import IntroPresident from "Components/IntroPresident";
 import BlockCellToken from "Components/BlockCellToken";
@@ -14,39 +11,26 @@ import Vision from "Components/Vision";
 import PartnerShip from "Components/PartnerShip";
 import CopyRight from "Components/CopyRight";
 import ButtonToTop from "Components/ButtonToTop";
-import { Element } from "react-scroll";
-import BlockChainImg from "Components/BlockChainImg/BlockChainImg";
+import BlockChainImage from "Components/AboutUsComponents/BlockChainImage";
+import NavVar from "Components/AboutUsComponents/NavVar";
 
 const cx = classNames.bind(styles);
 
-const homePresenter = ({
-  scrollToCeoGreeting,
-  scrollToHistory,
-  scrollToVision,
-  scrollToPartnerShip,
-  scrollToTop
-}) => {
+const homePresenter = ({ scrollToTop }) => {
   return (
     <div className={cx("home")}>
-      <div className={cx("nav-var")}>
-        <NavVar
-          scrollToCeoGreeting={scrollToCeoGreeting}
-          scrollToHistory={scrollToHistory}
-          scrollToVision={scrollToVision}
-          scrollToPartnerShip={scrollToPartnerShip}
-        />
+      <div className={cx("navvar-container")}>
+        <NavVar />
       </div>
 
-      <div className={cx("block-chain-image-container")}>
-        <BlockChainImg />
+      <div className={cx("blockchain-image-container")}>
+        <BlockChainImage />
       </div>
 
       <div className={cx("body")}>
-        <Element name={"scroll-to-element"}>
-          <div className={cx("ceo-greeting")}>
-            <CeoGreeting />
-          </div>
-        </Element>
+        <div className={cx("ceo-greeting")}>
+          <CeoGreeting />
+        </div>
 
         <div className={cx("IntroBlockCell")}>
           <IntroBlockCell />
