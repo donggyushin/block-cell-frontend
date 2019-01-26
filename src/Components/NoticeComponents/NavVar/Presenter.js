@@ -2,10 +2,9 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
-
 const cx = classNames.bind(styles);
 
-const NavVar = () => {
+const Presenter = () => {
   return (
     <div className={cx("nav-var")}>
       <div className={cx("column")}>
@@ -15,13 +14,11 @@ const NavVar = () => {
       </div>
       <div className={cx("column")}>
         <div className={cx("item-container")}>
-          <Link to={"/about-us"} style={{ textDecoration: "none" }}>
-            <span className={cx("item")}>
-              <div>
-                About us <i class="fas fa-caret-down" />
-              </div>
-            </span>
-          </Link>
+          <span className={cx("item", "testtest")}>
+            <div>
+              About us <i class="fas fa-caret-down" />
+            </div>
+          </span>
         </div>
         <div className={cx("item-container")}>
           <Link to={"/business-model"} style={{ textDecoration: "none" }}>
@@ -53,7 +50,11 @@ const NavVar = () => {
         <div className={cx("item-container")}>
           <span className={cx("item")}>
             <div>
-              Recruit <i class="fas fa-caret-down" />
+              <Link to={"/recruit"} style={{ textDecoration: "none" }}>
+                <span className={cx("span-in-link")}>
+                  Recruit <i class="fas fa-caret-down" />
+                </span>
+              </Link>
             </div>
           </span>
         </div>
@@ -66,4 +67,4 @@ const NavVar = () => {
   );
 };
 
-export default NavVar;
+export default Presenter;
