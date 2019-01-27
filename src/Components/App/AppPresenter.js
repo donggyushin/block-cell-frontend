@@ -8,6 +8,7 @@ import RecruitContainer from "Routes/Recruit";
 import NoticeContainer from "Routes/Notice";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import NoticeDetailContainer from "Routes/NoticeDetail";
 const cx = classNames.bind(styles);
 
 const AppPresenter = () => {
@@ -24,6 +25,11 @@ const AppPresenter = () => {
         />
         <Route exact path={"/recruit"} component={RecruitContainer} />
         <Route exact path={"/notice"} component={NoticeContainer} />
+        <Route
+          exact
+          path={"/notice-detail/:id"}
+          component={NoticeDetailContainer}
+        />
       </div>
     </Router>
   );

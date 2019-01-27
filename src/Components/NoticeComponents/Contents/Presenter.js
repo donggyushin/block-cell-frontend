@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -67,7 +68,9 @@ const ImportantNotice = ({ title, createdAt, views }) => {
         <span>공지</span>
       </div>
       <div className={cx("title")}>
-        <span>{title}</span>
+        <Link to={"/notice-detail/1"} style={{ textDecoration: "none" }}>
+          <span>{title}</span>
+        </Link>
       </div>
       <div className={cx("created-at")}>
         <span>{createdAt}</span>
@@ -78,7 +81,6 @@ const ImportantNotice = ({ title, createdAt, views }) => {
     </div>
   );
 };
-
 const NormalNotice = ({ num, title, createdAt, views }) => {
   return (
     <div className={cx("normal-item-container")}>
@@ -86,7 +88,9 @@ const NormalNotice = ({ num, title, createdAt, views }) => {
         <span>{num}</span>
       </div>
       <div className={cx("title")}>
-        <span>{title}</span>
+        <Link to={"/notice-detail/1"} style={{ textDecoration: "none" }}>
+          <span>{title}</span>
+        </Link>
       </div>
       <div className={cx("created-at")}>
         <span>{createdAt}</span>

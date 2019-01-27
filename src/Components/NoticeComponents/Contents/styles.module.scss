@@ -83,6 +83,9 @@
         .title {
           width: 100%;
           cursor: pointer;
+          span {
+            color: rgba($color: #000000, $alpha: 0.6);
+          }
         }
         .created-at {
           width: 20%;
@@ -125,6 +128,9 @@
           .title {
             width: 100%;
             cursor: pointer;
+            span {
+              color: rgba($color: #000000, $alpha: 0.6);
+            }
           }
           .created-at {
             width: 20%;

@@ -1,0 +1,104 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    width: 100%;
+    border-left: 10px solid rgba($color: #000000, $alpha: 0.6);
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
+    display: flex;
+    align-items: flex-end;
+    .korean {
+      font-size: 2.7rem;
+      color: black;
+      font-weight: 500;
+      margin-left: 20px;
+      margin-right: 7px;
+    }
+
+    .english {
+      font-size: 1rem;
+      color: rgba($color: #000000, $alpha: 0.6);
+      margin-bottom: 7px;
+    }
+  }
+
+  .body {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px;
+    .title {
+      width: 100%;
+      border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
+      font-size: 2rem;
+      font-weight: 500;
+      color: black;
+    }
+
+    .info {
+      width: 90%;
+      display: flex;
+      background-color: rgba($color: #000000, $alpha: 0.1);
+      margin-top: 30px;
+      padding-left: 20px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+      .column {
+        .right {
+          color: black;
+        }
+
+        &:first-child {
+          margin-right: 80px;
+        }
+      }
+    }
+
+    .contents {
+      width: 83%;
+      margin-top: 90px;
+      margin-bottom: 200px;
+      p {
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .row {
+      width: 100%;
+      display: flex;
+      .column {
+        width: 100%;
+
+        &:last-child {
+          text-align: end;
+        }
+        i {
+          color: rgba($color: #000000, $alpha: 0.4);
+        }
+        span {
+          cursor: pointer;
+          font-size: 1.7rem;
+        }
+      }
+
+      button {
+        margin-top: 50px;
+        background-color: #34495e;
+        color: white;
+        border: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
