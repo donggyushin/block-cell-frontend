@@ -35,9 +35,7 @@ const homePresenter = ({ scrollToTop }) => {
         <div className={cx("IntroBlockCell")}>
           <IntroBlockCell />
         </div>
-        <div className={cx("IntroPresident")}>
-          <IntroPresident />
-        </div>
+
         <div className={cx("funny-line__under-IntroPresident")}>
           <FunnyLine />
         </div>

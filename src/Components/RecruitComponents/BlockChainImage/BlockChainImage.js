@@ -22,9 +22,7 @@ const BlockChainImage = () => {
           <span className={cx("second-line")}>채용안내</span>
         </div>
         <div className={cx("row")}>
-          <span className={cx("third-line")}>
-            블럭셀 블럭셀 블럭셀 블럭셀 블럭셀
-          </span>
+          <span className={cx("third-line")}>Recruit</span>
         </div>
       </div>
     </div>

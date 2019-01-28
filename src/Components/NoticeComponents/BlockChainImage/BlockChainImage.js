@@ -16,7 +16,7 @@ const BlockChainImage = () => {
       </div>
       <div className={cx("text")}>
         <div className={cx("row")}>
-          <span className={cx("top")}>블럭셀's</span>
+          <span className={cx("top")}>블럭셀</span>
         </div>
         <div className={cx("row")}>
           <span className={cx("second-line")}>공지사항</span>

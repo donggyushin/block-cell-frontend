@@ -20,7 +20,7 @@ const NavVar2 = () => {
           <Link to={"/about-us"} style={{ textDecoration: "none" }}>
             <span className={cx("item")}>
               <div>
-                About us <i class="fas fa-caret-down" />
+                블럭셀은? <i class="fas fa-caret-down" />
               </div>
             </span>
           </Link>
@@ -57,7 +57,7 @@ const NavVar2 = () => {
             <div>
               <Link to={"/recruit"} style={{ textDecoration: "none" }}>
                 <span className={cx("span-in-link")}>
-                  Recruit <i class="fas fa-caret-down" />
+                  채용안내 <i class="fas fa-caret-down" />
                 </span>
               </Link>
             </div>

@@ -7,7 +7,6 @@ const cx = classNames.bind(styles);
 
 const NavVar = ({
   scrollToGreeting,
-  scrollToPresidentIntroduction,
   scrollToHistory,
   scrollToVision,
   scrollToPartnership
@@ -34,7 +33,6 @@ const NavVar = ({
             <div className={cx("dropdown-container")}>
               <DropDownItems
                 scrollToGreeting={scrollToGreeting}
-                scrollToPresidentIntroduction={scrollToPresidentIntroduction}
                 scrollToHistory={scrollToHistory}
                 scrollToVision={scrollToVision}
                 scrollToPartnership={scrollToPartnership}
@@ -91,7 +89,6 @@ const NavVar = ({
 
 const DropDownItems = ({
   scrollToGreeting,
-  scrollToPresidentIntroduction,
   scrollToHistory,
   scrollToVision,
   scrollToPartnership
@@ -99,7 +96,6 @@ const DropDownItems = ({
   return (
     <div className={cx("dropdownitems-container")}>
       <span onClick={scrollToGreeting}>인삿말</span>
-      <span onClick={scrollToPresidentIntroduction}>ceo 소개</span>
       <span onClick={scrollToHistory}>연혁</span>
       <span onClick={scrollToVision}>비전</span>
       <span onClick={scrollToPartnership}>파트너사</span>
