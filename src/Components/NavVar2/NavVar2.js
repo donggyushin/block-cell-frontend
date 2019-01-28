@@ -8,7 +8,13 @@ const cx = classNames.bind(styles);
 const NavVar2 = () => {
   return (
     <div className={cx("nav-var")}>
-      <div className={cx("column")}>BLOCKCELL</div>
+      <div className={cx("column", "blockcell-logo-container")}>
+        <img
+          alt={"blockcell-logo"}
+          width={"100%"}
+          src={require("../../media/images/navvar/blockcelllogo.png")}
+        />
+      </div>
       <div className={cx("column")}>
         <div className={cx("item-container")}>
           <Link to={"/about-us"} style={{ textDecoration: "none" }}>

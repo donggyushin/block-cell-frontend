@@ -15,6 +15,13 @@ const Contents = () => {
           <span>Recruit</span>
         </div>
       </div>
+      <div className={cx("body")}>
+        <img
+          alt={"contents"}
+          width={"100%"}
+          src={require("../../../media/images/recruit/recruitcontent.png")}
+        />
+      </div>
     </div>
   );
 };

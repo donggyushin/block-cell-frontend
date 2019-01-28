@@ -16,7 +16,13 @@ const NavVar = ({
     <div className={cx("nav-var")}>
       <div className={cx("column")}>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <span className={cx("span-in-link")}>BLOCKCELL</span>
+          <span className={cx("span-in-link")}>
+            <img
+              alt={"blockcell logo"}
+              width={"100%"}
+              src={require("../../../media/images/navvar/blockcelllogo.png")}
+            />
+          </span>
         </Link>
       </div>
       <div className={cx("column")}>
@@ -24,7 +30,7 @@ const NavVar = ({
           <Link to={"/about-us"} style={{ textDecoration: "none" }}>
             <span className={cx("item", "testtest")}>
               <div>
-                About us <i class="fas fa-caret-down" />
+                블럭셀은? <i class="fas fa-caret-down" />
               </div>
             </span>
           </Link>
@@ -45,6 +51,15 @@ const NavVar = ({
             </div>
           </span>
         </div>
+        {/* <div className={cx("item-container")}>
+          <Link to={"/business-model"} style={{ textDecoration: "none" }}>
+            <span className={cx("item")}>
+              <div>
+                사업모델 <i class="fas fa-caret-down" />
+              </div>
+            </span>
+          </Link>
+        </div> */}
         <div className={cx("item-container")}>
           <Link to={"/notice"} style={{ textDecoration: "none" }}>
             <span className={cx("item")}>
@@ -68,7 +83,7 @@ const NavVar = ({
             <div>
               <Link to={"/recruit"} style={{ textDecoration: "none" }}>
                 <span className={cx("span-in-link")}>
-                  Recruit <i class="fas fa-caret-down" />
+                  채용안내 <i class="fas fa-caret-down" />
                 </span>
               </Link>
             </div>

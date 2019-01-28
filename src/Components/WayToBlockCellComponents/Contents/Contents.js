@@ -16,7 +16,12 @@ const Contents = () => {
         </div>
       </div>
       <div className={cx("under-row")}>
-        <div className={cx("column-left")}>
+        <img
+          alt={"way-to-blockcell"}
+          width={"100%"}
+          src={require("../../../media/images/WayToBlockcell/map.png")}
+        />
+        {/* <div className={cx("column-left")}>
           <img
             alt={"map"}
             width={"100%"}
@@ -53,7 +58,7 @@ const Contents = () => {
             <span>Fax 02. 564. 0087</span>
             <span>blockcell@naver.com</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

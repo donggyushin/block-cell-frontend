@@ -11,7 +11,7 @@ const BlockChainImage = () => {
         <img
           alt={"block-chain"}
           width={"100%"}
-          src={require("../../../media/images/blockchainsample.jpg")}
+          src={require("../../../media/images/blockchainimage/blockchainimage.jpeg")}
         />
       </div>
       <div className={cx("text")}>

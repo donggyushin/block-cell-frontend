@@ -24,7 +24,7 @@ const History = () => {
           <img
             width={"100%"}
             alt={"history"}
-            src={require("../../media/images/history.png")}
+            src={require("../../media/images/hisotry/history.png")}
           />
         </div>
       </Slide>
@@ -32,7 +32,7 @@ const History = () => {
       <Fade bottom>
         <div className={cx("bottom")}>
           <div className={cx("column")}>
-            <div className={cx("item")}>
+            <div className={cx("item", "left-item")}>
               <div className={cx("year")}>
                 <span>2018</span>
               </div>
@@ -74,17 +74,15 @@ const History = () => {
                 </p>
               </div>
               <div className={cx("big")}>
-                <span>· 글로벌 유저 대상 국제 거래소 개발</span>
+                <span>
+                  · 글로벌 유저 대상 국제 거래소 <br /> &nbsp;&nbsp; 개발
+                </span>
                 <br />
                 <br />
                 <span>· 암호화폐 전문 은행 개발</span>
                 <br />
                 <br />
-                <span>
-                  · MOU업체와 MOA작성 후 본격적 게임
-                  <br />
-                  &nbsp;&nbsp;개발
-                </span>
+                <span>· MOU업체와 MOA작성 후 본격적 &nbsp;&nbsp;게임 개발</span>
               </div>
             </div>
           </div>
@@ -94,14 +92,18 @@ const History = () => {
                 <span>2019 2Q</span>
               </div>
               <div className={cx("big")}>
-                <span>· 글로벌 유저 대상 국제 거래소 오픈</span>
+                <span>
+                  · 글로벌 유저 대상 국제 거래소 <br />
+                  &nbsp;&nbsp; 오픈
+                </span>
               </div>
               <div className={cx("year")}>
                 <span>2019 3Q</span>
               </div>
               <div className={cx("big")}>
                 <span>
-                  · 블록체인 기반의 부동산 플랫폼 오픈
+                  · 블록체인 기반의 부동산 플랫폼 <br />
+                  &nbsp;&nbsp;오픈
                   <br />
                   &nbsp;&nbsp;게임개발 BETA TEST
                 </span>

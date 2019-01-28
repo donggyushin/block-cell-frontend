@@ -24,23 +24,23 @@ class NavVarContainer extends React.Component {
   }
 
   scrollToGreeting = () => {
-    scroll.scrollTo(610, this.state.scrollOptions);
+    scroll.scrollTo(558, this.state.scrollOptions);
   };
 
   scrollToPresidentIntroduction = () => {
-    scroll.scrollTo(1587, this.state.scrollOptions);
+    scroll.scrollTo(1554, this.state.scrollOptions);
   };
 
   scrollToHistory = () => {
-    scroll.scrollTo(2362, this.state.scrollOptions);
+    scroll.scrollTo(2261, this.state.scrollOptions);
   };
 
   scrollToVision = () => {
-    scroll.scrollTo(3474, this.state.scrollOptions);
+    scroll.scrollTo(3333, this.state.scrollOptions);
   };
 
   scrollToPartnership = () => {
-    scroll.scrollTo(5198, this.state.scrollOptions);
+    scroll.scrollTo(4997, this.state.scrollOptions);
   };
 }
 

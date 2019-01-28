@@ -14,7 +14,8 @@
     p {
       text-align: center;
       color: rgba(0, 0, 0, 0.5);
-      line-height: 1.6;
+      line-height: 2;
+      width: 120%;
       span {
         color: rgba(0, 0, 0, 0.7);
         font-size: 20px;
@@ -24,8 +25,8 @@
 
     &:first-child {
       margin-bottom: 70px;
-      border-left: 6px solid rgba(0, 0, 0, 0.6);
-      border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+      border-left: 6px solid #112142;
+      border-bottom: 2px solid #112142;
       display: flex;
       flex-direction: row;
       align-items: flex-end;

@@ -10,15 +10,21 @@ const NavVar = () => {
     <div className={cx("nav-var")}>
       <div className={cx("column")}>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <span className={cx("span-in-link")}>BLOCKCELL</span>
+          <span className={cx("span-in-link")}>
+            <img
+              alt={"blockcell logo"}
+              width={"100%"}
+              src={require("../../../media/images/navvar/blockcelllogo.png")}
+            />
+          </span>
         </Link>
       </div>
       <div className={cx("column")}>
         <div className={cx("item-container")}>
           <Link to={"/about-us"} style={{ textDecoration: "none" }}>
-            <span className={cx("item")}>
+            <span className={cx("item", "testtest")}>
               <div>
-                About us <i class="fas fa-caret-down" />
+                블럭셀은? <i class="fas fa-caret-down" />
               </div>
             </span>
           </Link>
@@ -53,7 +59,11 @@ const NavVar = () => {
         <div className={cx("item-container")}>
           <span className={cx("item")}>
             <div>
-              Recruit <i class="fas fa-caret-down" />
+              <Link to={"/recruit"} style={{ textDecoration: "none" }}>
+                <span className={cx("span-in-link")}>
+                  채용안내 <i class="fas fa-caret-down" />
+                </span>
+              </Link>
             </div>
           </span>
         </div>

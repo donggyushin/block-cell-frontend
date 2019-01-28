@@ -7,78 +7,102 @@ const cx = classNames.bind(styles);
 
 const Carousel2 = ({ height }) => {
   return (
-    <Carousel>
-      <Carousel.Item>
-        <div className={cx("container")}>
-          <div className={cx("asd")}>
-            <img
-              alt="900x500"
-              height={"100%"}
-              width={"100%"}
-              src={require("../../media/images/carousel1 2.jpeg")}
-            />
+    <div className={cx("carousel-container")}>
+      <Carousel>
+        <Carousel.Item>
+          <div className={cx("container")}>
+            <div className={cx("asd")}>
+              <img
+                alt="900x500"
+                width={"100%"}
+                src={require("../../media/images/carousel/carousel1.jpeg")}
+              />
+            </div>
+            <div className={cx("cover")} />
           </div>
-          <div className={cx("cover")} />
-        </div>
 
-        <Carousel.Caption>
+          {/* <Carousel.Caption>
           <div className={cx("caption-container")}>
-            <h3 className={cx("text")}>First slide label</h3>
-            <p className={cx("text")}>
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </p>
+            <span className={cx("text")}>부동산 자산 유동화를 위한</span>
+            <span className={cx("text")}>
+              블록체인 기반의 부동산 플랫폼 전문기업 "블럭셀"
+            </span>
           </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className={cx("container")}>
-          <div className={cx("asd")}>
-            <img
-              alt="900x500"
-              height={"100%"}
-              width={"100%"}
-              src={
-                "https://talentgarden.org/wp-content/uploads/2018/01/Screen-Shot-2017-12-11-at-12.00.26-PM.png"
-              }
-            />
+        </Carousel.Caption> */}
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className={cx("container")}>
+            <div className={cx("asd")}>
+              <img
+                alt="900x500"
+                width={"100%"}
+                src={require("../../media/images/carousel/carousel2.jpeg")}
+              />
+            </div>
+            <div className={cx("cover")} />
           </div>
-          <div className={cx("cover")} />
-        </div>
 
-        <Carousel.Caption>
+          {/* <Carousel.Caption>
           <div className={cx("caption-container")}>
-            <h3 className={cx("text")}>Second slide label</h3>
-            <p className={cx("text")}>
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </p>
+            <span className={cx("text")}>부동산 자산 유동화를 위한</span>
+            <span className={cx("text")}>
+              블록체인 기반의 부동산 플랫폼 전문기업 "블럭셀"
+            </span>
           </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className={cx("container")}>
-          <div className={cx("asd")}>
-            <img
-              alt="900x500"
-              height={"100%"}
-              width={"100%"}
-              src={
-                "https://cdn-images-1.medium.com/max/1600/1*vYfRmR3ANliBjAq34fioTw.jpeg"
-              }
-            />
+        </Carousel.Caption> */}
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className={cx("container")}>
+            <div className={cx("asd")}>
+              <img
+                alt="900x500"
+                width={"100%"}
+                src={require("../../media/images/carousel/carousel3.jpeg")}
+              />
+            </div>
+            <div className={cx("cover")} />
           </div>
-          <div className={cx("cover")} />
-        </div>
 
-        <Carousel.Caption>
+          {/* <Carousel.Caption>
           <div className={cx("caption-container")}>
-            <h3 className={cx("text")}>Third slide label</h3>
-            <p className={cx("text")}>
-              Nulla vitae elit libero, a pharetra augue mollis interdum.
-            </p>
+            <span className={cx("text")}>부동산 자산 유동화를 위한</span>
+            <span className={cx("text")}>
+              블록체인 기반의 부동산 플랫폼 전문기업 "블럭셀"
+            </span>
           </div>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+        </Carousel.Caption> */}
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className={cx("container")}>
+            <div className={cx("asd")}>
+              <img
+                alt="900x500"
+                width={"100%"}
+                src={require("../../media/images/carousel/carousel4.jpeg")}
+              />
+            </div>
+            <div className={cx("cover")} />
+          </div>
+
+          {/* <Carousel.Caption>
+          <div className={cx("caption-container")}>
+            <span className={cx("text")}>부동산 자산 유동화를 위한</span>
+            <span className={cx("text")}>
+              블록체인 기반의 부동산 플랫폼 전문기업 "블럭셀"
+            </span>
+          </div>
+        </Carousel.Caption> */}
+        </Carousel.Item>
+      </Carousel>
+      {/* <div className={cx("fixed-caption")}> */}
+      <div className={cx("caption-container")}>
+        <span className={cx("text")}>부동산 자산 유동화를 위한</span>
+        <span className={cx("text")}>
+          블록체인 기반의 부동산 플랫폼 전문기업 "블럭셀"
+        </span>
+      </div>
+      {/* </div> */}
+    </div>
   );
 };
 

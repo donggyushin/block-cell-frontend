@@ -5,8 +5,8 @@
   align-items: center;
 
   .header {
-    border-left: 6px solid rgba(0, 0, 0, 0.6);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    border-left: 6px solid #112142;
+    border-bottom: 2px solid #112142;
     width: 100%;
     display: flex;
     align-items: flex-end;
@@ -29,8 +29,10 @@
   .body {
     display: flex;
     justify-content: center;
-    width: 142%;
+    align-items: center;
+    width: 166%;
     overflow: hidden;
+    margin-bottom: 30px;
   }
 
   .bottom {
@@ -43,6 +45,7 @@
       .item {
         width: 100%;
         color: rgba(0, 0, 0, 0.5);
+
         .year {
           width: 100%;
           text-align: center;
@@ -64,4 +67,9 @@
       }
     }
   }
+}
+
+.left-item {
+  position: relative;
+  left: 20px;
 }

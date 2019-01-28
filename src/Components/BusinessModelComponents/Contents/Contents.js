@@ -23,15 +23,26 @@ const Contents = () => {
         <Fade bottom>
           <div className={cx("item")}>
             <div className={cx("item-header")}>
-              <div className={cx("item-header-number")}>
+              <img
+                alt={"title"}
+                width={"100%"}
+                src={require("../../../media/images/businessmodel/1.png")}
+              />
+              {/* <div className={cx("item-header-number")}>
                 <span>1</span>
               </div>
               <div className={cx("item-header-title")}>
                 <span>금융상품 및 직접투자 방식</span>
-              </div>
+              </div> */}
             </div>
             <div className={cx("item-body")}>
-              <div className={cx("background-image")} />
+              <div className={cx("background-image2")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/whitebackground.png")}
+                />
+              </div>
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>1) 당사 발행의 상품권 (블럭 셀)</span>
@@ -46,15 +57,21 @@ const Contents = () => {
         <Fade bottom>
           <div className={cx("item")}>
             <div className={cx("item-header")}>
-              <div className={cx("item-header-number")}>
-                <span>2</span>
-              </div>
-              <div className={cx("item-header-title")}>
-                <span>부동산 개발 사업</span>
-              </div>
+              <img
+                alt={"title"}
+                width={"100%"}
+                src={require("../../../media/images/businessmodel/2.png")}
+              />
             </div>
             <div className={cx("item-body")}>
-              <div className={cx("background-image")} />
+              {/* <div className={cx("background-image")} /> */}
+              <div className={cx("background-image2")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/whitebackground.png")}
+                />
+              </div>
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>
@@ -71,7 +88,13 @@ const Contents = () => {
               </div>
             </div>
             <div className={cx("item-body")}>
-              <div className={cx("background-image")} />
+              <div className={cx("background-image2")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/whitebackground.png")}
+                />
+              </div>
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>
@@ -92,16 +115,22 @@ const Contents = () => {
         <Fade bottom>
           <div className={cx("item")}>
             <div className={cx("item-header")}>
-              <div className={cx("item-header-number")}>
-                <span>3</span>
-              </div>
-              <div className={cx("item-header-title")}>
-                <span>개입 개발 사업 및 IT 관련 사업</span>
-              </div>
+              <img
+                alt={"title"}
+                width={"100%"}
+                src={require("../../../media/images/businessmodel/3.png")}
+              />
             </div>
 
             <div className={cx("item-body")}>
-              <div className={cx("background-image")} />
+              <div className={cx("background-image2")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/whitebackground.png")}
+                />
+              </div>
+
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>-국내 게임전문 유명사와 공동개발 및 지분참여</span>
@@ -116,15 +145,21 @@ const Contents = () => {
         <Fade bottom>
           <div className={cx("item")}>
             <div className={cx("item-header")}>
-              <div className={cx("item-header-number")}>
-                <span>4</span>
-              </div>
-              <div className={cx("item-header-title")}>
-                <span>투자 대상 범위</span>
-              </div>
+              <img
+                alt={"title"}
+                width={"100%"}
+                src={require("../../../media/images/businessmodel/4.png")}
+              />
             </div>
             <div className={cx("item-body")}>
-              <div className={cx("background-image", "bigger")} />
+              {/* <div className={cx("background-image", "bigger")} /> */}
+              <div className={cx("background-image2", "bigger")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/fat-backgroundimage.png")}
+                />
+              </div>
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>-부동산 관련 개발사업의 전반</span>
@@ -156,15 +191,20 @@ const Contents = () => {
         <Fade bottom>
           <div className={cx("item")}>
             <div className={cx("item-header")}>
-              <div className={cx("item-header-number")}>
-                <span>5</span>
-              </div>
-              <div className={cx("item-header-title")}>
-                <span>파트너사 및 제휴 업무</span>
-              </div>
+              <img
+                alt={"title"}
+                width={"100%"}
+                src={require("../../../media/images/businessmodel/5.png")}
+              />
             </div>
             <div className={cx("item-body")}>
-              <div className={cx("background-image")} />
+              <div className={cx("background-image2")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/whitebackground.png")}
+                />
+              </div>
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>
@@ -181,7 +221,13 @@ const Contents = () => {
               </div>
             </div>
             <div className={cx("item-body")}>
-              <div className={cx("background-image")} />
+              <div className={cx("background-image2")}>
+                <img
+                  alt={"text-background"}
+                  width={"100%"}
+                  src={require("../../../media/images/businessmodel/whitebackground.png")}
+                />
+              </div>
               <div className={cx("item-body-text")}>
                 <div className={cx("row")}>
                   <span>
