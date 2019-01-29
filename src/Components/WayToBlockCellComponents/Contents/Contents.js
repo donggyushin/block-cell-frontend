@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import Molding from "Components/Molding";
 
 const cx = classNames.bind(styles);
 
@@ -8,6 +9,9 @@ const Contents = () => {
   return (
     <div className={cx("container")}>
       <div className={cx("row")}>
+        <div className={cx("molding-container")}>
+          <Molding />
+        </div>
         <div className={cx("column-left")}>
           <span>찾아오시는 길</span>
         </div>
