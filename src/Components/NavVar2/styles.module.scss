@@ -25,21 +25,23 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      margin-left: 245px;
+      margin-left: 15%;
       margin-right: 130px;
       height: 80px;
     }
     &:nth-child(2) {
-      width: 50%;
+      width: 580px;
       display: flex;
-      justify-content: center;
-      margin-right: 10%;
+      justify-content: space-between;
+      margin-right: 15%;
     }
     .item-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       .item {
+        width: 90%;
         color: white;
         text-decoration: none;
         display: flex;
@@ -58,8 +60,8 @@
       }
     }
     .login-join {
-      margin-left: 40px;
       color: rgba($color: white, $alpha: 0.8);
+
       .login-join--item {
         cursor: pointer;
         &:first-child {
@@ -84,4 +86,8 @@
   to {
     width: 130px;
   }
+}
+
+.item-container-container {
+  display: flex;
 }
