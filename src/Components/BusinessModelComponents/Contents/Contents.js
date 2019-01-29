@@ -3,6 +3,11 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
 import Molding from "Components/Molding";
+import Item1 from "../Item1";
+import Item2 from "../Item2";
+import Item3 from "../Item3";
+import Item4 from "../Item4";
+import Item5 from "../Item5";
 
 const cx = classNames.bind(styles);
 
@@ -24,20 +29,43 @@ const Contents = () => {
       </Fade>
 
       <div className={cx("body")}>
-        <Fade bottom>
+        <div className={cx("item-container")}>
+          <Item1 />
+        </div>
+        <div className={cx("item-container")}>
+          <Item2 />
+        </div>
+        <div className={cx("item-container")}>
+          <Item3 />
+        </div>
+        <div className={cx("item-container")}>
+          <Item4 />
+        </div>
+        <div className={cx("item-container")}>
+          <Item5 />
+        </div>
+
+        {/* <Fade bottom>
           <div className={cx("item")}>
+            <div className={cx("item__background-image")}>
+              <img
+                width={"100%"}
+                alt={"background"}
+                src={require("../../../media/images/businessmodel/sibal1.png")}
+              />
+            </div>
             <div className={cx("item-header")}>
               <img
                 alt={"title"}
                 width={"100%"}
                 src={require("../../../media/images/businessmodel/1.png")}
               />
-              {/* <div className={cx("item-header-number")}>
+              <div className={cx("item-header-number")}>
                 <span>1</span>
               </div>
               <div className={cx("item-header-title")}>
                 <span>금융상품 및 직접투자 방식</span>
-              </div> */}
+              </div>
             </div>
             <div className={cx("item-body")}>
               <div className={cx("background-image2")}>
@@ -68,7 +96,7 @@ const Contents = () => {
               />
             </div>
             <div className={cx("item-body")}>
-              {/* <div className={cx("background-image")} /> */}
+              <div className={cx("background-image")} />
               <div className={cx("background-image2")}>
                 <img
                   alt={"text-background"}
@@ -156,7 +184,7 @@ const Contents = () => {
               />
             </div>
             <div className={cx("item-body")}>
-              {/* <div className={cx("background-image", "bigger")} /> */}
+              <div className={cx("background-image", "bigger")} />
               <div className={cx("background-image2", "bigger")}>
                 <img
                   alt={"text-background"}
@@ -245,7 +273,7 @@ const Contents = () => {
               </div>
             </div>
           </div>
-        </Fade>
+        </Fade> */}
       </div>
     </div>
   );
