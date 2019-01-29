@@ -15,7 +15,7 @@ const Carousel2 = ({ height }) => {
               <img
                 alt="900x500"
                 width={"100%"}
-                src={require("../../media/images/carousel/carousel1.jpeg")}
+                src={require("../../media/images/carousel/carousel4.jpeg")}
               />
             </div>
             <div className={cx("cover")} />
@@ -78,7 +78,7 @@ const Carousel2 = ({ height }) => {
               <img
                 alt="900x500"
                 width={"100%"}
-                src={require("../../media/images/carousel/carousel4.jpeg")}
+                src={require("../../media/images/carousel/carousel1.jpeg")}
               />
             </div>
             <div className={cx("cover")} />
