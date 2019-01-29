@@ -6,6 +6,7 @@
   height: 300px;
   display: flex;
   font-family: "Nanum Gothic", sans-serif;
+  justify-content: space-between;
   align-items: flex-start;
   font-weight: 600;
   font-size: 14px;
@@ -15,6 +16,7 @@
   .column {
     display: flex;
     align-items: flex-end;
+
     &:first-child {
       display: flex;
       width: 170px;
@@ -29,6 +31,7 @@
       height: 85px;
       display: flex;
       justify-content: center;
+      margin-right: 10%;
     }
     .item-container {
       display: flex;
