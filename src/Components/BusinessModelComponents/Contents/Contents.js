@@ -30,19 +30,29 @@ const Contents = () => {
 
       <div className={cx("body")}>
         <div className={cx("item-container")}>
-          <Item1 />
+          <Fade bottom>
+            <Item1 />
+          </Fade>
         </div>
         <div className={cx("item-container")}>
-          <Item2 />
+          <Fade bottom>
+            <Item2 />
+          </Fade>
         </div>
         <div className={cx("item-container")}>
-          <Item3 />
+          <Fade bottom>
+            <Item3 />
+          </Fade>
         </div>
         <div className={cx("item-container")}>
-          <Item4 />
+          <Fade bottom>
+            <Item4 />
+          </Fade>
         </div>
         <div className={cx("item-container")}>
-          <Item5 />
+          <Fade bottom>
+            <Item5 />
+          </Fade>
         </div>
 
         {/* <Fade bottom>
