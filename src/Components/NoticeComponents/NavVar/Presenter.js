@@ -41,7 +41,7 @@ const Presenter = () => {
           <Link to={"/notice"} style={{ textDecoration: "none" }}>
             <span className={cx("item")}>
               <div>
-                공지사항 <i class="fas fa-caret-down" />
+                게시판 <i class="fas fa-caret-down" />
               </div>
             </span>
           </Link>
