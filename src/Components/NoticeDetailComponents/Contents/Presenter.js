@@ -1,12 +1,16 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import Molding from "Components/Molding";
 const cx = classNames.bind(styles);
 
 const ContentsPresenter = ({ goBack }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
+        <div className={cx("molding-container")}>
+          <Molding />
+        </div>
         <div className={cx("korean")}>
           <span>공지사항</span>
         </div>
