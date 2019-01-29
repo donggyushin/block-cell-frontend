@@ -45,12 +45,13 @@
   }
 
   .bottom {
-    width: 100%;
+    width: 107%;
     display: flex;
     justify-content: space-between;
     line-height: 1.6;
     .column {
       width: 24%;
+
       .item {
         width: 100%;
         color: rgba(0, 0, 0, 0.5);
@@ -78,7 +79,7 @@
   }
 }
 
-.left-item {
-  position: relative;
-  left: 20px;
-}
+// .left-item {
+//   position: relative;
+//   left: 20px;
+// }
