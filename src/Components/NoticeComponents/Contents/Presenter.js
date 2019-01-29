@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import Molding from "Components/Molding";
 
 const cx = classNames.bind(styles);
 
@@ -9,6 +10,9 @@ const Presenter = () => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
+        <div className={cx("molding-container")}>
+          <Molding />
+        </div>
         <div className={cx("korean-title")}>
           <span>공지사항</span>
         </div>
