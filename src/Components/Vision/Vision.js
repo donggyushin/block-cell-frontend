@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
+import Molding from "../Molding";
 
 const cx = classNames.bind(styles);
 
@@ -10,6 +11,9 @@ const Vision = () => {
     <Fade bottom>
       <div className={cx("Vision")}>
         <div className={cx("row")}>
+          <div className={cx("molding-container")}>
+            <Molding />
+          </div>
           <div className={cx("korean-title")}>
             <span>비전</span>
           </div>
