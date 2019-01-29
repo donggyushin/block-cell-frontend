@@ -34,9 +34,10 @@
   }
 
   .notice {
-    border-top: 2px solid #112142;
+    border-top: 5px solid #112142;
     border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
-    width: 100%;
+
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +47,7 @@
       width: 100%;
       display: flex;
       align-items: center;
-      border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
+      // border-bottom: 2px solid rgba($color: #000000, $alpha: 0.6);
       padding-top: 10px;
       padding-bottom: 10px;
 
@@ -72,12 +73,12 @@
 
     .important-notice-container {
       width: 100%;
-      margin-top: 30px;
+      border-bottom: 1.2px solid rgba($color: #000000, $alpha: 0.6);
       .important-item-container {
         width: 100%;
-        border-bottom: 1.8px solid rgba($color: #000000, $alpha: 0.6);
-        border-top: 1.8px solid rgba($color: #000000, $alpha: 0.6);
-        background-color: rgba($color: #000000, $alpha: 0.1);
+        border-bottom: 0.1px solid rgba($color: #000000, $alpha: 0.6);
+        border-top: 1.2px solid rgba($color: #000000, $alpha: 0.6);
+        background-color: rgba($color: #000000, $alpha: 0.08);
         padding-top: 10px;
         padding-bottom: 10px;
         display: flex;
@@ -111,8 +112,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
       .normal-notice {
         width: 100%;
         display: flex;

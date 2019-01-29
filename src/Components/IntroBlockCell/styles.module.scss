@@ -7,19 +7,24 @@
     display: flex;
     margin-bottom: 50px;
     color: rgba(0, 0, 0, 0.5);
+    align-items: center;
     .left {
       width: 50%;
       text-align: center;
+
+      position: relative;
+      top: 5px;
     }
     .right {
       width: 50%;
+
       .title {
-        font-weight: 500;
+        font-weight: 800;
         color: black;
         margin-bottom: 35px;
       }
       .right-text {
-        line-height: 1.7;
+        line-height: 1.5;
       }
     }
   }

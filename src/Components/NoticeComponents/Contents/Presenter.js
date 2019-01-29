@@ -43,6 +43,13 @@ const Presenter = () => {
               views={1203342}
             />
           </div>
+          <div className={cx("important-notice")}>
+            <ImportantNotice
+              title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
+              createdAt={"2019-01-01"}
+              views={1203342}
+            />
+          </div>
         </div>
         <div className={cx("normal-notice-container")}>
           <div className={cx("normal-notice")}>
