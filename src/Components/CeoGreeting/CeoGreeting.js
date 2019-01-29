@@ -11,8 +11,16 @@ const CeoGreeting = () => {
     <Fade bottom>
       <div className={cx("CeoGreeting")}>
         <div className={cx("column", "top")}>
+          <div className={cx("molding-image")}>
+            <img
+              alt={"molding"}
+              src={require("../../media/images/molding/molding.jpeg")}
+              width={"100%"}
+              height={"100%"}
+            />
+          </div>
           <div className={cx("row-korean")}>
-            <span>CEO의 인삿말</span>
+            <span>CEO 인삿말</span>
           </div>
           <div className={cx("row-english")}>
             <span>CEO greeting</span>
