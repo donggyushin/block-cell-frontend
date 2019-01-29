@@ -13,7 +13,7 @@ const IntroBlockCell = () => {
           <div className={cx("left")}>
             <img
               alt={"blockcelllogo"}
-              width={"80%"}
+              width={"83%"}
               src={require("../../media/images/blockcelllogo.png")}
             />
           </div>

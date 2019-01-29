@@ -16,12 +16,13 @@
   .column {
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
 
     &:first-child {
       display: flex;
       width: 170px;
       margin-top: 3.5px;
-      margin-left: 245px;
+      margin-left: 15%;
       margin-right: 190px;
       justify-content: flex-end;
       align-items: flex-start;
@@ -29,15 +30,17 @@
     }
     &:nth-child(2) {
       height: 85px;
-      width: 50%;
+      width: 580px;
       display: flex;
-      justify-content: center;
-      margin-right: 10%;
+      justify-content: space-between;
+      margin-right: 15%;
     }
     .item-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      margin-right: 7px;
 
       .item {
         color: white;
@@ -45,7 +48,7 @@
         display: flex;
         align-items: flex-end;
         cursor: pointer;
-        margin-right: 15px;
+        margin-right: 5px;
         height: 40px;
         &:hover {
           div {
@@ -57,15 +60,16 @@
       }
     }
     .login-join {
-      margin-left: 40px;
       color: rgba($color: white, $alpha: 0.8);
       .login-join--item {
         cursor: pointer;
         &:first-child {
           margin-right: 5px;
+          width: 42px;
         }
         &:last-child {
           margin-left: 5px;
+          width: 55px;
         }
       }
     }
@@ -131,4 +135,8 @@
   to {
     width: 70px;
   }
+}
+
+.item-container-container {
+  display: flex;
 }
