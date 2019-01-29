@@ -28,7 +28,7 @@ const History = () => {
           <img
             width={"100%"}
             alt={"history"}
-            src={require("../../media/images/hisotry/history.png")}
+            src={require("../../media/images/hisotry/history.jpeg")}
           />
         </div>
       </Slide>
