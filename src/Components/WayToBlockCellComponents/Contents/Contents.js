@@ -23,7 +23,7 @@ const Contents = () => {
         <img
           alt={"way-to-blockcell"}
           width={"100%"}
-          src={require("../../../media/images/WayToBlockcell/map.png")}
+          src={require("../../../media/images/WayToBlockcell/map.jpeg")}
         />
         {/* <div className={cx("column-left")}>
           <img
