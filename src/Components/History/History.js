@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
+import Molding from "../Molding";
 
 const cx = classNames.bind(styles);
 
@@ -11,6 +12,9 @@ const History = () => {
     <div className={cx("history")}>
       <Fade bottom>
         <div className={cx("header")}>
+          <div className={cx("molding-container")}>
+            <Molding />
+          </div>
           <div className={cx("korean-title")}>
             <span>연혁</span>
           </div>
