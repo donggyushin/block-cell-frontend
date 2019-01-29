@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
 import FunnyLine from "../FunnyLine";
+import Molding from "../Molding";
 
 const cx = classNames.bind(styles);
 
@@ -12,12 +13,7 @@ const CeoGreeting = () => {
       <div className={cx("CeoGreeting")}>
         <div className={cx("column", "top")}>
           <div className={cx("molding-image")}>
-            <img
-              alt={"molding"}
-              src={require("../../media/images/molding/molding.jpeg")}
-              width={"100%"}
-              height={"100%"}
-            />
+            <Molding />
           </div>
           <div className={cx("row-korean")}>
             <span>CEO 인삿말</span>

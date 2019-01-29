@@ -11,7 +11,7 @@ const Modling = () => {
         alt={"molding"}
         width={"100%"}
         height={"100%"}
-        src={require("../../media/images/molding/molding.jpeg")}
+        src={require("../../media/images/molding/molding.png")}
       />
     </div>
   );
