@@ -9,6 +9,7 @@ import NoticeContainer from "Routes/Notice";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import NoticeDetailContainer from "Routes/NoticeDetail";
+import FrequentlyAskedContainer from "Routes/FrequentlyAsked";
 const cx = classNames.bind(styles);
 
 const AppPresenter = () => {
@@ -29,6 +30,11 @@ const AppPresenter = () => {
           exact
           path={"/notice-detail/:id"}
           component={NoticeDetailContainer}
+        />
+        <Route
+          exact
+          path={"/frequently-asked"}
+          component={FrequentlyAskedContainer}
         />
       </div>
     </Router>

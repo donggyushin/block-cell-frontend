@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  .navvar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+  .blockchain-image-container {
+    width: 100%;
+  }
+
+  .body {
+    width: 1000px;
+    .contents {
+      width: 100%;
+      margin-top: 100px;
+    }
+
+    .search-var {
+      width: 100%;
+      margin-top: 180px;
+      margin-bottom: 200px;
+    }
+  }
+
+  .copyright-container {
+    width: 100%;
+  }
+}
