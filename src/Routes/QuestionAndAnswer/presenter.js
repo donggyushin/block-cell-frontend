@@ -1,22 +1,23 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
-import NavVarPresenter from "Components/FrequentlyAskedComponents/NavVar";
-import BlockChainImage from "Components/FrequentlyAskedComponents/BlockchainImage";
-import BulletinContainer from "Components/FrequentlyAskedComponents/Bulletin";
-import SearchVarContainer from "Components/FrequentlyAskedComponents/SearchVar";
+import NavVarPresenter from "Components/QuestionAndAnswerComponents/NavVar";
+import BlockchainImagePresenter from "Components/QuestionAndAnswerComponents/BlockChainImage";
+import BulletinContainer from "Components/QuestionAndAnswerComponents/Bulletin";
+import SearchVarContainer from "Components/QuestionAndAnswerComponents/SearchVar";
 import CopyRight from "Components/CopyRight";
 import BulletinNavigator from "Components/BulletinNavigator";
+
 const cx = classNames.bind(styles);
 
-const FrequentlyAskedPresenter = () => {
+const QuestionAndAnswer = () => {
   return (
     <div className={cx("container")}>
       <div className={cx("navvar")}>
         <NavVarPresenter />
       </div>
       <div className={cx("blockchain-image-container")}>
-        <BlockChainImage />
+        <BlockchainImagePresenter />
       </div>
       <div className={cx("navigator")}>
         <BulletinNavigator />
@@ -36,4 +37,4 @@ const FrequentlyAskedPresenter = () => {
   );
 };
 
-export default FrequentlyAskedPresenter;
+export default QuestionAndAnswer;

@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import ContentsPresenter from "./Presenter";
+import ContentsPresenter from "./presenter";
 
 class ContentsContainer extends React.Component {
   render() {

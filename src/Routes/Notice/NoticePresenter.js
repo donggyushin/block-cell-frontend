@@ -6,6 +6,7 @@ import NavVar from "Components/NoticeComponents/NavVar";
 import Contents from "Components/NoticeComponents/Contents";
 import SearchVarContainer from "Components/NoticeComponents/SearchVar";
 import CopyRight from "Components/CopyRight";
+import BulletinNavigator from "Components/BulletinNavigator";
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +18,9 @@ const NoticePresenter = () => {
       </div>
       <div className={cx("blockchain-image-container")}>
         <BlockChainImage />
+      </div>
+      <div className={cx("navigator")}>
+        <BulletinNavigator />
       </div>
       <div className={cx("body")}>
         <div className={cx("contents")}>

@@ -10,6 +10,9 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import NoticeDetailContainer from "Routes/NoticeDetail";
 import FrequentlyAskedContainer from "Routes/FrequentlyAsked";
+import FrequentlyAskedDetailPresenter from "Routes/FrequentlyAskedDetail";
+import QuestionAndAnswer from "Routes/QuestionAndAnswer";
+import QuestionAndAnswerDetail from "Routes/QuestionAndAnswerDetail";
 const cx = classNames.bind(styles);
 
 const AppPresenter = () => {
@@ -35,6 +38,17 @@ const AppPresenter = () => {
           exact
           path={"/frequently-asked"}
           component={FrequentlyAskedContainer}
+        />
+        <Route
+          exact
+          path={"/frequently-asked/:id"}
+          component={FrequentlyAskedDetailPresenter}
+        />
+        <Route exact path={"/question&answer"} component={QuestionAndAnswer} />
+        <Route
+          exact
+          path={"/question&answer/:id"}
+          component={QuestionAndAnswerDetail}
         />
       </div>
     </Router>

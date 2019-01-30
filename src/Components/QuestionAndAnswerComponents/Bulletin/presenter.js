@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
+import styles from "./styles.module.scss";
 import Molding from "Components/Molding";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const Bulletin = () => {
+const BulletinPresenter = () => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -14,10 +14,10 @@ const Bulletin = () => {
           <Molding />
         </div>
         <div className={cx("korean-title")}>
-          <span>자주 묻는 질문</span>
+          <span>묻고 답하기</span>
         </div>
         <div className={cx("english-subtitle")}>
-          <span>FAQ</span>
+          <span>Q&A</span>
         </div>
       </div>
       <div className={cx("notice")}>
@@ -79,7 +79,7 @@ const ImportantNotice = ({ title, createdAt, views }) => {
         <span>공지</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/frequently-asked/1"} style={{ textDecoration: "none" }}>
+        <Link to={"/question&answer/1"} style={{ textDecoration: "none" }}>
           <span>{title}</span>
         </Link>
       </div>
@@ -99,7 +99,7 @@ const NormalNotice = ({ num, title, createdAt, views }) => {
         <span>{num}</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/frequently-asked/1"} style={{ textDecoration: "none" }}>
+        <Link to={"/question&answer/1"} style={{ textDecoration: "none" }}>
           <span>{title}</span>
         </Link>
       </div>
@@ -113,4 +113,4 @@ const NormalNotice = ({ num, title, createdAt, views }) => {
   );
 };
 
-export default Bulletin;
+export default BulletinPresenter;
