@@ -8,7 +8,8 @@ class NavVarContainer extends React.Component {
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart"
-    }
+    },
+    top: true
   };
 
   render() {
@@ -19,9 +20,37 @@ class NavVarContainer extends React.Component {
         scrollToHistory={this.scrollToHistory}
         scrollToVision={this.scrollToVision}
         scrollToPartnership={this.scrollToPartnership}
+        top={this.state.top}
       />
     );
   }
+
+  componentDidMount = () => {
+    window.addEventListener("scroll", this.handleScroll);
+    if (document.documentElement.scrollTop >= 48) {
+      this.setState({ ...this.state, top: false });
+    }
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = event => {
+    let scrollTop = document.documentElement.scrollTop;
+
+    if (scrollTop >= 48) {
+      this.setState({
+        ...this.state,
+        top: false
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        top: true
+      });
+    }
+  };
 
   scrollToGreeting = () => {
     scroll.scrollTo(558, this.state.scrollOptions);

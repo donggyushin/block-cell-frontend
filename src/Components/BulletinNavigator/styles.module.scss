@@ -2,24 +2,40 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 
-  .column {
-    &:first-child {
-      margin-right: 7px;
-    }
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &:last-child {
-      margin-left: 7px;
-    }
+    .column {
+      padding-left: 15px;
+      padding-right: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    span {
-      color: rgba($color: #000000, $alpha: 0.8);
-    }
-  }
+      span {
+        color: rgba($color: #000000, $alpha: 0.8);
+      }
+      .under-line {
+        visibility: hidden;
+        width: 10px;
+        height: 2px;
+        background-color: #04183a;
+        opacity: 0.1;
+        transition: 0.5s;
+      }
 
-  .center {
-    margin-right: 7px;
-    margin-left: 7px;
+      &:hover {
+        .under-line {
+          visibility: visible;
+          width: 130%;
+          opacity: 1;
+        }
+      }
+    }
   }
 }

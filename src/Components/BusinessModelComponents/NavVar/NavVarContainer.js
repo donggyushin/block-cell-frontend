@@ -8,7 +8,8 @@ class NavVarConatainer extends React.Component {
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart"
-    }
+    },
+    top: true
   };
   render() {
     const {
@@ -25,9 +26,36 @@ class NavVarConatainer extends React.Component {
         toThirdItem={toThirdItem}
         toFourthItem={toFourthItem}
         toFifthItem={toFifthItem}
+        top={this.state.top}
       />
     );
   }
+  componentDidMount = () => {
+    window.addEventListener("scroll", this.handleScroll);
+    if (document.documentElement.scrollTop >= 48) {
+      this.setState({ ...this.state, top: false });
+    }
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = event => {
+    let scrollTop = document.documentElement.scrollTop;
+
+    if (scrollTop >= 48) {
+      this.setState({
+        ...this.state,
+        top: false
+      });
+    } else {
+      this.setState({
+        ...this.state,
+        top: true
+      });
+    }
+  };
 
   toFirstItem = () => {
     scroll.scrollTo(424, this.state.scrollOptions);

@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
-import Molding from "../Molding";
+
+import TitlePresenter from "../Title";
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +12,7 @@ const PartnerShip = () => {
     <Fade bottom>
       <div className={cx("partnership")}>
         <div className={cx("header")}>
-          <div className={cx("molding-container")}>
+          {/* <div className={cx("molding-container")}>
             <Molding />
           </div>
           <div className={cx("korean-title")}>
@@ -19,7 +20,8 @@ const PartnerShip = () => {
           </div>
           <div className={cx("english-subtitle")}>
             <span>Partner ship</span>
-          </div>
+          </div> */}
+          <TitlePresenter title={"파트너사"} subTitle={"Partnetship"} />
         </div>
         <div className={cx("bottom")}>
           <div className={cx("partner-box")}>

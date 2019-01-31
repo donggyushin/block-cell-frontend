@@ -2,12 +2,13 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
-import Molding from "Components/Molding";
+
 import Item1 from "../Item1";
 import Item2 from "../Item2";
 import Item3 from "../Item3";
 import Item4 from "../Item4";
 import Item5 from "../Item5";
+import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,7 @@ const Contents = () => {
     <div className={cx("contents")}>
       <Fade bottom>
         <div className={cx("header")}>
-          <div className={cx("molding-container")}>
+          {/* <div className={cx("molding-container")}>
             <Molding />
           </div>
           <div className={cx("column", "title-kor")}>
@@ -24,7 +25,8 @@ const Contents = () => {
           </div>
           <div className={cx("column", "title-eng")}>
             <span className={cx("header-title-eng")}>Business model</span>
-          </div>
+          </div> */}
+          <TitlePresenter title={"사업모델"} subTitle={"Business model"} />
         </div>
       </Fade>
 

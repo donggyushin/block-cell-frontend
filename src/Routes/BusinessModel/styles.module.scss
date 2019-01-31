@@ -5,7 +5,8 @@
   align-items: center;
 
   .nav-var {
-    position: absolute;
+    // position: absolute;
+    position: fixed;
     top: 0;
     z-index: 3;
     width: 100%;

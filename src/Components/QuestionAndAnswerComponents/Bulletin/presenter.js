@@ -1,8 +1,9 @@
 import React from "react";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
-import Molding from "Components/Molding";
+
 import { Link } from "react-router-dom";
+import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
@@ -10,7 +11,7 @@ const BulletinPresenter = () => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
-        <div className={cx("molding-container")}>
+        {/* <div className={cx("molding-container")}>
           <Molding />
         </div>
         <div className={cx("korean-title")}>
@@ -18,7 +19,8 @@ const BulletinPresenter = () => {
         </div>
         <div className={cx("english-subtitle")}>
           <span>Q&A</span>
-        </div>
+        </div> */}
+        <TitlePresenter title={"묻고 답하기"} subTitle={"Q&A"} />
       </div>
       <div className={cx("notice")}>
         <div className={cx("notice-header")}>

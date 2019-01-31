@@ -3,7 +3,8 @@
 .nav-var {
   color: white;
   width: 100%;
-  height: 300px;
+  // height: 300px;
+  height: 100px;
   display: flex;
   font-family: "Nanum Gothic", sans-serif;
   justify-content: space-between;
@@ -12,6 +13,7 @@
   font-size: 14px;
   z-index: 100;
   padding-bottom: 15px;
+  transition: 0.5s;
 
   .column {
     display: flex;
@@ -108,10 +110,11 @@
     .dropdown-container {
       .dropdownitems-container {
         border-top: 1px solid white;
+        margin-top: 10px;
         background-color: rgba($color: #000000, $alpha: 0.7);
         line-height: 1.6;
         padding: 10px;
-        width: 70px;
+        width: 100px;
         display: flex;
         flex-direction: column;
         font-size: 13px;
@@ -133,10 +136,15 @@
   }
 
   to {
-    width: 70px;
+    width: 100px;
   }
 }
 
 .item-container-container {
   display: flex;
+}
+
+.has-background {
+  background-color: #04183a;
+  transition: 0.5s;
 }

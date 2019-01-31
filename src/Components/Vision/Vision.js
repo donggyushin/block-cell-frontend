@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
-import Molding from "../Molding";
+
+import TitlePresenter from "../Title";
 
 const cx = classNames.bind(styles);
 
@@ -11,15 +12,7 @@ const Vision = () => {
     <Fade bottom>
       <div className={cx("Vision")}>
         <div className={cx("row")}>
-          <div className={cx("molding-container")}>
-            <Molding />
-          </div>
-          <div className={cx("korean-title")}>
-            <span>비전</span>
-          </div>
-          <div className={cx("english-subtitle")}>
-            <span>Vision</span>
-          </div>
+          <TitlePresenter title={"비전"} subTitle={"Vision"} />
         </div>
         <div className={cx("row")}>
           <p>

@@ -42,18 +42,14 @@ const NavVarPresenter = () => {
           <div className={cx("item-container")}>
             <Link to={"/notice"} style={{ textDecoration: "none" }}>
               <span className={cx("item")}>
-                <div>
-                  게시판 <i class="fas fa-caret-down" />
-                </div>
+                <div>고객지원</div>
               </span>
             </Link>
           </div>
           <div className={cx("item-container")}>
             <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}>
               <span className={cx("item")}>
-                <div>
-                  오시는 길 <i class="fas fa-caret-down" />
-                </div>
+                <div>오시는 길</div>
               </span>
             </Link>
           </div>
@@ -61,9 +57,7 @@ const NavVarPresenter = () => {
             <span className={cx("item")}>
               <div>
                 <Link to={"/recruit"} style={{ textDecoration: "none" }}>
-                  <span className={cx("span-in-link")}>
-                    채용안내 <i class="fas fa-caret-down" />
-                  </span>
+                  <span className={cx("span-in-link")}>채용안내</span>
                 </Link>
               </div>
             </span>

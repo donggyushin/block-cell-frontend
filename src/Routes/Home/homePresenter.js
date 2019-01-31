@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import IntroBlockCell from "Components/IntroBlockCell";
-import IntroPresident from "Components/IntroPresident";
 import BlockCellToken from "Components/BlockCellToken";
-import CeoGreeting from "Components/CeoGreeting";
 import FunnyLine from "Components/FunnyLine";
 import History from "Components/History";
 import Vision from "Components/Vision";
@@ -13,6 +11,7 @@ import CopyRight from "Components/CopyRight";
 import ButtonToTop from "Components/ButtonToTop";
 import BlockChainImage from "Components/AboutUsComponents/BlockChainImage";
 import NavVar from "Components/AboutUsComponents/NavVar";
+import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
@@ -29,7 +28,7 @@ const homePresenter = ({ scrollToTop }) => {
 
       <div className={cx("body")}>
         <div className={cx("ceo-greeting")}>
-          <CeoGreeting />
+          <TitlePresenter title={"CEO 인사말"} subTitle={"CEO greeting"} />
         </div>
 
         <div className={cx("IntroBlockCell")}>

@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
-import Molding from "../Molding";
+import TitlePresenter from "../Title";
 
 const cx = classNames.bind(styles);
 
@@ -12,15 +12,7 @@ const History = () => {
     <div className={cx("history")}>
       <Fade bottom>
         <div className={cx("header")}>
-          <div className={cx("molding-container")}>
-            <Molding />
-          </div>
-          <div className={cx("korean-title")}>
-            <span>연혁</span>
-          </div>
-          <div className={cx("english-subtitle")}>
-            <span>History</span>
-          </div>
+          <TitlePresenter title={"연혁"} subTitle={"History"} />
         </div>
       </Fade>
       <Slide left>
