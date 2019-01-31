@@ -23,26 +23,27 @@
 }
 
 .caption-container {
-  position: relative;
-  bottom: 215px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  span {
-    font-size: 3.8rem;
-    font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  width: 948px;
+  height: 214px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin-left: -474px;
+  top: 50%;
+  margin-top: -107px;
+
+  .up {
+    font-size: 3rem;
+  }
+
+  .down {
+    font-size: 6.5rem;
     text-shadow: 5px 5px 8px #05131c;
   }
-}
-
-.caption-container {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  left: 23%;
-  top: 41%;
 }
 
 .carousel-container {

@@ -96,9 +96,11 @@ const Carousel2 = ({ height }) => {
       </Carousel>
       {/* <div className={cx("fixed-caption")}> */}
       <div className={cx("caption-container")}>
-        <span className={cx("text")}>부동산 자산 유동화를 위한</span>
-        <span className={cx("text")}>
-          블록체인 기반의 부동산 플랫폼 전문기업 "블럭셀"
+        <span className={cx("text", "up")}>
+          부동산 자산 유동화를 위한 블록체인 기반의
+        </span>
+        <span className={cx("text", "down")}>
+          부동산 플랫폼 전문기업 "블럭셀"
         </span>
       </div>
       {/* </div> */}
