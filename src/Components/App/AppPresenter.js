@@ -13,6 +13,7 @@ import FrequentlyAskedContainer from "Routes/FrequentlyAsked";
 import FrequentlyAskedDetailPresenter from "Routes/FrequentlyAskedDetail";
 import QuestionAndAnswer from "Routes/QuestionAndAnswer";
 import QuestionAndAnswerDetail from "Routes/QuestionAndAnswerDetail";
+import EditorTest from "Routes/EditorTest";
 const cx = classNames.bind(styles);
 
 const AppPresenter = () => {
@@ -50,6 +51,7 @@ const AppPresenter = () => {
           path={"/question&answer/:id"}
           component={QuestionAndAnswerDetail}
         />
+        <Route exact path={"/editor-test"} component={EditorTest} />
       </div>
     </Router>
   );
