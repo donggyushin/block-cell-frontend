@@ -19,10 +19,10 @@ const BlockChainImagePresenter = () => {
           <span className={cx("top")}>블럭셀</span>
         </div>
         <div className={cx("row")}>
-          <span className={cx("second-line")}>묻고 답하기</span>
+          <span className={cx("second-line")}>고객지원</span>
         </div>
         <div className={cx("row")}>
-          <span className={cx("third-line")}>Q&A</span>
+          <span className={cx("third-line")}>Customer service</span>
         </div>
       </div>
     </div>

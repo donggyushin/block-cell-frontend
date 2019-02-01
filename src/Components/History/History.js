@@ -18,9 +18,9 @@ const History = () => {
       <Slide left>
         <div className={cx("body")}>
           <img
-            width={"100%"}
+            width={"88%"}
             alt={"history"}
-            src={require("../../media/images/hisotry/history.jpeg")}
+            src={require("../../media/images/hisotry/history.png")}
           />
         </div>
       </Slide>
@@ -76,10 +76,7 @@ const History = () => {
                 <span>· 암호화폐 전문 은행 개발</span>
                 <br />
                 <br />
-                <span>
-                  · MOU업체와 MOA작성 후 본격적 게<br />
-                  &nbsp;&nbsp;임 개발
-                </span>
+                <span>· MOU업체와 MOA작성 후 본격적 &nbsp;게임 개발</span>
               </div>
             </div>
           </div>
@@ -96,7 +93,7 @@ const History = () => {
               </div>
               <div className={cx("big")}>
                 <span>
-                  · 블록체인 기반의 부동산 플랫폼 오픈
+                  · 블록체인 기반의 부동산 플랫폼 &nbsp;&nbsp;오픈
                   <br />
                   &nbsp;&nbsp;게임개발 BETA TEST
                 </span>

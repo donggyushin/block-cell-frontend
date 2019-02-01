@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import BuildingImage from "Components/AboutUsComponents/BuildingImage";
 
 const cx = classNames.bind(styles);
 
@@ -27,6 +28,9 @@ const SearchVarPresenter = () => {
         <div className={cx("button")}>
           <button>검색</button>
         </div>
+      </div>
+      <div className={cx("building-image-container")}>
+        <BuildingImage />
       </div>
     </div>
   );

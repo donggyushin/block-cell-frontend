@@ -12,6 +12,7 @@ import ButtonToTop from "Components/ButtonToTop";
 import BlockChainImage from "Components/AboutUsComponents/BlockChainImage";
 import NavVar from "Components/AboutUsComponents/NavVar";
 import TitlePresenter from "Components/Title";
+import BuildingImage from "Components/AboutUsComponents/BuildingImage";
 
 const cx = classNames.bind(styles);
 
@@ -35,12 +36,16 @@ const homePresenter = ({ scrollToTop }) => {
           <IntroBlockCell />
         </div>
 
-        <div className={cx("funny-line__under-IntroPresident")}>
+        {/* <div className={cx("funny-line__under-IntroPresident")}>
           <FunnyLine />
+        </div> */}
+        <div className={cx("building-image1")}>
+          <BuildingImage />
         </div>
         <div className={cx("history")}>
           <History />
         </div>
+
         <div className={cx("vision")}>
           <Vision />
         </div>
@@ -51,6 +56,7 @@ const homePresenter = ({ scrollToTop }) => {
         </div>
         <div className={cx("partnership")}>
           <PartnerShip />
+          <BuildingImage />
         </div>
       </div>
       <div className={cx("copyright")}>

@@ -80,13 +80,18 @@
     }
   }
   .bottom {
+    margin-top: -46px;
+    padding: 0;
+    border-collapse: collapse;
     span {
       color: #155e88;
       font-family: sans-serif;
       font-size: 150px;
       font-weight: 600;
       position: relative;
-      bottom: 50px;
+      padding: 0;
+      margin: 0;
+      border-collapse: collapse;
     }
   }
 }

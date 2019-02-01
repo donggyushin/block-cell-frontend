@@ -9,7 +9,13 @@ const IntroBlockCell = () => {
   return (
     <div className={cx("IntroBlockCell")}>
       <Fade bottom>
-        <div className={cx("first-row")}>
+        <img
+          width={"100%"}
+          alt={"IntroBlockcell"}
+          src={require("../../media/images/AboutUs/IntroBlockcell.png")}
+        />
+
+        {/* <div className={cx("first-row")}>
           <div className={cx("left")}>
             <img
               alt={"blockcelllogo"}
@@ -56,7 +62,7 @@ const IntroBlockCell = () => {
         </div>
         <div className={cx("last-row")}>
           <span>블록셀 회장&nbsp; &nbsp;최 창 식</span>
-        </div>
+        </div> */}
       </Fade>
     </div>
   );
