@@ -63,8 +63,16 @@ const Presenter = ({ top }) => {
           </div>
         </div>
         <div className={cx("login-join")}>
-          <span className={cx("login-join--item")}>로그인</span>|
-          <span className={cx("login-join--item")}>회원가입</span>
+          <Link to={"/login"} style={{ textDecoration: "none" }}>
+            <span className={cx("login-join--item", "span-in-link")}>
+              로그인 |&nbsp;
+            </span>
+          </Link>
+          <Link to={"/new-account"} style={{ textDecoration: "none" }}>
+            <span className={cx("login-join--item", "span-in-link")}>
+              회원가입
+            </span>
+          </Link>
         </div>
       </div>
     </div>

@@ -3,26 +3,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-
-  .navvar-container {
+  .nav-var-container {
     width: 100%;
-    position: fixed;
     z-index: 3;
+    position: fixed;
     top: 0;
-    left: 0;
   }
 
-  .blockchainimage-container {
+  .blockchain-image-container {
     width: 100%;
   }
 
-  .summernote-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 300px;
+  .contents-container {
+    width: 997px;
     margin-top: 150px;
+    margin-bottom: 200px;
   }
 
   .copyright-container {

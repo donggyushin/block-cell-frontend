@@ -38,7 +38,7 @@ const BulletinPresenter = () => {
           </div>
         </div>
         <div className={cx("important-notice-container")}>
-          <div className={cx("important-notice")}>
+          {/* <div className={cx("important-notice")}>
             <ImportantNotice
               title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
               createdAt={"2019-01-01"}
@@ -51,10 +51,10 @@ const BulletinPresenter = () => {
               createdAt={"2019-01-01"}
               views={1203342}
             />
-          </div>
+          </div> */}
         </div>
         <div className={cx("normal-notice-container")}>
-          <div className={cx("normal-notice")}>
+          {/* <div className={cx("normal-notice")}>
             <NormalNotice
               num={1}
               title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
@@ -67,7 +67,7 @@ const BulletinPresenter = () => {
               createdAt={"2019-01-01"}
               views={123123}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

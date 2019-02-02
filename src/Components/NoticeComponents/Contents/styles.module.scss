@@ -151,4 +151,15 @@
       }
     }
   }
+
+  .button-container {
+    width: 800px;
+    text-align: right;
+    button {
+      border: 0;
+      background-color: #05143b;
+      color: white;
+      border-radius: 5px;
+    }
+  }
 }

@@ -13,8 +13,12 @@ import FrequentlyAskedContainer from "Routes/FrequentlyAsked";
 import FrequentlyAskedDetailPresenter from "Routes/FrequentlyAskedDetail";
 import QuestionAndAnswer from "Routes/QuestionAndAnswer";
 import QuestionAndAnswerDetail from "Routes/QuestionAndAnswerDetail";
-
 import NoticeWriter from "Routes/NoticeWriter";
+import LoginPage from "Routes/Login";
+import NewAccountPage from "Routes/NewAccout";
+import NoticeDetailFake1 from "Routes/NoticeDetailFake";
+import NoticeDetailFake2 from "Routes/NoticeDetailFake2";
+import FrequentlyAskedDetailFake1 from "Routes/FrequentlyAskedDetailFake";
 const cx = classNames.bind(styles);
 
 const AppPresenter = () => {
@@ -33,6 +37,16 @@ const AppPresenter = () => {
         <Route exact path={"/notice"} component={NoticeContainer} />
         <Route
           exact
+          path={"/notice-detail/as2"}
+          component={NoticeDetailFake1}
+        />
+        <Route
+          exact
+          path={"/notice-detail/as3"}
+          component={NoticeDetailFake2}
+        />
+        <Route
+          exact
           path={"/notice-detail/:id"}
           component={NoticeDetailContainer}
         />
@@ -40,6 +54,11 @@ const AppPresenter = () => {
           exact
           path={"/frequently-asked"}
           component={FrequentlyAskedContainer}
+        />
+        <Route
+          exact
+          path={"/frequently-asked/as1"}
+          component={FrequentlyAskedDetailFake1}
         />
         <Route
           exact
@@ -53,6 +72,8 @@ const AppPresenter = () => {
           component={QuestionAndAnswerDetail}
         />
         <Route exact path={"/notice-writer"} component={NoticeWriter} />
+        <Route exact path={"/login"} component={LoginPage} />
+        <Route exact path={"/new-account"} component={NewAccountPage} />
       </div>
     </Router>
   );

@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import NavVar from "Components/NoticeComponents/NavVar";
 import BlockChainImage from "Components/NoticeComponents/BlockChainImage";
 import Summernote from "Components/NoticeWriter/Summernote";
+import CopyRight from "Components/CopyRight";
 
 const cx = classNames.bind(styles);
 
@@ -18,6 +19,9 @@ const NoticeWriter = () => {
       </div>
       <div className={cx("summernote-container")}>
         <Summernote />
+      </div>
+      <div className={cx("copyright-container")}>
+        <CopyRight />
       </div>
     </div>
   );

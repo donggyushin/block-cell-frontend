@@ -39,22 +39,24 @@ const Presenter = () => {
         <div className={cx("important-notice-container")}>
           <div className={cx("important-notice")}>
             <ImportantNotice
-              title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
+              title={"블럭셀은 어떤 회사인가요?"}
               createdAt={"2019-01-01"}
-              views={1203342}
+              views={17}
+              id={"as2"}
             />
           </div>
           <div className={cx("important-notice")}>
             <ImportantNotice
-              title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
+              title={"주력 사업은 무엇인가요?"}
               createdAt={"2019-01-01"}
-              views={1203342}
+              views={9}
+              id={"as3"}
             />
           </div>
         </div>
         <div className={cx("normal-notice-container")}>
           <div className={cx("normal-notice")}>
-            <NormalNotice
+            {/* <NormalNotice
               num={1}
               title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
               createdAt={"2019-01-01"}
@@ -65,22 +67,27 @@ const Presenter = () => {
               title={"스카이 캐슬은 어떤 참혹한 결과를 맞을 것인가?"}
               createdAt={"2019-01-01"}
               views={123123}
-            />
+            /> */}
           </div>
         </div>
+      </div>
+      <div className={cx("button-container")}>
+        <Link to={"/notice-writer"} style={{ textDecoration: "none" }}>
+          <button>작성하기</button>
+        </Link>
       </div>
     </div>
   );
 };
 
-const ImportantNotice = ({ title, createdAt, views }) => {
+const ImportantNotice = ({ title, createdAt, views, id }) => {
   return (
     <div className={cx("important-item-container")}>
       <div className={cx("num")}>
         <span>공지</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/notice-detail/1"} style={{ textDecoration: "none" }}>
+        <Link to={`/notice-detail/${id}`} style={{ textDecoration: "none" }}>
           <span>{title}</span>
         </Link>
       </div>
