@@ -6,8 +6,16 @@ const LOGIN = "user/LOGIN";
 const LOGOUT = "user/LOGOUT";
 const NEW_ACCOUNT = "user/NEW_ACCOUNT";
 const OPEN_MODAL = "user/OPEN_MODAL";
+const GET_USER_PROFILE = "user/GET_USER_PROFILE";
 
 // create actions
+
+export const getUserProfile = user => {
+  return {
+    type: GET_USER_PROFILE,
+    user
+  };
+};
 
 export const openModal = error => {
   return {
@@ -36,6 +44,26 @@ export const newAccount = () => {
 };
 
 // axios actions
+export const getUserProfileRequest = () => {
+  return dispatch => {
+    console.log();
+    axios
+      .get("/api/authentication/get-user-profile", {
+        headers: {
+          "X-JWT": localStorage.getItem("jwt")
+        }
+      })
+      .then(res => {
+        if (!res.data.ok) {
+          console.log(res);
+        } else {
+          console.log(res.data.user);
+          dispatch(getUserProfile(res.data.user));
+        }
+      })
+      .catch(error => console.log(error));
+  };
+};
 
 export const newAccountRequest = (username, password1, password2) => {
   return dispatch => {
@@ -48,6 +76,7 @@ export const newAccountRequest = (username, password1, password2) => {
       .then(res => {
         if (!res.data.ok) {
           dispatch(openModal(res.data.error));
+          alert(res.data.error);
         } else {
           window.location.href = "/";
         }
@@ -68,8 +97,10 @@ export const loginRequest = (username, password) => {
       .then(res => {
         if (!res.data.ok) {
           dispatch(openModal(res.data.error));
+          alert(res.data.error);
         } else {
           const token = res.data.jwt;
+
           dispatch(login(token));
         }
       })
@@ -94,14 +125,24 @@ export default function reducer(state = initialState, action) {
       return reducerLogin(state, action);
     case LOGOUT:
       return reducerLogout(state, action);
-    case OPEN_MODAL:
-      return reducerOpenModal;
+    // case OPEN_MODAL:
+    //   return reducerOpenModal;
+    case GET_USER_PROFILE:
+      return reducerGetUserProfile(state, action);
     default:
       return state;
   }
 }
 
 // reducer actions
+const reducerGetUserProfile = (state, action) => {
+  const { user } = action;
+  return {
+    ...state,
+    user
+  };
+};
+
 const reducerOpenModal = (state, action) => {
   const { error } = action;
   return {

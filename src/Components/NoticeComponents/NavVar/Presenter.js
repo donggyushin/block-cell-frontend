@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 
-const Presenter = ({ top }) => {
+const Presenter = ({ top, isLoggedIn }) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
       <div className={cx("column")}>
@@ -63,16 +63,24 @@ const Presenter = ({ top }) => {
           </div>
         </div>
         <div className={cx("login-join")}>
-          <Link to={"/login"} style={{ textDecoration: "none" }}>
+          {isLoggedIn ? (
             <span className={cx("login-join--item", "span-in-link")}>
-              로그인 |&nbsp;
+              로그아웃
             </span>
-          </Link>
-          <Link to={"/new-account"} style={{ textDecoration: "none" }}>
-            <span className={cx("login-join--item", "span-in-link")}>
-              회원가입
-            </span>
-          </Link>
+          ) : (
+            <div>
+              <Link to={"/login"} style={{ textDecoration: "none" }}>
+                <span className={cx("login-join--item", "span-in-link")}>
+                  로그인 |&nbsp;
+                </span>
+              </Link>
+              <Link to={"/new-account"} style={{ textDecoration: "none" }}>
+                <span className={cx("login-join--item", "span-in-link")}>
+                  회원가입
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

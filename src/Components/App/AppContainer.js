@@ -1,31 +1,48 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import AppPresenter from "./AppPresenter";
+import { getUserProfileRequest } from "../../store/modules/user";
 
 class AppContainer extends Component {
+  state = {
+    loading: false
+  };
+  componentDidMount() {
+    const { getUserProfile } = this.props;
+    getUserProfile();
+  }
+
   render() {
-    const { open, error } = this.props;
     const { onCloseModal } = this;
+
+    const { loading } = this.state;
+
     return (
-      <AppPresenter open={open} error={error} onCloseModal={onCloseModal} />
+      <div>
+        {loading ? (
+          "loading..."
+        ) : (
+          <AppPresenter open={false} error={null} onCloseModal={onCloseModal} />
+        )}
+      </div>
     );
   }
 
-  onCloseModal = () => {
-    this.props.open = false;
-    this.props.error = "";
-  };
+  onCloseModal = () => {};
 }
 
 const mapStateToProps = state => {
   return {
-    open: state.user.open,
-    error: state.user.error
+    user: state.user.user
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    getUserProfile: () => {
+      dispatch(getUserProfileRequest());
+    }
+  };
 };
 
 export default connect(

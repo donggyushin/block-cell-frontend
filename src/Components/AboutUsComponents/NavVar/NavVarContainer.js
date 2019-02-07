@@ -1,6 +1,7 @@
 import React from "react";
 import NavVar from "./NavVar";
 import { animateScroll as scroll } from "react-scroll";
+import { connect } from "react-redux";
 
 class NavVarContainer extends React.Component {
   state = {
@@ -13,6 +14,7 @@ class NavVarContainer extends React.Component {
   };
 
   render() {
+    const { isLoggedIn } = this.props;
     return (
       <NavVar
         scrollToGreeting={this.scrollToGreeting}
@@ -21,6 +23,7 @@ class NavVarContainer extends React.Component {
         scrollToVision={this.scrollToVision}
         scrollToPartnership={this.scrollToPartnership}
         top={this.state.top}
+        isLoggedIn={isLoggedIn}
       />
     );
   }
@@ -73,4 +76,17 @@ class NavVarContainer extends React.Component {
   };
 }
 
-export default NavVarContainer;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.user.isLoggedIn
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavVarContainer);

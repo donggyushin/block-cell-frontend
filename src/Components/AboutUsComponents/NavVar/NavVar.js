@@ -10,7 +10,8 @@ const NavVar = ({
   scrollToHistory,
   scrollToVision,
   scrollToPartnership,
-  top
+  top,
+  isLoggedIn
 }) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
@@ -84,16 +85,24 @@ const NavVar = ({
           </div>
         </div>
         <div className={cx("login-join")}>
-          <Link to={"/login"} style={{ textDecoration: "none" }}>
+          {isLoggedIn ? (
             <span className={cx("login-join--item", "span-in-link")}>
-              로그인 |{" "}
+              로그아웃
             </span>
-          </Link>
-          <Link to={"/new-account"} style={{ textDecoration: "none" }}>
-            <span className={cx("login-join--item", "span-in-link")}>
-              회원가입
-            </span>
-          </Link>
+          ) : (
+            <div>
+              <Link to={"/login"} style={{ textDecoration: "none" }}>
+                <span className={cx("login-join--item", "span-in-link")}>
+                  로그인 |{" "}
+                </span>
+              </Link>
+              <Link to={"/new-account"} style={{ textDecoration: "none" }}>
+                <span className={cx("login-join--item", "span-in-link")}>
+                  회원가입
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

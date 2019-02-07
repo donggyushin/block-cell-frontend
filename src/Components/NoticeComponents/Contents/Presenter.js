@@ -6,7 +6,7 @@ import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
-const Presenter = () => {
+const Presenter = ({ admin }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -72,9 +72,13 @@ const Presenter = () => {
         </div>
       </div>
       <div className={cx("button-container")}>
-        <Link to={"/notice-writer"} style={{ textDecoration: "none" }}>
-          <button>작성하기</button>
-        </Link>
+        {admin && (
+          <div>
+            <Link to={"/notice-writer"} style={{ textDecoration: "none" }}>
+              <button>작성하기</button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

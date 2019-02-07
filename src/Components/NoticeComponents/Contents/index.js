@@ -1,2 +1,2 @@
-import Contents from "./Presenter";
+import Contents from "./container";
 export default Contents;

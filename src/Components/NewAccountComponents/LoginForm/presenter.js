@@ -43,7 +43,7 @@ const LoginFormPresenter = ({
         />
       </div>
       <div className={cx("button-container")}>
-        <button onClick={clickButton}>LOGIN</button>
+        <button onClick={clickButton}>SUBMIT</button>
       </div>
       <ResponsiveModal
         open={open}

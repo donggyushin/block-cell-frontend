@@ -78,6 +78,7 @@
 
 .span-in-link {
   color: white;
+  text-decoration: none;
 }
 
 @keyframes upToDown {
@@ -146,4 +147,7 @@
   background-color: #04183a;
   transition: 0.5s;
   opacity: 0.5;
+}
+a {
+  text-decoration: none !important;
 }

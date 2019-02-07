@@ -1,12 +1,14 @@
 import React from "react";
 import Presenter from "./Presenter";
+import { connect } from "react-redux";
 
 class Container extends React.Component {
   state = {
     top: true
   };
   render() {
-    return <Presenter top={this.state.top} />;
+    const { isLoggedIn } = this.props;
+    return <Presenter top={this.state.top} isLoggedIn={isLoggedIn} />;
   }
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
@@ -36,4 +38,17 @@ class Container extends React.Component {
   };
 }
 
-export default Container;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.user.isLoggedIn
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Container);
