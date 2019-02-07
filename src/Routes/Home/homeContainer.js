@@ -3,6 +3,9 @@ import HomePresenter from "./homePresenter";
 import { animateScroll } from "react-scroll";
 
 class HomeContainer extends Component {
+  componentDidMount() {
+    animateScroll.scrollToTop();
+  }
   render() {
     return (
       <HomePresenter

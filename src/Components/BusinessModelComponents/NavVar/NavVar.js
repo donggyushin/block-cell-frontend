@@ -29,13 +29,15 @@ const NavVar = ({
       <div className={cx("column")}>
         <div className={cx("item-container-container")}>
           <div className={cx("item-container")}>
-            <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+            {/* <Link to={"/about-us"} style={{ textDecoration: "none" }}> */}
+            <a href={"/about-us"}>
               <span className={cx("item", "testtest")}>
                 <div>
                   블럭셀은? <i class="fas fa-caret-down" />
                 </div>
               </span>
-            </Link>
+            </a>
+            {/* </Link> */}
           </div>
           <div className={cx("item-container")}>
             <span className={cx("item", "testtest")}>
@@ -63,25 +65,31 @@ const NavVar = ({
           </Link>
         </div> */}
           <div className={cx("item-container")}>
-            <Link to={"/notice"} style={{ textDecoration: "none" }}>
+            {/* <Link to={"/notice"} style={{ textDecoration: "none" }}> */}
+            <a href={"/notice"}>
               <span className={cx("item")}>
                 <div>고객지원</div>
               </span>
-            </Link>
+            </a>
+            {/* </Link> */}
           </div>
           <div className={cx("item-container")}>
-            <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}>
+            {/* <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}> */}
+            <a href={"/way-to-blockcell"}>
               <span className={cx("item")}>
                 <div>오시는 길</div>
               </span>
-            </Link>
+            </a>
+            {/* </Link> */}
           </div>
           <div className={cx("item-container")}>
             <span className={cx("item")}>
               <div>
-                <Link to={"/recruit"} style={{ textDecoration: "none" }}>
+                {/* <Link to={"/recruit"} style={{ textDecoration: "none" }}> */}
+                <a href={"/recruit"}>
                   <span className={cx("span-in-link")}>채용안내</span>
-                </Link>
+                </a>
+                {/* </Link> */}
               </div>
             </span>
           </div>

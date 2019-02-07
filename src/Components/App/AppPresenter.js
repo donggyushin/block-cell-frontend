@@ -19,9 +19,10 @@ import NewAccountPage from "Routes/NewAccout";
 import NoticeDetailFake1 from "Routes/NoticeDetailFake";
 import NoticeDetailFake2 from "Routes/NoticeDetailFake2";
 import FrequentlyAskedDetailFake1 from "Routes/FrequentlyAskedDetailFake";
+import Modal from "react-responsive-modal";
 const cx = classNames.bind(styles);
 
-const AppPresenter = () => {
+const AppPresenter = ({ open, error, onCloseModal }) => {
   return (
     <Router>
       <div className={cx("container")}>
@@ -74,6 +75,12 @@ const AppPresenter = () => {
         <Route exact path={"/notice-writer"} component={NoticeWriter} />
         <Route exact path={"/login"} component={LoginPage} />
         <Route exact path={"/new-account"} component={NewAccountPage} />
+        <div>
+          <Modal open={open} onClose={onCloseModal} center>
+            <h2>BLOCK CELL</h2>
+            <p className={cx("p-in-modal")}>{error}</p>
+          </Modal>
+        </div>
       </div>
     </Router>
   );

@@ -23,6 +23,7 @@ const getClientEnvironment = require("./env");
 const ModuleNotFoundPlugin = require("react-dev-utils/ModuleNotFoundPlugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin-alt");
 const typescriptFormatter = require("react-dev-utils/typescriptFormatter");
+require("@babel/polyfill");
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
@@ -134,8 +135,11 @@ module.exports = function(webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
-      isEnvDevelopment &&
-        require.resolve("react-dev-utils/webpackHotDevClient"),
+      isEnvDevelopment
+        ? require.resolve("react-dev-utils/webpackHotDevClient") +
+          "?/" +
+          "@babel/polyfill"
+        : "@babel/polyfill",
       // Finally, this is your app's code:
       paths.appIndexJs
       // We include the app code last so that if there is a runtime error during

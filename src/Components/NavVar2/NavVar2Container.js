@@ -1,10 +1,16 @@
 import React from "react";
 import NavVar2 from "./NavVar2";
 import { animateScroll } from "react-scroll";
+import { connect } from "react-redux";
+import { logout } from "../../store/modules/user";
 
 class NavVar2Container extends React.Component {
   render() {
-    return <NavVar2 />;
+    const { isLoggedIn, onClickLogoutSpan } = this.props;
+
+    return (
+      <NavVar2 isLoggedIn={isLoggedIn} onClickLogoutSpan={onClickLogoutSpan} />
+    );
   }
   scrollToTop = () => {
     animateScroll.scrollToTop({
@@ -47,4 +53,21 @@ class NavVar2Container extends React.Component {
   };
 }
 
-export default NavVar2Container;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.user.isLoggedIn
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onClickLogoutSpan: () => {
+      dispatch(logout());
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavVar2Container);

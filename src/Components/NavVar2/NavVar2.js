@@ -5,15 +5,17 @@ import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const NavVar2 = () => {
+const NavVar2 = ({ isLoggedIn, onClickLogoutSpan }) => {
   return (
     <div className={cx("nav-var")}>
       <div className={cx("column", "blockcell-logo-container")}>
-        <img
-          alt={"blockcell-logo"}
-          width={"100%"}
-          src={require("../../media/images/navvar/blockcelllogo.png")}
-        />
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <img
+            alt={"blockcell-logo"}
+            width={"100%"}
+            src={require("../../media/images/navvar/blockcelllogo.png")}
+          />
+        </Link>
       </div>
       <div className={cx("column")}>
         <div className={cx("item-container-container")}>
@@ -60,16 +62,27 @@ const NavVar2 = () => {
           </div>
         </div>
         <div className={cx("login-join")}>
-          <Link to={"/login"} style={{ textDecoration: "none" }}>
-            <span className={cx("login-join--item", "span-in-link")}>
-              로그인 |{" "}
+          {isLoggedIn ? (
+            <span
+              className={cx("login-join--item", "span-in-link")}
+              onClick={onClickLogoutSpan}
+            >
+              로그아웃
             </span>
-          </Link>
-          <Link to={"/new-account"} style={{ textDecoration: "none" }}>
-            <span className={cx("login-join--item", "span-in-link")}>
-              회원가입
-            </span>
-          </Link>
+          ) : (
+            <div>
+              <Link to={"/login"} style={{ textDecoration: "none" }}>
+                <span className={cx("login-join--item", "span-in-link")}>
+                  로그인 |{" "}
+                </span>
+              </Link>
+              <Link to={"/new-account"} style={{ textDecoration: "none" }}>
+                <span className={cx("login-join--item", "span-in-link")}>
+                  회원가입
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

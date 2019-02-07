@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import IntroBlockCell from "Components/IntroBlockCell";
 import BlockCellToken from "Components/BlockCellToken";
-import FunnyLine from "Components/FunnyLine";
 import History from "Components/History";
 import Vision from "Components/Vision";
 import PartnerShip from "Components/PartnerShip";
@@ -13,6 +12,7 @@ import BlockChainImage from "Components/AboutUsComponents/BlockChainImage";
 import NavVar from "Components/AboutUsComponents/NavVar";
 import TitlePresenter from "Components/Title";
 import BuildingImage from "Components/AboutUsComponents/BuildingImage";
+import Fade from "react-reveal/Fade";
 
 const cx = classNames.bind(styles);
 
@@ -28,9 +28,11 @@ const homePresenter = ({ scrollToTop }) => {
       </div>
 
       <div className={cx("body")}>
-        <div className={cx("ceo-greeting")}>
-          <TitlePresenter title={"CEO 인사말"} subTitle={"CEO greeting"} />
-        </div>
+        <Fade bottom>
+          <div className={cx("ceo-greeting")}>
+            <TitlePresenter title={"CEO 인사말"} subTitle={"CEO greeting"} />
+          </div>
+        </Fade>
 
         <div className={cx("IntroBlockCell")}>
           <IntroBlockCell />
