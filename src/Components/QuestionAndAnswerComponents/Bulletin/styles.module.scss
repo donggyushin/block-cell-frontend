@@ -151,4 +151,16 @@
       }
     }
   }
+
+  .bottom {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      background-color: #34495e;
+      color: white;
+      border: 0;
+      border-radius: 3px;
+    }
+  }
 }

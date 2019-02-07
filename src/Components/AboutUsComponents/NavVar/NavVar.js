@@ -11,7 +11,8 @@ const NavVar = ({
   scrollToVision,
   scrollToPartnership,
   top,
-  isLoggedIn
+  isLoggedIn,
+  onClickLogoutSpan
 }) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
@@ -86,7 +87,10 @@ const NavVar = ({
         </div>
         <div className={cx("login-join")}>
           {isLoggedIn ? (
-            <span className={cx("login-join--item", "span-in-link")}>
+            <span
+              onClick={onClickLogoutSpan}
+              className={cx("login-join--item", "span-in-link")}
+            >
               로그아웃
             </span>
           ) : (

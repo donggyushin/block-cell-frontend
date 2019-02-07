@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 
-const Presenter = ({ top, isLoggedIn }) => {
+const Presenter = ({ top, isLoggedIn, onClickLogoutSpan }) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
       <div className={cx("column")}>
@@ -64,7 +64,10 @@ const Presenter = ({ top, isLoggedIn }) => {
         </div>
         <div className={cx("login-join")}>
           {isLoggedIn ? (
-            <span className={cx("login-join--item", "span-in-link")}>
+            <span
+              onClick={onClickLogoutSpan}
+              className={cx("login-join--item", "span-in-link")}
+            >
               로그아웃
             </span>
           ) : (

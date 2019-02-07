@@ -1,14 +1,21 @@
 import React from "react";
 import Presenter from "./Presenter";
 import { connect } from "react-redux";
+import { logout } from "../../../store/modules/user";
 
 class Container extends React.Component {
   state = {
     top: true
   };
   render() {
-    const { isLoggedIn } = this.props;
-    return <Presenter top={this.state.top} isLoggedIn={isLoggedIn} />;
+    const { isLoggedIn, onClickLogoutSpan } = this.props;
+    return (
+      <Presenter
+        onClickLogoutSpan={onClickLogoutSpan}
+        top={this.state.top}
+        isLoggedIn={isLoggedIn}
+      />
+    );
   }
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
@@ -45,7 +52,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    onClickLogoutSpan: () => {
+      dispatch(logout());
+    }
+  };
 };
 
 export default connect(
