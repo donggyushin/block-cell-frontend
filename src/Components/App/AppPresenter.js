@@ -23,6 +23,8 @@ import Modal from "react-responsive-modal";
 import FAQwriterPageContainer from "Routes/FAQwriter";
 import QNAwriterPage from "Routes/QNAwriter/presenter";
 import NoticeSearchListPage from "Routes/NoticeSearchList";
+import FaqSearchListPage from "Routes/FaqSearchListPage/presenter";
+import QnaSearchListPage from "Routes/QnaSearchListPage";
 const cx = classNames.bind(styles);
 
 const AppPresenter = ({ open, error, onCloseModal }) => {
@@ -88,6 +90,16 @@ const AppPresenter = ({ open, error, onCloseModal }) => {
           exact
           path={"/notice-search-list/:searchValue"}
           component={NoticeSearchListPage}
+        />
+        <Route
+          exact
+          path={"/faq-search-list/:searchValue"}
+          component={FaqSearchListPage}
+        />
+        <Route
+          exact
+          path={"/qna-search-list/:searchValue"}
+          component={QnaSearchListPage}
         />
         <div>
           <Modal open={open} onClose={onCloseModal} center>

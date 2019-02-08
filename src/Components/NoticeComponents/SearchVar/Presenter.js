@@ -5,7 +5,12 @@ import BuildingImage from "Components/AboutUsComponents/BuildingImage";
 
 const cx = classNames.bind(styles);
 
-const SearchVar = () => {
+const SearchVar = ({
+  searchValue,
+  _onSearchButtonClicked,
+  _onChangeInput,
+  _onEnterKeyPressed
+}) => {
   return (
     <div className={cx("container")}>
       <div className={cx("page-numbers")}>
@@ -23,10 +28,14 @@ const SearchVar = () => {
       </div>
       <div className={cx("search-var")}>
         <div className={cx("input")}>
-          <input />
+          <input
+            value={searchValue}
+            onChange={_onChangeInput}
+            onKeyPress={_onEnterKeyPressed}
+          />
         </div>
         <div className={cx("button")}>
-          <button>검색</button>
+          <button onClick={_onSearchButtonClicked}>검색</button>
         </div>
       </div>
       <div className={cx("building-image-container")}>
