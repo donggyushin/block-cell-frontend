@@ -11,7 +11,7 @@ const BulletinNavigator = () => {
     <div className={cx("container")}>
       <div className={cx("row")}>
         <div className={cx("column")}>
-          <Link to={"/notice"} style={{ textDecoration: "none" }}>
+          <Link to={"/notice/1"} style={{ textDecoration: "none" }}>
             <span>공지사항</span>
           </Link>
 
@@ -19,7 +19,7 @@ const BulletinNavigator = () => {
         </div>
         <span>|</span>
         <div className={cx("column", "center")}>
-          <Link to={"/frequently-asked"} style={{ textDecoration: "none" }}>
+          <Link to={"/frequently-asked/1"} style={{ textDecoration: "none" }}>
             <span>자주 묻는 질문</span>
           </Link>
 
@@ -27,7 +27,7 @@ const BulletinNavigator = () => {
         </div>
         <span>|</span>
         <div className={cx("column")}>
-          <Link to={"/question&answer"} style={{ textDecoration: "none" }}>
+          <Link to={"/question&answer/1"} style={{ textDecoration: "none" }}>
             <span>묻고 답하기</span>
           </Link>
 

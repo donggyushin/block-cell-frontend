@@ -1,12 +1,17 @@
 import React from "react";
 import BulletinPresenter from "./presenter";
 import { connect } from "react-redux";
+import { get15FaqsRequest } from "../../../store/modules/faq";
+import { withRouter } from "react-router";
 
 class BulletinContainer extends React.Component {
   state = {
-    admin: false
+    admin: false,
+    faqs: null,
+    loading: true
   };
   componentDidMount() {
+    const { getFAQs } = this.props;
     if (this.props.user) {
       if (this.props.user.admin) {
         this.setState({
@@ -14,6 +19,16 @@ class BulletinContainer extends React.Component {
           admin: true
         });
       }
+    }
+
+    getFAQs(this.props.match.params.page);
+
+    if (this.props.faqs) {
+      this.setState({
+        ...this.state,
+        faqs: this.props.faqs,
+        loading: false
+      });
     }
   }
 
@@ -26,25 +41,45 @@ class BulletinContainer extends React.Component {
         });
       }
     }
+    if (this.props.faqs && !prevProps.faqs) {
+      this.setState({
+        ...this.state,
+        faqs: this.props.faqs,
+        loading: false
+      });
+    }
   }
 
   render() {
-    const { admin } = this.state;
-    return <BulletinPresenter admin={admin} />;
+    const { admin, loading, faqs } = this.state;
+    return (
+      <div>
+        {loading ? (
+          "loading..."
+        ) : (
+          <BulletinPresenter admin={admin} faqs={faqs} />
+        )}
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    faqs: state.faq.faqs
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    getFAQs: page => {
+      dispatch(get15FaqsRequest(page));
+    }
+  };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BulletinContainer);
+)(withRouter(BulletinContainer));

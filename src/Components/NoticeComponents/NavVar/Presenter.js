@@ -39,7 +39,7 @@ const Presenter = ({ top, isLoggedIn, onClickLogoutSpan }) => {
             </Link>
           </div>
           <div className={cx("item-container")}>
-            <Link to={"/notice"} style={{ textDecoration: "none" }}>
+            <Link to={"/notice/1"} style={{ textDecoration: "none" }}>
               <span className={cx("item")}>
                 <div>고객지원</div>
               </span>

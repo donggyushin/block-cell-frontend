@@ -57,7 +57,7 @@ const NavVar = ({
           </div>
           <div className={cx("item-container")}>
             {/* <Link to={"/notice"} style={{ textDecoration: "none" }}> */}
-            <a href={"/notice"}>
+            <a href={"/notice/1"}>
               <span className={cx("item")}>
                 <div>고객지원</div>
               </span>

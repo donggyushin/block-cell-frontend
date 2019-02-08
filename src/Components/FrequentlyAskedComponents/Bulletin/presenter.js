@@ -6,7 +6,7 @@ import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
-const Bulletin = ({ admin }) => {
+const Bulletin = ({ admin, faqs }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -53,15 +53,20 @@ const Bulletin = ({ admin }) => {
           </div> */}
         </div>
         <div className={cx("normal-notice-container")}>
-          <div className={cx("normal-notice")}>
-            <NormalNotice
-              num={1}
-              title={"블럭셀은 어떻게 오나요 ?"}
-              createdAt={"2019-01-01"}
-              views={4}
-              id={"as1"}
-            />
-          </div>
+          {faqs.map(faq => {
+            return (
+              <div className={cx("normal-notice")}>
+                <NormalNotice
+                  key={faq.id}
+                  num={faq.id}
+                  title={faq.title}
+                  createdAt={faq.updatedAt.substring(0, 10)}
+                  views={faq.views}
+                  id={faq.id}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className={cx("bottom")}>
@@ -82,7 +87,10 @@ const ImportantNotice = ({ title, createdAt, views }) => {
         <span>공지</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/frequently-asked/1"} style={{ textDecoration: "none" }}>
+        <Link
+          to={"/frequently-asked-detail/1"}
+          style={{ textDecoration: "none" }}
+        >
           <span>{title}</span>
         </Link>
       </div>
@@ -102,7 +110,10 @@ const NormalNotice = ({ num, title, createdAt, views, id }) => {
         <span>{num}</span>
       </div>
       <div className={cx("title")}>
-        <Link to={`/frequently-asked/${id}`} style={{ textDecoration: "none" }}>
+        <Link
+          to={`/frequently-asked-detail/${id}`}
+          style={{ textDecoration: "none" }}
+        >
           <span>{title}</span>
         </Link>
       </div>

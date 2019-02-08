@@ -7,7 +7,7 @@ import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
-const BulletinPresenter = ({ user }) => {
+const BulletinPresenter = ({ user, qnas }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -68,6 +68,19 @@ const BulletinPresenter = ({ user }) => {
               views={123123}
             />
           </div> */}
+          <div className={cx("normal-notice")}>
+            {qnas.map(qna => {
+              return (
+                <NormalNotice
+                  key={qna.id}
+                  num={qna.id}
+                  title={qna.title}
+                  createdAt={qna.updatedAt.substring(0, 10)}
+                  views={qna.views}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       <div className={cx("bottom")}>
@@ -88,7 +101,10 @@ const ImportantNotice = ({ title, createdAt, views }) => {
         <span>공지</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/question&answer/1"} style={{ textDecoration: "none" }}>
+        <Link
+          to={"/question&answer-detail/1"}
+          style={{ textDecoration: "none" }}
+        >
           <span>{title}</span>
         </Link>
       </div>
@@ -108,7 +124,10 @@ const NormalNotice = ({ num, title, createdAt, views }) => {
         <span>{num}</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/question&answer/1"} style={{ textDecoration: "none" }}>
+        <Link
+          to={"/question&answer-detail/1"}
+          style={{ textDecoration: "none" }}
+        >
           <span>{title}</span>
         </Link>
       </div>

@@ -6,7 +6,7 @@ import TitlePresenter from "Components/Title";
 
 const cx = classNames.bind(styles);
 
-const Presenter = ({ admin }) => {
+const Presenter = ({ admin, notices }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -68,6 +68,18 @@ const Presenter = ({ admin }) => {
               createdAt={"2019-01-01"}
               views={123123}
             /> */}
+            {notices.map(notice => {
+              const createdAt = notice.createdAt.substring(0, 10);
+              return (
+                <NormalNotice
+                  key={notice.id}
+                  views={notice.views}
+                  title={notice.title}
+                  createdAt={createdAt}
+                  num={notice.id}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

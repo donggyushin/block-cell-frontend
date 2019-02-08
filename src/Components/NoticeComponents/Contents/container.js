@@ -1,14 +1,20 @@
 import React from "react";
 import Presenter from "./Presenter";
 import { connect } from "react-redux";
+import { get15NoticesRequest } from "../../../store/modules/notice";
+import { withRouter } from "react-router";
 
 class Container extends React.Component {
   state = {
-    loading: false,
-    admin: false
+    loading: true,
+    admin: false,
+    notices: null
   };
 
   componentDidMount() {
+    const { getNotices } = this.props;
+    const { page } = this.props.match.params;
+
     if (this.props.user) {
       if (this.props.user.admin) {
         this.setState({
@@ -16,6 +22,16 @@ class Container extends React.Component {
           admin: true
         });
       }
+    }
+
+    getNotices(page);
+
+    if (this.props.notices) {
+      this.setState({
+        ...this.state,
+        notices: this.props.notices,
+        loading: false
+      });
     }
   }
 
@@ -30,24 +46,41 @@ class Container extends React.Component {
         }
       }
     }
+
+    if (this.props.notices && !prevProps.notices) {
+      this.setState({
+        ...this.state,
+        notices: this.props.notices,
+        loading: false
+      });
+    }
   }
   render() {
-    const { loading, admin } = this.state;
-    return <div>{loading ? "loading..." : <Presenter admin={admin} />}</div>;
+    const { loading, admin, notices } = this.state;
+    return (
+      <div>
+        {loading ? "loading..." : <Presenter admin={admin} notices={notices} />}
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    user: state.user.user
+    user: state.user.user,
+    notices: state.notice.notices
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    getNotices: page => {
+      dispatch(get15NoticesRequest(page));
+    }
+  };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Container);
+)(withRouter(Container));

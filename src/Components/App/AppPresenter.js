@@ -37,7 +37,7 @@ const AppPresenter = ({ open, error, onCloseModal }) => {
           component={WayToBlockCellContainer}
         />
         <Route exact path={"/recruit"} component={RecruitContainer} />
-        <Route exact path={"/notice"} component={NoticeContainer} />
+        <Route exact path={"/notice/:page"} component={NoticeContainer} />
         <Route
           exact
           path={"/notice-detail/as2"}
@@ -55,23 +55,27 @@ const AppPresenter = ({ open, error, onCloseModal }) => {
         />
         <Route
           exact
-          path={"/frequently-asked"}
+          path={"/frequently-asked/:page"}
           component={FrequentlyAskedContainer}
         />
         <Route
           exact
-          path={"/frequently-asked/as1"}
+          path={"/frequently-asked-detail/as1"}
           component={FrequentlyAskedDetailFake1}
         />
         <Route
           exact
-          path={"/frequently-asked/:id"}
+          path={"/frequently-asked-detail/:id"}
           component={FrequentlyAskedDetailPresenter}
         />
-        <Route exact path={"/question&answer"} component={QuestionAndAnswer} />
         <Route
           exact
-          path={"/question&answer/:id"}
+          path={"/question&answer/:page"}
+          component={QuestionAndAnswer}
+        />
+        <Route
+          exact
+          path={"/question&answer-detail/:id"}
           component={QuestionAndAnswerDetail}
         />
         <Route exact path={"/notice-writer"} component={NoticeWriter} />
