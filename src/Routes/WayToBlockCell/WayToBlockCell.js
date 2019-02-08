@@ -20,6 +20,12 @@ const WayToBlockCell = () => {
       <div className={cx("contents")}>
         <Contents />
       </div>
+      <div className={cx("building-image-container")}>
+        <img
+          alt={"building"}
+          src={require("../../media/images/AboutUs/buildingImage.png")}
+        />
+      </div>
       <div className={cx("bottom")}>
         <CopyRight />
       </div>

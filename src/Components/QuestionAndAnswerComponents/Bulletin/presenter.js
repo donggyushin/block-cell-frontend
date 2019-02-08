@@ -125,7 +125,7 @@ const NormalNotice = ({ num, title, createdAt, views }) => {
       </div>
       <div className={cx("title")}>
         <Link
-          to={"/question&answer-detail/1"}
+          to={`/question&answer-detail/${num}`}
           style={{ textDecoration: "none" }}
         >
           <span>{title}</span>

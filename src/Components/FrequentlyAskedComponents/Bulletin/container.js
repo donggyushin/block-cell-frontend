@@ -41,7 +41,7 @@ class BulletinContainer extends React.Component {
         });
       }
     }
-    if (this.props.faqs && !prevProps.faqs) {
+    if (this.props.faqs !== prevProps.faqs) {
       this.setState({
         ...this.state,
         faqs: this.props.faqs,

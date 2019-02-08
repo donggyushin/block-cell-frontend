@@ -123,7 +123,7 @@ const NormalNotice = ({ num, title, createdAt, views }) => {
         <span>{num}</span>
       </div>
       <div className={cx("title")}>
-        <Link to={"/notice-detail/1"} style={{ textDecoration: "none" }}>
+        <Link to={`/notice-detail/${num}`} style={{ textDecoration: "none" }}>
           <span>{title}</span>
         </Link>
       </div>

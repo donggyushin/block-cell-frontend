@@ -22,6 +22,7 @@ import FrequentlyAskedDetailFake1 from "Routes/FrequentlyAskedDetailFake";
 import Modal from "react-responsive-modal";
 import FAQwriterPageContainer from "Routes/FAQwriter";
 import QNAwriterPage from "Routes/QNAwriter/presenter";
+import NoticeSearchListPage from "Routes/NoticeSearchList";
 const cx = classNames.bind(styles);
 
 const AppPresenter = ({ open, error, onCloseModal }) => {
@@ -83,6 +84,11 @@ const AppPresenter = ({ open, error, onCloseModal }) => {
         <Route exact path={"/new-account"} component={NewAccountPage} />
         <Route exact path={"/faq-writer"} component={FAQwriterPageContainer} />
         <Route exact path={"/qna-writer"} component={QNAwriterPage} />
+        <Route
+          exact
+          path={"/notice-search-list/:searchValue"}
+          component={NoticeSearchListPage}
+        />
         <div>
           <Modal open={open} onClose={onCloseModal} center>
             <h2>BLOCK CELL</h2>

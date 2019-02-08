@@ -2,10 +2,17 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Molding from "Components/Molding";
+import ReactHtmlParser from "react-html-parser";
 
 const cx = classNames.bind(styles);
 
-const ContentsPresenter = ({ goBack }) => {
+const ContentsPresenter = ({
+  goBack,
+  faq,
+  _onClickNextButton,
+  _onClickPreviousButton
+}) => {
+  const contents = ReactHtmlParser(faq.contents);
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -21,56 +28,22 @@ const ContentsPresenter = ({ goBack }) => {
       </div>
       <div className={cx("body")}>
         <div className={cx("title")}>
-          <span>스카이 캐슬은 어떤 참혹한 결말을 맞을 것인가?</span>
+          <span>{faq.title}</span>
         </div>
         <div className={cx("info")}>
           <div className={cx("column")}>
             <span className={cx("left")}>작성자</span>&nbsp;|&nbsp;
-            <span className={cx("right")}>블럭셀</span>
+            <span className={cx("right")}>{faq.user.username}</span>
           </div>
           <div className={cx("column")}>
             <span className={cx("left")}>작성일</span>&nbsp;|&nbsp;
-            <span className={cx("right")}>2019-01-28</span>
+            <span className={cx("right")}>
+              {faq.updatedAt.substring(0, 10)}
+            </span>
           </div>
         </div>
         <div className={cx("contents")}>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when
-            an unknown printer took a galley of type and scrambled it to make a
-            type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially
-            unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type
-            specimen book. It has survived not only five centuries, but also the
-            leap into electronic typesetting, remaining essentially unchanged.
-            It was popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum. Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has
-            survived not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the release of Letraset sheets containing Lorem Ipsum
-            passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+          <p>{contents}</p>
         </div>
       </div>
       <div className={cx("bottom")}>
@@ -78,10 +51,10 @@ const ContentsPresenter = ({ goBack }) => {
           <div className={cx("column")}>
             <i class="fas fa-chevron-left" />
             &nbsp;
-            <span>이전글</span>
+            <span onClick={_onClickPreviousButton}>이전글</span>
           </div>
           <div className={cx("column")}>
-            <span>다음글</span>
+            <span onClick={_onClickNextButton}>다음글</span>
             &nbsp;
             <i class="fas fa-chevron-right" />
           </div>

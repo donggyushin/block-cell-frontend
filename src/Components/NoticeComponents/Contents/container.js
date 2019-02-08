@@ -47,7 +47,7 @@ class Container extends React.Component {
       }
     }
 
-    if (this.props.notices && !prevProps.notices) {
+    if (this.props.notices !== prevProps.notices) {
       this.setState({
         ...this.state,
         notices: this.props.notices,

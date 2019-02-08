@@ -10,12 +10,21 @@ import "bootstrap/js/modal";
 import "bootstrap/js/dropdown";
 import "bootstrap/js/tooltip";
 import "bootstrap/dist/css/bootstrap.css";
+import { postNewQnaRequest } from "store/modules/qna";
 
 const cx = classNames.bind(styles);
 
 class SummernoteEditor extends React.Component {
+  state = {
+    title: "",
+    contents: ""
+  };
+
   onChange = content => {
-    console.log("onChange ", content);
+    this.setState({
+      ...this.state,
+      contents: content
+    });
   };
 
   onImageUpload = (images, insertImage) => {
@@ -30,9 +39,32 @@ class SummernoteEditor extends React.Component {
     }
   };
 
+  _onTitleChange = e => {
+    const value = e.target.value;
+    this.setState({
+      ...this.state,
+      title: value
+    });
+  };
+
+  _onClickSubmitButton = () => {
+    const { title, contents } = this.state;
+    postNewQnaRequest(title, contents);
+  };
+
   render() {
+    const { title } = this.state;
+    const { _onTitleChange, _onClickSubmitButton } = this;
     return (
       <div className={cx("container")}>
+        <div className={cx("title-container")}>
+          <input
+            value={title}
+            onChange={_onTitleChange}
+            placeholder={"제목을 입력해주세요. "}
+            name={"title"}
+          />
+        </div>
         <ReactSummernote
           value="내용을 입력하여주세요"
           options={{
@@ -54,7 +86,7 @@ class SummernoteEditor extends React.Component {
           onImageUpload={this.onImageUpload}
         />
         <div className={cx("button-container")}>
-          <button>SUBMIT</button>
+          <button onClick={_onClickSubmitButton}>SUBMIT</button>
         </div>
       </div>
     );

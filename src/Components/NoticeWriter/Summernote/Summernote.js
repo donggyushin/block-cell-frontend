@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+import { connect } from "react-redux";
 
 // imports for summernote
 import ReactSummernote from "react-summernote";
@@ -10,12 +11,21 @@ import "bootstrap/js/modal";
 import "bootstrap/js/dropdown";
 import "bootstrap/js/tooltip";
 import "bootstrap/dist/css/bootstrap.css";
+import { postNewNoticeRequest } from "store/modules/notice";
 
 const cx = classNames.bind(styles);
 
 class SummernoteEditor extends React.Component {
+  state = {
+    title: "",
+    contents: ""
+  };
+
   onChange = content => {
-    console.log("onChange ", content);
+    this.setState({
+      ...this.state,
+      contents: content
+    });
   };
 
   onImageUpload = (images, insertImage) => {
@@ -30,9 +40,33 @@ class SummernoteEditor extends React.Component {
     }
   };
 
+  _titleChange = event => {
+    const value = event.target.value;
+    this.setState({
+      ...this.state,
+      title: value
+    });
+  };
+
+  _onClickSubmitButton = () => {
+    const { postNewNotice } = this.props;
+    const { title, contents } = this.state;
+    postNewNotice(title, contents);
+  };
+
   render() {
+    const { title } = this.state;
+    const { _titleChange, _onClickSubmitButton } = this;
     return (
       <div className={cx("container")}>
+        <div className={cx("title-container")}>
+          <input
+            name={"title"}
+            onChange={_titleChange}
+            value={title}
+            placeholder={"제목을 입력해주세요. "}
+          />
+        </div>
         <ReactSummernote
           value="내용을 입력하여주세요"
           options={{
@@ -54,11 +88,26 @@ class SummernoteEditor extends React.Component {
           onImageUpload={this.onImageUpload}
         />
         <div className={cx("button-container")}>
-          <button>SUBMIT</button>
+          <button onClick={_onClickSubmitButton}>SUBMIT</button>
         </div>
       </div>
     );
   }
 }
 
-export default SummernoteEditor;
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    postNewNotice: (title, contents) => {
+      dispatch(postNewNoticeRequest(title, contents));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SummernoteEditor);
