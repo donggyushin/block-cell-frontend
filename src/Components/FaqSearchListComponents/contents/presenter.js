@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import TitlePresenter from "Components/Title";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const Contents = () => {
+const Contents = ({ faqsByTerm, _goBack }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -19,15 +20,21 @@ const Contents = () => {
           <span>조회수</span>
         </div>
         <div className={cx("contents")}>
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
+          {faqsByTerm.map(faq => {
+            return (
+              <ContentItem
+                num={faq.id}
+                key={faq.id}
+                title={faq.title}
+                date={faq.updatedAt.substring(0, 10)}
+                views={faq.views}
+              />
+            );
+          })}
         </div>
       </div>
       <div className={cx("bottom")}>
-        <input />
-        <button>검색</button>
+        <button onClick={_goBack}>돌아가기</button>
       </div>
     </div>
   );
@@ -37,7 +44,15 @@ const ContentItem = ({ num, title, date, views }) => {
   return (
     <div className={cx("ContentItem-container")}>
       <span>{num}</span>
-      <span>{title}</span>
+      <span>
+        <Link
+          className={cx("link")}
+          style={{ textDecoration: "none" }}
+          to={`/frequently-asked-detail/${num}`}
+        >
+          {title}
+        </Link>
+      </span>
       <span>{date}</span>
       <span>{views}</span>
     </div>

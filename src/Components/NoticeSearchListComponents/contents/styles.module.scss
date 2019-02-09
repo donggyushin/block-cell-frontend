@@ -42,14 +42,10 @@
   }
 
   .bottom {
-    margin-top: 70px;
+    margin-top: 5px;
     width: 100%;
     display: flex;
-    justify-content: center;
-    input {
-      width: 300px;
-      margin-right: 10px;
-    }
+    justify-content: flex-end;
     button {
       background-color: #04183a;
       color: white;
@@ -78,5 +74,12 @@
     &:last-child {
       width: 10%;
     }
+  }
+}
+
+.link {
+  color: rgba($color: #000000, $alpha: 0.6);
+  &:hover {
+    color: rgba($color: #000000, $alpha: 0.6);
   }
 }

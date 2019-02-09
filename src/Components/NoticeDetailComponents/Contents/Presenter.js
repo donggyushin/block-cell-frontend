@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Molding from "Components/Molding";
 import ReactHtmlParser from "react-html-parser";
+import CommentsForNotice from "../Comments";
 
 const cx = classNames.bind(styles);
 
@@ -46,6 +47,9 @@ const ContentsPresenter = ({
         <div className={cx("contents")}>
           <div>{contents}</div>
         </div>
+      </div>
+      <div className={cx("comments-container")}>
+        <CommentsForNotice />
       </div>
       <div className={cx("bottom")}>
         <div className={cx("row")}>

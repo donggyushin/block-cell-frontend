@@ -65,6 +65,7 @@ class SummernoteEditor extends React.Component {
             onChange={_titleChange}
             value={title}
             placeholder={"제목을 입력해주세요. "}
+            required={true}
           />
         </div>
         <ReactSummernote

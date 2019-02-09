@@ -4,8 +4,16 @@ import axios from "axios";
 
 const GET_15_QNAS = "qna/GET_15_QNAS";
 const GET_QNA_DETAIL = "qna/GET_QNA_DETAIL";
+const GET_QNAS_BY_TERM = "qna/GET_QNAS_BY_TERM";
 
 // create actions
+
+const getQnasByTerm = qnasByTerm => {
+  return {
+    type: GET_QNAS_BY_TERM,
+    qnasByTerm
+  };
+};
 
 const getQnaDetail = qna => {
   return {
@@ -22,6 +30,22 @@ export const get15Qnas = qnas => {
 };
 
 // axios actions
+
+export const getQnasByTermRequest = searchValue => {
+  return dispatch => {
+    axios
+      .get(`/api/qna/search/${searchValue}`)
+      .then(res => {
+        if (!res.data.ok) {
+          alert(res.data.error);
+        } else {
+          const qnasByTerm = res.data.qnas;
+          dispatch(getQnasByTerm(qnasByTerm));
+        }
+      })
+      .catch(err => console.log(err));
+  };
+};
 
 export const getPreviousQnaPageRequest = id => {
   axios
@@ -113,7 +137,8 @@ export const get15QnasRequest = page => {
 
 const initialState = {
   qnas: null,
-  qna: null
+  qna: null,
+  qnasByTerm: null
 };
 
 // reducer
@@ -123,12 +148,23 @@ export default function reducer(state = initialState, action) {
       return reducerGet15QNAS(state, action);
     case GET_QNA_DETAIL:
       return reducerGetQNAdetail(state, action);
+    case GET_QNAS_BY_TERM:
+      return reducerGetQnasByTerm(state, action);
     default:
       return state;
   }
 }
 
 // reducer actions
+
+const reducerGetQnasByTerm = (state, action) => {
+  const { qnasByTerm } = action;
+  return {
+    ...state,
+    qnasByTerm
+  };
+};
+
 const reducerGetQNAdetail = (state, action) => {
   const { qna } = action;
   return {

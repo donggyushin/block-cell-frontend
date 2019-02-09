@@ -26,6 +26,7 @@ const LoginFormPresenter = ({
           onChange={handleChange}
           value={username}
           name={"username"}
+          required={true}
         />
         <input
           placeholder={"Password"}
@@ -33,6 +34,7 @@ const LoginFormPresenter = ({
           value={password1}
           type={"password"}
           name={"password1"}
+          required={true}
         />
         <input
           placeholder={"동일한 password를 입력해주세요. "}
@@ -40,6 +42,7 @@ const LoginFormPresenter = ({
           value={password2}
           type={"password"}
           name={"password2"}
+          required={true}
         />
       </div>
       <div className={cx("button-container")}>
@@ -57,7 +60,6 @@ const LoginFormPresenter = ({
 const ResponsiveModal = ({ open, onOpenModal, onCloseModal }) => {
   return (
     <div>
-      <button onClick={onOpenModal}>Open modal</button>
       <Modal open={open} onClose={onCloseModal} center>
         <h2>BLOCK CELL</h2>
         <p className={cx("p-in-modal")}>

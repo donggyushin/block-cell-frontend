@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Molding from "Components/Molding";
 import ReactHtmlParser from "react-html-parser";
+import CommentsForFAQContainer from "../Comments";
 
 const cx = classNames.bind(styles);
 
@@ -45,6 +46,9 @@ const ContentsPresenter = ({
         <div className={cx("contents")}>
           <p>{contents}</p>
         </div>
+      </div>
+      <div className={cx("comments-container")}>
+        <CommentsForFAQContainer />
       </div>
       <div className={cx("bottom")}>
         <div className={cx("row")}>

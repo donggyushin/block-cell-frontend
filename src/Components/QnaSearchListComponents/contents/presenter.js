@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import TitlePresenter from "Components/Title";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const Contents = () => {
+const Contents = ({ qnasByTerm, _goBack }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("header")}>
@@ -19,15 +20,21 @@ const Contents = () => {
           <span>조회수</span>
         </div>
         <div className={cx("contents")}>
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
-          <ContentItem num={1} title={"test"} date={"2019-02-02"} views={12} />
+          {qnasByTerm.map(qna => {
+            return (
+              <ContentItem
+                key={qna.id}
+                num={qna.id}
+                title={qna.title}
+                date={qna.updatedAt}
+                views={qna.views}
+              />
+            );
+          })}
         </div>
       </div>
       <div className={cx("bottom")}>
-        <input />
-        <button>검색</button>
+        <button onClick={_goBack}>돌아가기</button>
       </div>
     </div>
   );
@@ -37,8 +44,12 @@ const ContentItem = ({ num, title, date, views }) => {
   return (
     <div className={cx("ContentItem-container")}>
       <span>{num}</span>
-      <span>{title}</span>
-      <span>{date}</span>
+      <span>
+        <Link className={cx("link")} to={`/question&answer-detail/${num}`}>
+          {title}
+        </Link>
+      </span>
+      <span>{date.substring(0, 10)}</span>
       <span>{views}</span>
     </div>
   );

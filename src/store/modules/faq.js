@@ -4,8 +4,17 @@ import axios from "axios";
 
 const GET_15_FAQS = "faq/GET_15_FAQS";
 const GET_FAQ_DETAIL = "faq/GET_FAQ_DETAIL";
+const GET_FAQ_BY_TERM = "faq/GET_FAQ_BY_TERM";
 
 // create actions
+
+const getFaqByTerm = faqsByTerm => {
+  return {
+    type: GET_FAQ_BY_TERM,
+    faqsByTerm
+  };
+};
+
 const getFaqDetail = faq => {
   return {
     type: GET_FAQ_DETAIL,
@@ -21,6 +30,22 @@ export const get15Faqs = faqs => {
 };
 
 // axios actions
+
+export const getFaqsByTermRequest = searchValue => {
+  return dispatch => {
+    axios
+      .get(`/api/faq/search/${searchValue}`)
+      .then(res => {
+        if (!res.data.ok) {
+          alert(res.data.error);
+        } else {
+          const faqsByTerm = res.data.faqs;
+          dispatch(getFaqByTerm(faqsByTerm));
+        }
+      })
+      .catch(err => console.log(err));
+  };
+};
 
 export const getPreviousFaqPageRequest = id => {
   axios
@@ -110,7 +135,8 @@ export const get15FaqsRequest = page => {
 
 const initialState = {
   faqs: null,
-  faq: null
+  faq: null,
+  faqsByTerm: null
 };
 
 // reducer
@@ -121,12 +147,21 @@ export default function reducer(state = initialState, action) {
       return reducerGet15FQAS(state, action);
     case GET_FAQ_DETAIL:
       return reducerGetFAQdetail(state, action);
+    case GET_FAQ_BY_TERM:
+      return reducerGetFaqsByTerm(state, action);
     default:
       return state;
   }
 }
 
 // reducer actions
+const reducerGetFaqsByTerm = (state, action) => {
+  const { faqsByTerm } = action;
+  return {
+    ...state,
+    faqsByTerm
+  };
+};
 
 const reducerGetFAQdetail = (state, action) => {
   const { faq } = action;

@@ -21,6 +21,7 @@ const LoginFormPresenter = ({
           onChange={handleChange}
           value={username}
           name={"username"}
+          required={true}
         />
         <input
           placeholder={"Password"}
@@ -28,6 +29,7 @@ const LoginFormPresenter = ({
           value={password}
           type={"password"}
           name={"password"}
+          required={true}
         />
       </div>
       <div className={cx("button-container")}>

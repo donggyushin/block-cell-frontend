@@ -63,6 +63,7 @@ class SummernoteEditor extends React.Component {
             value={title}
             placeholder={"제목을 입력해주세요. "}
             name={"title"}
+            required={true}
           />
         </div>
         <ReactSummernote
