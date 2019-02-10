@@ -9,21 +9,33 @@ const SearchVarPresenter = ({
   _onChangeInput,
   _onEnterKeyPressed,
   _onSearchButtonPressed,
-  searchValue
+  searchValue,
+  maxPage,
+  page,
+  firstPage,
+  lastPage
 }) => {
+  let pages = [];
+  for (let i = firstPage; i <= lastPage; i++) {
+    pages.push(pageNumber(page, i));
+  }
   return (
     <div className={cx("container")}>
       <div className={cx("page-numbers")}>
         <div className={cx("first-page")}>
-          <button className={cx("white-button")}>처음</button>
+          <a href={`/frequently-asked/1`}>
+            <button className={cx("white-button")}>처음</button>
+          </a>
         </div>
         <div className={cx("numbers")}>
-          <button className={cx("white-button", "left")}>left</button>
-          <span className={cx("active")}>1</span>
-          <button className={cx("white-button")}>right</button>
+          {/* <button className={cx("white-button", "left")}>left</button> */}
+          {pages}
+          {/* <button className={cx("white-button")}>right</button> */}
         </div>
         <div className={cx("last-page")}>
-          <button className={cx("white-button")}>마지막</button>
+          <a href={`/frequently-asked/${maxPage}`}>
+            <button className={cx("white-button")}>마지막</button>
+          </a>
         </div>
       </div>
       <div className={cx("search-var")}>
@@ -42,6 +54,20 @@ const SearchVarPresenter = ({
         <BuildingImage />
       </div>
     </div>
+  );
+};
+
+const pageNumber = (page, i) => {
+  return (
+    <a href={`/frequently-asked/${i}`}>
+      <span
+        className={
+          page.toString() === i.toString() ? cx("active") : cx("non-active")
+        }
+      >
+        {i}
+      </span>
+    </a>
   );
 };
 

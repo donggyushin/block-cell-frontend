@@ -9,19 +9,23 @@ const CommentsForQna = ({
   text,
   _onSubmitButtonClicked,
   _onInputChange,
-  _onEnterKeyPressed
+  _onEnterKeyPressed,
+  user
 }) => {
   return (
     <div className={cx("container")}>
-      <div className={cx("input-container")}>
-        <input
-          value={text}
-          onChange={_onInputChange}
-          onKeyPress={_onEnterKeyPressed}
-          placeholder={"댓글을 입력해주세요. "}
-        />
-        <button onClick={_onSubmitButtonClicked}>입력</button>
-      </div>
+      {user && (
+        <div className={cx("input-container")}>
+          <input
+            value={text}
+            onChange={_onInputChange}
+            onKeyPress={_onEnterKeyPressed}
+            placeholder={"댓글을 입력해주세요. "}
+          />
+          <button onClick={_onSubmitButtonClicked}>입력</button>
+        </div>
+      )}
+
       <div className={cx("comments-container")}>
         {comments.map(comment => {
           return (

@@ -84,7 +84,7 @@ const BulletinPresenter = ({ user, qnas }) => {
         </div>
       </div>
       <div className={cx("bottom")}>
-        {user && (
+        {localStorage.getItem("jwt") && (
           <Link to={"/qna-writer"} style={{ textDecoration: "none" }}>
             <button>작성하기</button>
           </Link>

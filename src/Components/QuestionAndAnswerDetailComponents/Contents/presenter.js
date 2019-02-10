@@ -11,7 +11,9 @@ const ContentsPresenter = ({
   goBack,
   qna,
   _onClickNextButton,
-  _onClickPreviousButton
+  _onClickPreviousButton,
+  _onClickDeleteButton,
+  admin
 }) => {
   const contents = ReactHtmlParser(qna.contents);
   return (
@@ -47,6 +49,12 @@ const ContentsPresenter = ({
           <p>{contents}</p>
         </div>
       </div>
+      {admin && (
+        <div className={cx("delete-button-container")}>
+          <button onClick={_onClickDeleteButton}>삭제하기</button>
+        </div>
+      )}
+
       <div className={cx("comments-container")}>
         <CommentsForQnaContainer qnaId={qna.id} />
       </div>

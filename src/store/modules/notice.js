@@ -5,8 +5,16 @@ import axios from "axios";
 const GET_15_NOTICES = "notice/GET_15_NOTICES";
 const GET_NOTICE_DETAIL = "notice/GET_NOTICE_DETAIL";
 const GET_NOTICE_BY_TERM = "notice/GET_NOTICE_BY_TERM";
+const GET_NOTICE_COUNT = "notice/GET_NOTICE_COUNT";
 
 // create actions
+
+const getNoticeCount = count => {
+  return {
+    type: GET_NOTICE_COUNT,
+    count
+  };
+};
 
 const getNoticeByTerm = noticesByTerm => {
   return {
@@ -30,6 +38,37 @@ export const get15Notices = notices => {
 };
 
 // axios actions
+
+export const DeleteNoticeRequest = noticeId => {
+  axios
+    .delete(`/api/notice/${noticeId}`, {
+      headers: {
+        "X-JWT": localStorage.getItem("jwt")
+      }
+    })
+    .then(res => {
+      if (!res.data.ok) {
+        alert(res.data.error);
+      } else {
+        window.location.href = "/notice/1";
+      }
+    })
+    .catch(err => console.log(err));
+};
+
+export const GetNoticeCountRequest = () => {
+  return dispatch => {
+    axios.get("/api/notice/count").then(res => {
+      if (!res.data.ok) {
+        alert(res.data.error);
+      } else {
+        const count = res.data.count;
+        dispatch(getNoticeCount(count));
+      }
+    });
+  };
+};
+
 export const GetNoticesByTermRequest = searchValue => {
   return dispatch => {
     axios
@@ -137,7 +176,8 @@ export const get15NoticesRequest = page => {
 const initialState = {
   notices: null,
   notice: null,
-  noticesByTerm: null
+  noticesByTerm: null,
+  count: 0
 };
 
 // reducer
@@ -150,12 +190,22 @@ export default function reducer(state = initialState, action) {
       return reducerGetNoticeDetail(state, action);
     case GET_NOTICE_BY_TERM:
       return reducerGetNoticesByTerm(state, action);
+    case GET_NOTICE_COUNT:
+      return reducerGetNoticeCount(state, action);
     default:
       return state;
   }
 }
 
 // reducer actions
+const reducerGetNoticeCount = (state, action) => {
+  const { count } = action;
+  return {
+    ...state,
+    count
+  };
+};
+
 const reducerGetNoticesByTerm = (state, action) => {
   const { noticesByTerm } = action;
   return {

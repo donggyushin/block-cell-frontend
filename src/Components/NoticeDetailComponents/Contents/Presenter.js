@@ -11,7 +11,9 @@ const ContentsPresenter = ({
   goBack,
   notice,
   _onClickNextButton,
-  _onClickPreviousButton
+  _onClickPreviousButton,
+  admin,
+  _onClickDeleteButton
 }) => {
   const contents = ReactHtmlParser(notice.contents);
 
@@ -48,6 +50,12 @@ const ContentsPresenter = ({
           <div>{contents}</div>
         </div>
       </div>
+      {admin && (
+        <div className={cx("delete-button")}>
+          <button onClick={_onClickDeleteButton}>삭제하기</button>
+        </div>
+      )}
+
       <div className={cx("comments-container")}>
         <CommentsForNotice noticeId={notice.id} />
       </div>

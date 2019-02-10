@@ -10,10 +10,11 @@ class CommentsForFAQContainer extends React.Component {
   state = {
     loading: true,
     comments: null,
-    text: ""
+    text: "",
+    user: null
   };
   componentDidMount() {
-    const { GetComments, faqId } = this.props;
+    const { GetComments, faqId, user } = this.props;
     GetComments(faqId);
 
     if (this.props.comments) {
@@ -23,10 +24,16 @@ class CommentsForFAQContainer extends React.Component {
         loading: false
       });
     }
+    if (user) {
+      this.setState({
+        ...this.state,
+        user
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
-    const { comments } = this.props;
+    const { comments, user } = this.props;
     if (comments !== prevProps.comments) {
       this.setState({
         ...this.state,
@@ -34,9 +41,15 @@ class CommentsForFAQContainer extends React.Component {
         loading: false
       });
     }
+    if (user !== prevProps.user) {
+      this.setState({
+        ...this.state,
+        user
+      });
+    }
   }
   render() {
-    const { loading, comments, text } = this.state;
+    const { loading, comments, text, user } = this.state;
     const { _onEnterKeyPressed, _onSubmitButtonClicked, _onInputChange } = this;
     return (
       <div>
@@ -49,6 +62,7 @@ class CommentsForFAQContainer extends React.Component {
             _onInputChange={_onInputChange}
             text={text}
             comments={comments}
+            user={user}
           />
         )}
       </div>
@@ -97,7 +111,8 @@ class CommentsForFAQContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    comments: state.commentForFaq.comments
+    comments: state.commentForFaq.comments,
+    user: state.user.user
   };
 };
 

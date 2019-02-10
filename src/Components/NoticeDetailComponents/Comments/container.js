@@ -10,11 +10,12 @@ class CommentsForNotice extends React.Component {
   state = {
     loading: true,
     comments: null,
-    text: ""
+    text: "",
+    user: null
   };
 
   componentDidMount() {
-    const { GetComments, noticeId } = this.props;
+    const { GetComments, noticeId, user } = this.props;
     GetComments(noticeId);
     if (this.props.comments) {
       this.setState({
@@ -23,10 +24,16 @@ class CommentsForNotice extends React.Component {
         loading: false
       });
     }
+    if (user) {
+      this.setState({
+        ...this.state,
+        user
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
-    const { comments } = this.props;
+    const { comments, user } = this.props;
 
     if (comments !== prevProps.comments) {
       this.setState({
@@ -35,10 +42,16 @@ class CommentsForNotice extends React.Component {
         loading: false
       });
     }
+    if (user !== prevProps.user) {
+      this.setState({
+        ...this.state,
+        user
+      });
+    }
   }
 
   render() {
-    const { loading, comments, text } = this.state;
+    const { loading, comments, text, user } = this.state;
     const { _onEnterKeyPressed, _onChangeInput, _onClickSubmitButton } = this;
     return (
       <div>
@@ -51,6 +64,7 @@ class CommentsForNotice extends React.Component {
             _onClickSubmitButton={_onClickSubmitButton}
             text={text}
             comments={comments}
+            user={user}
           />
         )}
       </div>
@@ -99,7 +113,8 @@ class CommentsForNotice extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    comments: state.commentForNotice.comments
+    comments: state.commentForNotice.comments,
+    user: state.user.user
   };
 };
 

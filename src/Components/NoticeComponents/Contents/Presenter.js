@@ -103,8 +103,12 @@ const ImportantNotice = ({ title, createdAt, views, id }) => {
         <span>공지</span>
       </div>
       <div className={cx("title")}>
-        <Link to={`/notice-detail/${id}`} style={{ textDecoration: "none" }}>
-          <span>{title}</span>
+        <Link
+          to={`/notice-detail/${id}`}
+          className={cx("link")}
+          style={{ textDecoration: "none" }}
+        >
+          {title}
         </Link>
       </div>
       <div className={cx("created-at")}>

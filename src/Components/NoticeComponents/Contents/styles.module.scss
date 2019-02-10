@@ -120,32 +120,40 @@
         justify-content: center;
 
         .normal-item-container {
-          width: 100%;
+          width: 800px;
           display: flex;
           justify-content: center;
           align-items: center;
           padding-top: 7px;
           padding-bottom: 7px;
           div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            text-align: center;
           }
           .num {
-            width: 20%;
+            width: 100px;
           }
           .title {
-            width: 100%;
+            width: 500px;
             cursor: pointer;
+            word-wrap: break-word;
+
+            white-space: initial;
+
             span {
               color: rgba($color: #000000, $alpha: 0.6);
+              width: 500px;
+              word-wrap: break-word;
+              white-space: initial;
             }
           }
           .created-at {
-            width: 20%;
+            width: 100px;
           }
           .views {
-            width: 20%;
+            width: 100px;
           }
         }
       }
@@ -161,5 +169,12 @@
       color: white;
       border-radius: 5px;
     }
+  }
+}
+
+.link {
+  color: rgba($color: #000000, $alpha: 0.6);
+  &:hover {
+    color: rgba($color: #000000, $alpha: 0.6);
   }
 }

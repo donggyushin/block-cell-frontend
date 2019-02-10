@@ -5,8 +5,16 @@ import axios from "axios";
 const GET_15_QNAS = "qna/GET_15_QNAS";
 const GET_QNA_DETAIL = "qna/GET_QNA_DETAIL";
 const GET_QNAS_BY_TERM = "qna/GET_QNAS_BY_TERM";
+const GET_QNA_COUNT = "qna/GET_QNA_COUNT";
 
 // create actions
+
+const getQnaCount = count => {
+  return {
+    type: GET_QNA_COUNT,
+    count
+  };
+};
 
 const getQnasByTerm = qnasByTerm => {
   return {
@@ -30,6 +38,35 @@ export const get15Qnas = qnas => {
 };
 
 // axios actions
+export const deleteQnaRequest = id => {
+  axios
+    .delete(`/api/qna/${id}`, {
+      headers: {
+        "X-JWT": localStorage.getItem("jwt")
+      }
+    })
+    .then(res => {
+      if (!res.data.ok) {
+        alert(res.data.error);
+      } else {
+        window.location.href = "/question&answer/1";
+      }
+    })
+    .catch(err => console.log(err));
+};
+
+export const getQnaCountRequest = () => {
+  return dispatch => {
+    axios.get("/api/qna/count").then(res => {
+      if (!res.data.ok) {
+        alert(res.data.error);
+      } else {
+        const count = res.data.count;
+        dispatch(getQnaCount(count));
+      }
+    });
+  };
+};
 
 export const getQnasByTermRequest = searchValue => {
   return dispatch => {
@@ -138,7 +175,8 @@ export const get15QnasRequest = page => {
 const initialState = {
   qnas: null,
   qna: null,
-  qnasByTerm: null
+  qnasByTerm: null,
+  count: 0
 };
 
 // reducer
@@ -150,12 +188,21 @@ export default function reducer(state = initialState, action) {
       return reducerGetQNAdetail(state, action);
     case GET_QNAS_BY_TERM:
       return reducerGetQnasByTerm(state, action);
+    case GET_QNA_COUNT:
+      return reducerGetQnaCount(state, action);
     default:
       return state;
   }
 }
 
 // reducer actions
+const reducerGetQnaCount = (state, action) => {
+  const { count } = action;
+  return {
+    ...state,
+    count
+  };
+};
 
 const reducerGetQnasByTerm = (state, action) => {
   const { qnasByTerm } = action;

@@ -5,17 +5,19 @@ import { connect } from "react-redux";
 import {
   getNoticeDetailRequest,
   getNextNoticePageRequest,
-  getPreviousNoticePageRequest
+  getPreviousNoticePageRequest,
+  DeleteNoticeRequest
 } from "../../../store/modules/notice";
 
 class ContentsContainer extends React.Component {
   state = {
     loading: true,
-    notice: null
+    notice: null,
+    admin: false
   };
 
   componentDidMount() {
-    const { getNoticeDetail } = this.props;
+    const { getNoticeDetail, user } = this.props;
     const { id } = this.props.match.params;
     getNoticeDetail(id);
     if (this.props.notice) {
@@ -24,6 +26,15 @@ class ContentsContainer extends React.Component {
         notice: this.props.notice,
         loading: false
       });
+    }
+
+    if (user) {
+      if (user.admin) {
+        this.setState({
+          ...this.state,
+          admin: true
+        });
+      }
     }
   }
 
@@ -35,11 +46,26 @@ class ContentsContainer extends React.Component {
         loading: false
       });
     }
+
+    if (this.props.user !== prevProps.user) {
+      if (this.props.user) {
+        if (this.props.user.admin) {
+          this.setState({
+            ...this.state,
+            admin: true
+          });
+        }
+      }
+    }
   }
 
   render() {
-    const { loading, notice } = this.state;
-    const { _onClickNextButton, _onClickPreviousButton } = this;
+    const { loading, notice, admin } = this.state;
+    const {
+      _onClickNextButton,
+      _onClickPreviousButton,
+      _onClickDeleteButton
+    } = this;
     return (
       <div>
         {loading ? (
@@ -50,11 +76,19 @@ class ContentsContainer extends React.Component {
             _onClickPreviousButton={_onClickPreviousButton}
             notice={notice}
             goBack={this.goBackFunction}
+            admin={admin}
+            _onClickDeleteButton={_onClickDeleteButton}
           />
         )}
       </div>
     );
   }
+
+  _onClickDeleteButton = () => {
+    const { id } = this.props.match.params;
+    const { deleteNotice } = this.props;
+    deleteNotice(id);
+  };
 
   goBackFunction = () => {
     window.location.href = "/notice/1";
@@ -73,7 +107,8 @@ class ContentsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    notice: state.notice.notice
+    notice: state.notice.notice,
+    user: state.user.user
   };
 };
 
@@ -81,6 +116,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getNoticeDetail: id => {
       dispatch(getNoticeDetailRequest(id));
+    },
+    deleteNotice: id => {
+      dispatch(DeleteNoticeRequest(id));
     }
   };
 };

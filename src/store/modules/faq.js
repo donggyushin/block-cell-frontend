@@ -5,8 +5,16 @@ import axios from "axios";
 const GET_15_FAQS = "faq/GET_15_FAQS";
 const GET_FAQ_DETAIL = "faq/GET_FAQ_DETAIL";
 const GET_FAQ_BY_TERM = "faq/GET_FAQ_BY_TERM";
+const GET_FAQ_COUNT = "faq/GET_FAQ_COUNT";
 
 // create actions
+
+const getFaqCount = count => {
+  return {
+    type: GET_FAQ_COUNT,
+    count
+  };
+};
 
 const getFaqByTerm = faqsByTerm => {
   return {
@@ -30,6 +38,38 @@ export const get15Faqs = faqs => {
 };
 
 // axios actions
+export const deleteFaqRequest = id => {
+  axios
+    .delete(`/api/faq/${id}`, {
+      headers: {
+        "X-JWT": localStorage.getItem("jwt")
+      }
+    })
+    .then(res => {
+      if (!res.data.ok) {
+        alert(res.data.error);
+      } else {
+        window.location.href = "/frequently-asked/1";
+      }
+    })
+    .catch(err => console.log(err));
+};
+
+export const getFaqCountRequest = () => {
+  return dispatch => {
+    axios
+      .get("/api/faq/count")
+      .then(res => {
+        if (!res.data.ok) {
+          alert(res.data.error);
+        } else {
+          const count = res.data.count;
+          dispatch(getFaqCount(count));
+        }
+      })
+      .catch(err => console.log(err));
+  };
+};
 
 export const getFaqsByTermRequest = searchValue => {
   return dispatch => {
@@ -136,7 +176,8 @@ export const get15FaqsRequest = page => {
 const initialState = {
   faqs: null,
   faq: null,
-  faqsByTerm: null
+  faqsByTerm: null,
+  count: 0
 };
 
 // reducer
@@ -149,12 +190,22 @@ export default function reducer(state = initialState, action) {
       return reducerGetFAQdetail(state, action);
     case GET_FAQ_BY_TERM:
       return reducerGetFaqsByTerm(state, action);
+    case GET_FAQ_COUNT:
+      return reducerGetFaqCount(state, action);
     default:
       return state;
   }
 }
 
 // reducer actions
+const reducerGetFaqCount = (state, action) => {
+  const { count } = action;
+  return {
+    ...state,
+    count
+  };
+};
+
 const reducerGetFaqsByTerm = (state, action) => {
   const { faqsByTerm } = action;
   return {

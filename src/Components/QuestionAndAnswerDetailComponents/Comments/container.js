@@ -10,10 +10,11 @@ class CommentsForQnaContainer extends React.Component {
   state = {
     loading: true,
     comments: null,
-    text: ""
+    text: "",
+    user: null
   };
   componentDidMount() {
-    const { getComments, qnaId } = this.props;
+    const { getComments, qnaId, user } = this.props;
     getComments(qnaId);
     if (this.props.comments) {
       this.setState({
@@ -22,10 +23,16 @@ class CommentsForQnaContainer extends React.Component {
         loading: false
       });
     }
+    if (user) {
+      this.setState({
+        ...this.state,
+        user
+      });
+    }
   }
 
   componentDidUpdate(prevProps) {
-    const { comments } = this.props;
+    const { comments, user } = this.props;
     if (comments !== prevProps.comments) {
       this.setState({
         ...this.state,
@@ -33,9 +40,15 @@ class CommentsForQnaContainer extends React.Component {
         loading: false
       });
     }
+    if (user !== prevProps.user) {
+      this.setState({
+        ...this.state,
+        user
+      });
+    }
   }
   render() {
-    const { comments, loading, text } = this.state;
+    const { comments, loading, text, user } = this.state;
     const { _onSubmitButtonClicked, _onInputChange, _onEnterKeyPressed } = this;
     return (
       <div>
@@ -48,6 +61,7 @@ class CommentsForQnaContainer extends React.Component {
             _onEnterKeyPressed={_onEnterKeyPressed}
             text={text}
             comments={comments}
+            user={user}
           />
         )}
       </div>
@@ -96,7 +110,8 @@ class CommentsForQnaContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    comments: state.commentForQna.comments
+    comments: state.commentForQna.comments,
+    user: state.user.user
   };
 };
 

@@ -64,11 +64,22 @@ class LoginFormContainer extends React.Component {
   clickButton = () => {
     const { username, password1, password2 } = this.state;
     const { onClickSubmitButton } = this.props;
+    if (username === "") {
+      alert("아이디를 입력해주세요. ");
+      return;
+    }
+    if (password1 === "") {
+      alert("비밀번호를 입력해주세요. ");
+      return;
+    }
     if (password1 !== password2) {
       this.setState({
         ...this.state,
         open: true
       });
+      return;
+    } else if (username.length >= 15) {
+      alert("아이디를 15자 이내로 입력하여 주세요. ");
       return;
     } else {
       onClickSubmitButton(username, password1, password2);

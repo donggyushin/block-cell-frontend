@@ -5,17 +5,19 @@ import { connect } from "react-redux";
 import {
   getQnaDetailRequest,
   getNextQnaPageRequest,
-  getPreviousQnaPageRequest
+  getPreviousQnaPageRequest,
+  deleteQnaRequest
 } from "store/modules/qna";
 
 class ContentsContainer extends React.Component {
   state = {
     loading: true,
-    qna: null
+    qna: null,
+    admin: false
   };
 
   componentDidMount() {
-    const { getQnaDetail } = this.props;
+    const { getQnaDetail, user } = this.props;
     const { id } = this.props.match.params;
     getQnaDetail(id);
 
@@ -26,9 +28,18 @@ class ContentsContainer extends React.Component {
         loading: false
       });
     }
+    if (user) {
+      if (user.admin) {
+        this.setState({
+          ...this.state,
+          admin: true
+        });
+      }
+    }
   }
 
   componentDidUpdate(prevProps) {
+    const { user } = this.props;
     if (this.props.qna !== prevProps.qna) {
       this.setState({
         ...this.state,
@@ -36,11 +47,23 @@ class ContentsContainer extends React.Component {
         qna: this.props.qna
       });
     }
+    if (user !== prevProps.user) {
+      if (user.admin) {
+        this.setState({
+          ...this.state,
+          admin: true
+        });
+      }
+    }
   }
 
   render() {
-    const { loading, qna } = this.state;
-    const { _onClickNextButton, _onClickPreviousButton } = this;
+    const { loading, qna, admin } = this.state;
+    const {
+      _onClickNextButton,
+      _onClickPreviousButton,
+      _onClickDeleteButton
+    } = this;
     return (
       <div>
         {loading ? (
@@ -51,11 +74,19 @@ class ContentsContainer extends React.Component {
             _onClickNextButton={_onClickNextButton}
             _onClickPreviousButton={_onClickPreviousButton}
             goBack={this.goBackFunction}
+            _onClickDeleteButton={_onClickDeleteButton}
+            admin={admin}
           />
         )}
       </div>
     );
   }
+
+  _onClickDeleteButton = () => {
+    const { deleteQna } = this.props;
+    const { id } = this.props.match.params;
+    deleteQna(id);
+  };
 
   goBackFunction = () => {
     window.location.href = "/question&answer/1";
@@ -74,7 +105,8 @@ class ContentsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    qna: state.qna.qna
+    qna: state.qna.qna,
+    user: state.user.user
   };
 };
 
@@ -82,6 +114,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getQnaDetail: id => {
       dispatch(getQnaDetailRequest(id));
+    },
+    deleteQna: id => {
+      dispatch(deleteQnaRequest(id));
     }
   };
 };

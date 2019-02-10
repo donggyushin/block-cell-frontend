@@ -51,6 +51,14 @@ class SummernoteEditor extends React.Component {
   _onClickSubmitButton = () => {
     const { postNewNotice } = this.props;
     const { title, contents } = this.state;
+    if (title === "") {
+      alert("제목을 입력해주세요. ");
+      return;
+    }
+    if (contents === "") {
+      alert("내용을 입력해주세요. ");
+      return;
+    }
     postNewNotice(title, contents);
   };
 
