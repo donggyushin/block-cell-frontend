@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const CommentsForNotice = () => {
+const CommentsForNotice = ({ comments }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("input-container")}>
@@ -12,28 +12,15 @@ const CommentsForNotice = () => {
         <button>입력</button>
       </div>
       <div className={cx("comments-container")}>
-        <Comment
-          username={"123213"}
-          text={
-            "asdasdasdjlkdsaljkdsaljkadsjlkdsajlkdsajlkadsjlkadsjlkdasjlkdsajkldsajlkdsajkldsajlkdasljksad"
-          }
-          updatedAt={"2018-02-02"}
-        />
-        <Comment
-          username={"123213"}
-          text={"asdasdsad"}
-          updatedAt={"2018-02-02"}
-        />
-        <Comment
-          username={"123213"}
-          text={"asdasdsad"}
-          updatedAt={"2018-02-02"}
-        />
-        <Comment
-          username={"123213"}
-          text={"asdasdsad"}
-          updatedAt={"2018-02-02"}
-        />
+        {comments.map(comment => {
+          return (
+            <Comment
+              username={comment.user.username}
+              text={comment.text}
+              updatedAt={comment.createdAt.substring(0, 10)}
+            />
+          );
+        })}
       </div>
     </div>
   );

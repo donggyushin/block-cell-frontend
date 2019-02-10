@@ -48,7 +48,7 @@ const ContentsPresenter = ({
         </div>
       </div>
       <div className={cx("comments-container")}>
-        <CommentsForQnaContainer />
+        <CommentsForQnaContainer qnaId={qna.id} />
       </div>
       <div className={cx("bottom")}>
         <div className={cx("row")}>

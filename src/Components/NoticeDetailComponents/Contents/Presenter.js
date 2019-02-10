@@ -49,7 +49,7 @@ const ContentsPresenter = ({
         </div>
       </div>
       <div className={cx("comments-container")}>
-        <CommentsForNotice />
+        <CommentsForNotice noticeId={notice.id} />
       </div>
       <div className={cx("bottom")}>
         <div className={cx("row")}>
