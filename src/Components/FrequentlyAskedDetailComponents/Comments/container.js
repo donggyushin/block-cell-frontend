@@ -1,12 +1,16 @@
 import React from "react";
 import Presenter from "./presenter";
 import { connect } from "react-redux";
-import { GetCommentsForFaqRequest } from "store/modules/commentForFaq";
+import {
+  GetCommentsForFaqRequest,
+  PostCommentForFaqRequest
+} from "store/modules/commentForFaq";
 
 class CommentsForFAQContainer extends React.Component {
   state = {
     loading: true,
-    comments: null
+    comments: null,
+    text: ""
   };
   componentDidMount() {
     const { GetComments, faqId } = this.props;
@@ -32,11 +36,63 @@ class CommentsForFAQContainer extends React.Component {
     }
   }
   render() {
-    const { loading, comments } = this.state;
+    const { loading, comments, text } = this.state;
+    const { _onEnterKeyPressed, _onSubmitButtonClicked, _onInputChange } = this;
     return (
-      <div>{loading ? "loading..." : <Presenter comments={comments} />}</div>
+      <div>
+        {loading ? (
+          "loading..."
+        ) : (
+          <Presenter
+            _onEnterKeyPressed={_onEnterKeyPressed}
+            _onSubmitButtonClicked={_onSubmitButtonClicked}
+            _onInputChange={_onInputChange}
+            text={text}
+            comments={comments}
+          />
+        )}
+      </div>
     );
   }
+
+  _onEnterKeyPressed = e => {
+    const { key } = e;
+    const { faqId, PostComment } = this.props;
+    const { text } = this.state;
+    if (text === "") {
+      alert("내용을 입력하여 주세요");
+      return;
+    }
+    if (key === "Enter") {
+      PostComment(faqId, text);
+      this.setState({
+        ...this.state,
+        text: ""
+      });
+    }
+  };
+
+  _onSubmitButtonClicked = () => {
+    const { faqId, PostComment } = this.props;
+    const { text } = this.state;
+    if (text === "") {
+      alert("내용을 입력하여 주세요");
+      return;
+    }
+    PostComment(faqId, text);
+    this.setState({
+      ...this.state,
+      text: ""
+    });
+  };
+
+  _onInputChange = e => {
+    const { value } = e.target;
+    this.setState({
+      ...this.state,
+      text: value
+    });
+  };
 }
 
 const mapStateToProps = state => {
@@ -49,6 +105,9 @@ const mapDispatchToProps = dispatch => {
   return {
     GetComments: faqId => {
       dispatch(GetCommentsForFaqRequest(faqId));
+    },
+    PostComment: (faqId, text) => {
+      dispatch(PostCommentForFaqRequest(faqId, text));
     }
   };
 };

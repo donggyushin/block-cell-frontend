@@ -4,12 +4,23 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const CommentsForQna = ({ comments }) => {
+const CommentsForQna = ({
+  comments,
+  text,
+  _onSubmitButtonClicked,
+  _onInputChange,
+  _onEnterKeyPressed
+}) => {
   return (
     <div className={cx("container")}>
       <div className={cx("input-container")}>
-        <input placeholder={"댓글을 입력해주세요. "} />
-        <button>입력</button>
+        <input
+          value={text}
+          onChange={_onInputChange}
+          onKeyPress={_onEnterKeyPressed}
+          placeholder={"댓글을 입력해주세요. "}
+        />
+        <button onClick={_onSubmitButtonClicked}>입력</button>
       </div>
       <div className={cx("comments-container")}>
         {comments.map(comment => {

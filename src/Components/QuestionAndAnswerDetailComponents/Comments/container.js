@@ -1,12 +1,16 @@
 import React from "react";
 import Presenter from "./presenter";
 import { connect } from "react-redux";
-import { getCommentsForQnaRequest } from "store/modules/commentForQna";
+import {
+  getCommentsForQnaRequest,
+  postCommentForQnaRequest
+} from "store/modules/commentForQna";
 
 class CommentsForQnaContainer extends React.Component {
   state = {
     loading: true,
-    comments: null
+    comments: null,
+    text: ""
   };
   componentDidMount() {
     const { getComments, qnaId } = this.props;
@@ -31,11 +35,63 @@ class CommentsForQnaContainer extends React.Component {
     }
   }
   render() {
-    const { comments, loading } = this.state;
+    const { comments, loading, text } = this.state;
+    const { _onSubmitButtonClicked, _onInputChange, _onEnterKeyPressed } = this;
     return (
-      <div>{loading ? "loading..." : <Presenter comments={comments} />}</div>
+      <div>
+        {loading ? (
+          "loading..."
+        ) : (
+          <Presenter
+            _onSubmitButtonClicked={_onSubmitButtonClicked}
+            _onInputChange={_onInputChange}
+            _onEnterKeyPressed={_onEnterKeyPressed}
+            text={text}
+            comments={comments}
+          />
+        )}
+      </div>
     );
   }
+
+  _onSubmitButtonClicked = () => {
+    const { postComment, qnaId } = this.props;
+    const { text } = this.state;
+    if (text === "") {
+      alert("내용을 입력하여 주세요");
+      return;
+    }
+    postComment(qnaId, text);
+    this.setState({
+      ...this.state,
+      text: ""
+    });
+  };
+
+  _onInputChange = e => {
+    const { value } = e.target;
+    this.setState({
+      ...this.state,
+      text: value
+    });
+  };
+
+  _onEnterKeyPressed = e => {
+    const { key } = e;
+    const { qnaId, postComment } = this.props;
+    const { text } = this.state;
+    if (text === "") {
+      alert("내용을 입력하여 주세요");
+      return;
+    }
+    if (key === "Enter") {
+      postComment(qnaId, text);
+      this.setState({
+        ...this.state,
+        text: ""
+      });
+    }
+  };
 }
 
 const mapStateToProps = state => {
@@ -48,6 +104,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getComments: qnaId => {
       dispatch(getCommentsForQnaRequest(qnaId));
+    },
+    postComment: (qnaId, text) => {
+      dispatch(postCommentForQnaRequest(qnaId, text));
     }
   };
 };

@@ -1,12 +1,16 @@
 import React from "react";
 import Presenter from "./presenter";
 import { connect } from "react-redux";
-import { GetCommentsRequest } from "store/modules/commentForNotice";
+import {
+  GetCommentsRequest,
+  PostCommentForNoticeReuqest
+} from "store/modules/commentForNotice";
 
 class CommentsForNotice extends React.Component {
   state = {
     loading: true,
-    comments: null
+    comments: null,
+    text: ""
   };
 
   componentDidMount() {
@@ -34,11 +38,63 @@ class CommentsForNotice extends React.Component {
   }
 
   render() {
-    const { loading, comments } = this.state;
+    const { loading, comments, text } = this.state;
+    const { _onEnterKeyPressed, _onChangeInput, _onClickSubmitButton } = this;
     return (
-      <div>{loading ? "loading..." : <Presenter comments={comments} />}</div>
+      <div>
+        {loading ? (
+          "loading..."
+        ) : (
+          <Presenter
+            _onEnterKeyPressed={_onEnterKeyPressed}
+            _onChangeInput={_onChangeInput}
+            _onClickSubmitButton={_onClickSubmitButton}
+            text={text}
+            comments={comments}
+          />
+        )}
+      </div>
     );
   }
+
+  _onEnterKeyPressed = e => {
+    const { key } = e;
+    const { postComment, noticeId } = this.props;
+    const { text } = this.state;
+    if (text === "") {
+      alert("내용을 입력하여 주세요");
+      return;
+    }
+    if (key === "Enter") {
+      postComment(noticeId, text);
+      this.setState({
+        ...this.state,
+        text: ""
+      });
+    }
+  };
+
+  _onChangeInput = e => {
+    const { value } = e.target;
+    this.setState({
+      ...this.state,
+      text: value
+    });
+  };
+
+  _onClickSubmitButton = () => {
+    const { postComment, noticeId } = this.props;
+    const { text } = this.state;
+    if (text === "") {
+      alert("내용을 입력하여 주세요");
+      return;
+    }
+    postComment(noticeId, text);
+    this.setState({
+      ...this.state,
+      text: ""
+    });
+  };
 }
 
 const mapStateToProps = state => {
@@ -51,6 +107,9 @@ const mapDispatchToProps = dispatch => {
   return {
     GetComments: noticeId => {
       dispatch(GetCommentsRequest(noticeId));
+    },
+    postComment: (noticeId, text) => {
+      dispatch(PostCommentForNoticeReuqest(noticeId, text));
     }
   };
 };
