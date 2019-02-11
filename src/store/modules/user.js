@@ -1,6 +1,7 @@
 import axios from "axios";
 
 // action type
+const URL = "http://blockcell.cafe24app.com";
 
 const LOGIN = "user/LOGIN";
 const LOGOUT = "user/LOGOUT";
@@ -97,6 +98,7 @@ export const loginRequest = (username, password) => {
       .then(res => {
         if (!res.data.ok) {
           dispatch(openModal(res.data.error));
+          console.log(res.data.error);
           alert(res.data.error);
         } else {
           const token = res.data.jwt;

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeContainer from "../../Routes/Home";
 import IntroContainer from "../../Routes/Intro";
 import BusinessContainer from "Routes/BusinessModel";
@@ -31,76 +31,82 @@ const AppPresenter = ({ open, error, onCloseModal }) => {
   return (
     <Router>
       <div className={cx("container")}>
-        <Route exact path={"/"} component={IntroContainer} />
-        <Route exact path={"/about-us"} component={HomeContainer} />
-        <Route exact path={"/business-model"} component={BusinessContainer} />
-        <Route
-          exact
-          path={"/way-to-blockcell"}
-          component={WayToBlockCellContainer}
-        />
-        <Route exact path={"/recruit"} component={RecruitContainer} />
-        <Route exact path={"/notice/:page"} component={NoticeContainer} />
-        <Route
-          exact
-          path={"/notice-detail/as2"}
-          component={NoticeDetailFake1}
-        />
-        <Route
-          exact
-          path={"/notice-detail/as3"}
-          component={NoticeDetailFake2}
-        />
-        <Route
-          exact
-          path={"/notice-detail/:id"}
-          component={NoticeDetailContainer}
-        />
-        <Route
-          exact
-          path={"/frequently-asked/:page"}
-          component={FrequentlyAskedContainer}
-        />
-        <Route
-          exact
-          path={"/frequently-asked-detail/as1"}
-          component={FrequentlyAskedDetailFake1}
-        />
-        <Route
-          exact
-          path={"/frequently-asked-detail/:id"}
-          component={FrequentlyAskedDetailPresenter}
-        />
-        <Route
-          exact
-          path={"/question&answer/:page"}
-          component={QuestionAndAnswer}
-        />
-        <Route
-          exact
-          path={"/question&answer-detail/:id"}
-          component={QuestionAndAnswerDetail}
-        />
-        <Route exact path={"/notice-writer"} component={NoticeWriter} />
-        <Route exact path={"/login"} component={LoginPage} />
-        <Route exact path={"/new-account"} component={NewAccountPage} />
-        <Route exact path={"/faq-writer"} component={FAQwriterPageContainer} />
-        <Route exact path={"/qna-writer"} component={QNAwriterPage} />
-        <Route
-          exact
-          path={"/notice-search-list/:searchValue"}
-          component={NoticeSearchListPage}
-        />
-        <Route
-          exact
-          path={"/faq-search-list/:searchValue"}
-          component={FaqSearchListPage}
-        />
-        <Route
-          exact
-          path={"/qna-search-list/:searchValue"}
-          component={QnaSearchListPage}
-        />
+        <Switch>
+          <Route exact path={"/"} component={IntroContainer} />
+          <Route exact path={"/about-us"} component={HomeContainer} />
+          <Route exact path={"/business-model"} component={BusinessContainer} />
+          <Route
+            exact
+            path={"/way-to-blockcell"}
+            component={WayToBlockCellContainer}
+          />
+          <Route exact path={"/recruit"} component={RecruitContainer} />
+          <Route exact path={"/notice/:page"} component={NoticeContainer} />
+          <Route
+            exact
+            path={"/notice-detail/as2"}
+            component={NoticeDetailFake1}
+          />
+          <Route
+            exact
+            path={"/notice-detail/as3"}
+            component={NoticeDetailFake2}
+          />
+          <Route
+            exact
+            path={"/notice-detail/:id"}
+            component={NoticeDetailContainer}
+          />
+          <Route
+            exact
+            path={"/frequently-asked/:page"}
+            component={FrequentlyAskedContainer}
+          />
+          <Route
+            exact
+            path={"/frequently-asked-detail/as1"}
+            component={FrequentlyAskedDetailFake1}
+          />
+          <Route
+            exact
+            path={"/frequently-asked-detail/:id"}
+            component={FrequentlyAskedDetailPresenter}
+          />
+          <Route
+            exact
+            path={"/question&answer/:page"}
+            component={QuestionAndAnswer}
+          />
+          <Route
+            exact
+            path={"/question&answer-detail/:id"}
+            component={QuestionAndAnswerDetail}
+          />
+          <Route exact path={"/notice-writer"} component={NoticeWriter} />
+          <Route exact path={"/login"} component={LoginPage} />
+          <Route exact path={"/new-account"} component={NewAccountPage} />
+          <Route
+            exact
+            path={"/faq-writer"}
+            component={FAQwriterPageContainer}
+          />
+          <Route exact path={"/qna-writer"} component={QNAwriterPage} />
+          <Route
+            exact
+            path={"/notice-search-list/:searchValue"}
+            component={NoticeSearchListPage}
+          />
+          <Route
+            exact
+            path={"/faq-search-list/:searchValue"}
+            component={FaqSearchListPage}
+          />
+          <Route
+            exact
+            path={"/qna-search-list/:searchValue"}
+            component={QnaSearchListPage}
+          />
+        </Switch>
         <div>
           <Modal open={open} onClose={onCloseModal} center>
             <h2>BLOCK CELL</h2>
