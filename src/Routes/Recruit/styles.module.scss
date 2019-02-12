@@ -27,7 +27,9 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
+      max-width: 100%;
+      width: auto / 9;
+      height: auto;
     }
   }
 
