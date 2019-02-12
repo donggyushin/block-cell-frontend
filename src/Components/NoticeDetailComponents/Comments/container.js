@@ -75,11 +75,12 @@ class CommentsForNotice extends React.Component {
     const { key } = e;
     const { postComment, noticeId } = this.props;
     const { text } = this.state;
-    if (text === "") {
-      alert("내용을 입력하여 주세요");
-      return;
-    }
+
     if (key === "Enter") {
+      if (text === "") {
+        alert("내용을 입력하여 주세요");
+        return;
+      }
       postComment(noticeId, text);
       this.setState({
         ...this.state,

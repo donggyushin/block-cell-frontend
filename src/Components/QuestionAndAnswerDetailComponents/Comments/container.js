@@ -72,6 +72,7 @@ class CommentsForQnaContainer extends React.Component {
     const { postComment, qnaId } = this.props;
     const { text } = this.state;
     if (text === "") {
+      console.log("submit button clicked");
       alert("내용을 입력하여 주세요");
       return;
     }
@@ -94,11 +95,12 @@ class CommentsForQnaContainer extends React.Component {
     const { key } = e;
     const { qnaId, postComment } = this.props;
     const { text } = this.state;
-    if (text === "") {
-      alert("내용을 입력하여 주세요");
-      return;
-    }
+
     if (key === "Enter") {
+      if (text === "") {
+        alert("내용을 입력하여 주세요");
+        return;
+      }
       postComment(qnaId, text);
       this.setState({
         ...this.state,

@@ -73,11 +73,12 @@ class CommentsForFAQContainer extends React.Component {
     const { key } = e;
     const { faqId, PostComment } = this.props;
     const { text } = this.state;
-    if (text === "") {
-      alert("내용을 입력하여 주세요");
-      return;
-    }
+
     if (key === "Enter") {
+      if (text === "") {
+        alert("내용을 입력하여 주세요");
+        return;
+      }
       PostComment(faqId, text);
       this.setState({
         ...this.state,
