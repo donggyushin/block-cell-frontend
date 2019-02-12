@@ -11,13 +11,13 @@ class Container extends React.Component {
     notices: null
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { getNotices } = this.props;
     const { page } = this.props.match.params;
 
     if (this.props.user) {
       if (this.props.user.admin) {
-        this.setState({
+        await this.setState({
           ...this.state,
           admin: true
         });
@@ -35,11 +35,11 @@ class Container extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (this.props.user !== prevProps.user) {
       if (this.props.user) {
         if (this.props.user.admin) {
-          this.setState({
+          await this.setState({
             ...this.state,
             admin: true
           });

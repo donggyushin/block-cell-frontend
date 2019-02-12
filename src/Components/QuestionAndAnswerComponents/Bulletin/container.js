@@ -11,10 +11,10 @@ class BulletinContainer extends React.Component {
     qnas: null
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { getQNAs } = this.props;
     if (this.props.user) {
-      this.setState({
+      await this.setState({
         ...this.state,
         user: this.props.user
       });
@@ -31,9 +31,9 @@ class BulletinContainer extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (this.props.user && !prevProps.user) {
-      this.setState({
+      await this.setState({
         ...this.state,
         user: this.props.user
       });

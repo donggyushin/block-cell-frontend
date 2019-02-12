@@ -10,11 +10,11 @@ class BulletinContainer extends React.Component {
     faqs: null,
     loading: true
   };
-  componentDidMount() {
+  async componentDidMount() {
     const { getFAQs } = this.props;
     if (this.props.user) {
       if (this.props.user.admin) {
-        this.setState({
+        await this.setState({
           ...this.state,
           admin: true
         });
@@ -32,13 +32,15 @@ class BulletinContainer extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.user && !prevProps.user) {
-      if (this.props.user.admin) {
-        this.setState({
-          ...this.state,
-          admin: true
-        });
+  async componentDidUpdate(prevProps) {
+    if (this.props.user !== prevProps.user) {
+      if (this.props.user) {
+        if (this.props.user.admin) {
+          await this.setState({
+            ...this.state,
+            admin: true
+          });
+        }
       }
     }
     if (this.props.faqs !== prevProps.faqs) {
