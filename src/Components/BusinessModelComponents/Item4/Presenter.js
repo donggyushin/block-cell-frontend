@@ -9,7 +9,6 @@ const Item1 = () => {
     <div className={cx("container")}>
       <div className={cx("image")}>
         <img
-          width={"100%"}
           alt={"back"}
           src={require("../../../media/images/businessmodel/sibal4.png")}
         />

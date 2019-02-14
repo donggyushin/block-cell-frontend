@@ -1,5 +1,15 @@
 .container {
   position: relative;
+  width: 800px;
+  display: block;
+
+  .image {
+    width: 100%;
+    display: block;
+    img {
+      max-width: 100%;
+    }
+  }
 
   .text {
     display: flex;

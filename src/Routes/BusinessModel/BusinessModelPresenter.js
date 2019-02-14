@@ -13,8 +13,10 @@ const cx = classNames.bind(styles);
 const BusinessModelPresenter = () => {
   return (
     <div className={cx("businessModel-presenter")}>
-      <div className={cx("nav-var")}>
-        <NavVar />
+      <div className={cx("nav-var-outer")}>
+        <div className={cx("nav-var")}>
+          <NavVar />
+        </div>
       </div>
       <div className={cx("blockchainimage-container")}>
         <BlockChainImage />
@@ -24,8 +26,10 @@ const BusinessModelPresenter = () => {
           <Contents />
         </div>
       </div>
-      <div className={cx("bottom")}>
+      <div className={cx("building-container")}>
         <BuildingImage />
+      </div>
+      <div className={cx("bottom")}>
         <CopyRight />
       </div>
       <div className={cx("button-to-top-container")}>

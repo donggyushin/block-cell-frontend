@@ -19,8 +19,10 @@ const cx = classNames.bind(styles);
 const homePresenter = ({ scrollToTop }) => {
   return (
     <div className={cx("home")}>
-      <div className={cx("navvar-container")}>
-        <NavVar />
+      <div className={cx("navvar-outer")}>
+        <div className={cx("navvar-container")}>
+          <NavVar />
+        </div>
       </div>
 
       <div className={cx("blockchain-image-container")}>
@@ -41,9 +43,7 @@ const homePresenter = ({ scrollToTop }) => {
         {/* <div className={cx("funny-line__under-IntroPresident")}>
           <FunnyLine />
         </div> */}
-        <div className={cx("building-image1")}>
-          <BuildingImage />
-        </div>
+
         <div className={cx("history")}>
           <History />
         </div>
@@ -58,7 +58,9 @@ const homePresenter = ({ scrollToTop }) => {
         </div>
         <div className={cx("partnership")}>
           <PartnerShip />
-          <BuildingImage />
+          <div className={cx("building-image-container")}>
+            <BuildingImage />
+          </div>
         </div>
       </div>
       <div className={cx("copyright")}>

@@ -1,5 +1,16 @@
 .container {
   position: relative;
+  width: 800px;
+  display: block;
+
+  .image {
+    display: block;
+    widows: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
 
   .text {
     display: flex;

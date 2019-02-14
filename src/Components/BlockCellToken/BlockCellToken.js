@@ -55,7 +55,7 @@ const BlockCellToken = () => {
         </div>
 
         <div className={cx("bottom")}>
-          <span>BLOCK CELL</span>
+          <div className={cx("span")}>BLOCK CELL</div>
         </div>
       </Fade>
     </div>

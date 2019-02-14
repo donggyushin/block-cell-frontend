@@ -13,8 +13,10 @@ const cx = classNames.bind(styles);
 const NoticePresenter = () => {
   return (
     <div className={cx("container")}>
-      <div className={cx("nav-var-container")}>
-        <NavVar />
+      <div className={cx("navvar-outer")}>
+        <div className={cx("nav-var-container")}>
+          <NavVar />
+        </div>
       </div>
       <div className={cx("blockchain-image-container")}>
         <BlockChainImage />
