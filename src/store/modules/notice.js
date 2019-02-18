@@ -75,6 +75,7 @@ export const GetNoticesByTermRequest = searchValue => {
       .get(`/api/notice/search/${searchValue}`)
       .then(res => {
         if (!res.data.ok) {
+          console.log(res.data.error);
           alert(res.data.error);
         } else {
           const noticesByTerm = res.data.notices;

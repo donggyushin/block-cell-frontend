@@ -57,9 +57,11 @@ const homePresenter = ({ scrollToTop }) => {
           <BlockCellToken />
         </div>
         <div className={cx("partnership")}>
-          <PartnerShip />
+          {/* <PartnerShip /> */}
           <div className={cx("building-image-container")}>
-            <BuildingImage />
+            <div className={cx("inner-container")}>
+              <BuildingImage />
+            </div>
           </div>
         </div>
       </div>

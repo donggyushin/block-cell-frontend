@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   color: black;
+  min-height: 1px;
 
   .row {
     width: 80%;
@@ -45,6 +46,10 @@
   .under-row {
     width: 166%;
     margin-top: 50px;
+
+    min-height: 1px;
+    img {
+    }
     // .column-left {
     //   width: 100%;
     //   height: 330px;

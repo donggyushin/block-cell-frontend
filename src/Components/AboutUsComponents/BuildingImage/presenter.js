@@ -9,7 +9,6 @@ const BuildingImage = () => {
     <div className={cx("container")}>
       <img
         alt={"build"}
-        width={"100%"}
         src={require("../../../media/images/AboutUs/buildingImage.png")}
       />
     </div>

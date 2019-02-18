@@ -86,9 +86,8 @@
     .row {
       width: 100%;
       display: flex;
+      justify-content: space-between;
       .column {
-        width: 100%;
-
         &:last-child {
           text-align: end;
         }

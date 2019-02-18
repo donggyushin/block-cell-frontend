@@ -13,7 +13,14 @@
   z-index: 100;
   background-color: rgba($color: #000000, $alpha: 0.4);
   padding-bottom: 15px;
-  justify-content: space-between;
+  justify-content: center;
+
+  .column-outer {
+    padding: 0px;
+    width: 1007px;
+    display: flex;
+    justify-content: space-between;
+  }
 
   .column {
     display: flex;
@@ -25,15 +32,15 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      margin-left: 15%;
-      margin-right: 130px;
+      // margin-left: 15%;
+      // margin-right: 130px;
       height: 80px;
     }
     &:nth-child(2) {
       width: 580px;
       display: flex;
       justify-content: space-between;
-      margin-right: 15%;
+      // margin-right: 15%;
     }
     .item-container {
       display: flex;

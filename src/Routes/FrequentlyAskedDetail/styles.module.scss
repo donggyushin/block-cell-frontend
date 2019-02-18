@@ -3,11 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .nav-var-container {
+  .navvar-outer {
     width: 100%;
-    z-index: 3;
-    position: fixed;
-    top: 0;
+    position: relative;
+    .nav-var-container {
+      width: 100%;
+      z-index: 3;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   }
 
   .blockchain-image-container {

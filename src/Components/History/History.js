@@ -33,7 +33,7 @@ const History = () => {
                 <span>2018</span>
               </div>
               <div className={cx("big")}>
-                <span>· (주) 블럭셀 설립</span>
+                <span>· ( 주 ) 블럭셀 설립</span>
                 <br />
                 <br />
               </div>
@@ -55,7 +55,7 @@ const History = () => {
                 <span>2019 1Q</span>
               </div>
               <div className={cx("big")}>
-                <span>· (주) 블록셀 법인등록</span>
+                <span>· ( 주 ) 블럭셀 법인등록</span>
               </div>
               <div className={cx("small")}>
                 <p>
@@ -93,7 +93,7 @@ const History = () => {
               </div>
               <div className={cx("big")}>
                 <span>
-                  · 블록체인 기반의 부동산 플랫폼 &nbsp;&nbsp;오픈
+                  · 블록체인 기반의 부동산 플랫폼 오픈
                   <br />
                   &nbsp;&nbsp;게임개발 BETA TEST
                 </span>

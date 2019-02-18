@@ -11,8 +11,10 @@ const cx = classNames.bind(styles);
 const WayToBlockCell = () => {
   return (
     <div className={cx("container")}>
-      <div className={cx("nav-var")}>
-        <NavVar />
+      <div className={cx("navvar-outer")}>
+        <div className={cx("nav-var")}>
+          <NavVar />
+        </div>
       </div>
       <div className={cx("deck")}>
         <BlockChainImage />

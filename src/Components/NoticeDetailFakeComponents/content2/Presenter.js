@@ -43,7 +43,7 @@ const ContentsPresenter = ({ goBack }) => {
         </div>
       </div>
       <div className={cx("bottom")}>
-        <div className={cx("row")}>
+        {/* <div className={cx("row")}>
           <div className={cx("column")}>
             <i class="fas fa-chevron-left" />
             &nbsp;
@@ -54,7 +54,7 @@ const ContentsPresenter = ({ goBack }) => {
             &nbsp;
             <i class="fas fa-chevron-right" />
           </div>
-        </div>
+        </div> */}
         <div className={cx("row")}>
           <button onClick={goBack}>목록</button>
         </div>
