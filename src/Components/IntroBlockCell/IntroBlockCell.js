@@ -17,6 +17,11 @@ const IntroBlockCell = () => {
             src={require("../../media/images/AboutUs/IntroBlockcell.png")}
           />
         </div>
+        <img
+          width={"200px"}
+          alt={"blockcell logo"}
+          src={require("../../media/images/AboutUs/IntroBlockcell/blockcell.png")}
+        />
         <div className={cx("building-container")}>
           <div className={cx("building-inner-container")}>
             <BuildingImage />
