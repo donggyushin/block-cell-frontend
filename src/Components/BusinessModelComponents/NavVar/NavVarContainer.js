@@ -11,7 +11,8 @@ class NavVarConatainer extends React.Component {
       delay: 0,
       smooth: "easeInOutQuart"
     },
-    top: true
+    top: true,
+    visiable: false
   };
   render() {
     const {
@@ -22,6 +23,8 @@ class NavVarConatainer extends React.Component {
       toFifthItem
     } = this;
     const { isLoggedIn, onClickLogoutSpan } = this.props;
+    const { clickMenuIcon } = this;
+    const { visiable } = this.state;
     return (
       <NavVar
         toFirstItem={toFirstItem}
@@ -32,9 +35,19 @@ class NavVarConatainer extends React.Component {
         top={this.state.top}
         isLoggedIn={isLoggedIn}
         onClickLogoutSpan={onClickLogoutSpan}
+        clickMenuIcon={clickMenuIcon}
+        visiable={visiable}
       />
     );
   }
+
+  clickMenuIcon = () => {
+    this.setState({
+      ...this.state,
+      visiable: !this.state.visiable
+    });
+  };
+
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
     if (document.documentElement.scrollTop >= 48) {

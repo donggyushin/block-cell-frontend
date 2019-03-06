@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
 
 const cx = classNames.bind(styles);
 
@@ -13,7 +14,9 @@ const NavVar = ({
   toFifthItem,
   top,
   isLoggedIn,
-  onClickLogoutSpan
+  onClickLogoutSpan,
+  clickMenuIcon,
+  visiable
 }) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
@@ -122,7 +125,54 @@ const NavVar = ({
             )}
           </div>
         </div>
+        <div className={cx("column")}>
+          <i onClick={clickMenuIcon} class="fas fa-list" />
+        </div>
       </div>
+      <Fade top>
+        <div
+          className={cx(
+            "hidden-menu-bar",
+            !top && "has-background",
+            visiable && "visiable"
+          )}
+        >
+          <a href={"/about-us"}>
+            <span className={cx("item", "testtest")}>
+              <div>
+                블럭셀은? <i class="fas fa-caret-down" />
+              </div>
+            </span>
+          </a>
+          <span className={cx("item", "testtest")}>
+            <div>
+              사업모델 <i class="fas fa-caret-down" />
+            </div>
+            <div className={cx("dropdown-container")}>
+              <DropDownItems
+                toFirstItem={toFirstItem}
+                toSecondItem={toSecondItem}
+                toThirdItem={toThirdItem}
+                toFourthItem={toFourthItem}
+                toFifthItem={toFifthItem}
+              />
+            </div>
+          </span>
+          <a href={"/notice/1"}>
+            <span className={cx("item")}>
+              <div>고객지원</div>
+            </span>
+          </a>
+          <a href={"/way-to-blockcell"}>
+            <span className={cx("item")}>
+              <div>오시는 길</div>
+            </span>
+          </a>
+          <a href={"/recruit"}>
+            <span className={cx("span-in-link")}>채용안내</span>
+          </a>
+        </div>
+      </Fade>
     </div>
   );
 };

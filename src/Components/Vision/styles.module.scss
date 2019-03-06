@@ -1,8 +1,14 @@
+@import "../../styles/index.scss";
+
 .Vision {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: $break-point) {
+    width: 100vw;
+  }
   .row {
     word-wrap: break-word;
     display: flex;
@@ -10,6 +16,9 @@
     align-items: center;
     position: relative;
     width: 900px;
+    @media screen and (max-width: $break-point) {
+      width: 100%;
+    }
 
     p {
       word-wrap: break-word;
@@ -17,6 +26,9 @@
       color: rgba(0, 0, 0, 0.5);
       line-height: 2;
       width: 900px;
+      @media screen and (max-width: $break-point) {
+        width: 80%;
+      }
       span {
         color: #04183a;
         font-size: 20px;

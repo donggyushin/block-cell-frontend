@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +13,9 @@ const NavVar = ({
   scrollToPartnership,
   top,
   isLoggedIn,
-  onClickLogoutSpan
+  onClickLogoutSpan,
+  clickListIcon,
+  visiable
 }) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
@@ -110,7 +113,35 @@ const NavVar = ({
             )}
           </div>
         </div>
+        <div className={cx("column")}>
+          <i onClick={clickListIcon} class="fas fa-list" />
+        </div>
       </div>
+      <Fade top>
+        <div
+          className={cx(
+            "hidden-menu-var",
+            top && "has-no-background",
+            visiable && "visiable"
+          )}
+        >
+          <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+            <span>블럭셀은?</span>
+          </Link>
+          <Link to={"/business-model"} style={{ textDecoration: "none" }}>
+            <span>사업모델</span>
+          </Link>
+          <Link to={"/notice/1"} style={{ textDecoration: "none" }}>
+            <span>고객지원</span>
+          </Link>
+          <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}>
+            <span>오시는 길</span>
+          </Link>
+          <Link to={"/recruit"} style={{ textDecoration: "none" }}>
+            <span>채용안내</span>
+          </Link>
+        </div>
+      </Fade>
     </div>
   );
 };

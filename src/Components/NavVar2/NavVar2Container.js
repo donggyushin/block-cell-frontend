@@ -5,13 +5,32 @@ import { connect } from "react-redux";
 import { logout } from "../../store/modules/user";
 
 class NavVar2Container extends React.Component {
+  state = {
+    visiable: false
+  };
+
   render() {
     const { isLoggedIn, onClickLogoutSpan } = this.props;
+    const { clickMenuIcon } = this;
+    const { visiable } = this.state;
 
     return (
-      <NavVar2 isLoggedIn={isLoggedIn} onClickLogoutSpan={onClickLogoutSpan} />
+      <NavVar2
+        clickMenuIcon={clickMenuIcon}
+        isLoggedIn={isLoggedIn}
+        onClickLogoutSpan={onClickLogoutSpan}
+        visiable={visiable}
+      />
     );
   }
+
+  clickMenuIcon = () => {
+    this.setState({
+      ...this.state,
+      visiable: !this.state.visiable
+    });
+  };
+
   scrollToTop = () => {
     animateScroll.scrollToTop({
       duration: 800,

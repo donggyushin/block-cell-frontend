@@ -15,6 +15,7 @@ const Carousel2 = ({ height }) => {
               <img
                 alt="900x500"
                 width={"100%"}
+                height={"100%"}
                 src={require("../../media/images/carousel/carousel4.jpeg")}
               />
             </div>
@@ -36,6 +37,7 @@ const Carousel2 = ({ height }) => {
               <img
                 alt="900x500"
                 width={"100%"}
+                height={"100%"}
                 src={require("../../media/images/carousel/carousel2.jpeg")}
               />
             </div>
@@ -57,6 +59,7 @@ const Carousel2 = ({ height }) => {
               <img
                 alt="900x500"
                 width={"100%"}
+                height={"100%"}
                 src={require("../../media/images/carousel/carousel3.jpeg")}
               />
             </div>
@@ -78,6 +81,7 @@ const Carousel2 = ({ height }) => {
               <img
                 alt="900x500"
                 width={"100%"}
+                height={"100%"}
                 src={require("../../media/images/carousel/carousel1.jpeg")}
               />
             </div>

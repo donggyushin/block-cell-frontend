@@ -2,10 +2,16 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
 
 const cx = classNames.bind(styles);
 
-const NavVar2 = ({ isLoggedIn, onClickLogoutSpan }) => {
+const NavVar2 = ({
+  isLoggedIn,
+  onClickLogoutSpan,
+  clickMenuIcon,
+  visiable
+}) => {
   return (
     <div className={cx("nav-var")}>
       <div className={cx("column-outer")}>
@@ -86,7 +92,33 @@ const NavVar2 = ({ isLoggedIn, onClickLogoutSpan }) => {
             )}
           </div>
         </div>
+        <div className={cx("column")}>
+          <i onClick={clickMenuIcon} class="fas fa-list" />
+        </div>
       </div>
+      <Fade top>
+        <div
+          className={
+            visiable ? cx("hidden-menu-var", "visiable") : cx("hidden-menu-var")
+          }
+        >
+          <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+            <span>블럭셀은?</span>
+          </Link>
+          <Link to={"/business-model"} style={{ textDecoration: "none" }}>
+            <span>사업모델</span>
+          </Link>
+          <Link to={"/notice/1"} style={{ textDecoration: "none" }}>
+            <span>고객지원</span>
+          </Link>
+          <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}>
+            <span>오시는 길</span>
+          </Link>
+          <Link to={"/recruit"} style={{ textDecoration: "none" }}>
+            <span>채용안내</span>
+          </Link>
+        </div>
+      </Fade>
     </div>
   );
 };

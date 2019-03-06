@@ -11,11 +11,14 @@ class NavVarContainer extends React.Component {
       delay: 0,
       smooth: "easeInOutQuart"
     },
-    top: true
+    top: true,
+    visiable: false
   };
 
   render() {
     const { isLoggedIn, onClickLogoutSpan } = this.props;
+    const { clickListIcon } = this;
+    const { visiable } = this.state;
     return (
       <NavVar
         scrollToGreeting={this.scrollToGreeting}
@@ -26,9 +29,18 @@ class NavVarContainer extends React.Component {
         top={this.state.top}
         isLoggedIn={isLoggedIn}
         onClickLogoutSpan={onClickLogoutSpan}
+        clickListIcon={clickListIcon}
+        visiable={visiable}
       />
     );
   }
+
+  clickListIcon = () => {
+    this.setState({
+      ...this.state,
+      visiable: !this.state.visiable
+    });
+  };
 
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
