@@ -2,9 +2,17 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
+
 const cx = classNames.bind(styles);
 
-const Presenter = ({ top, isLoggedIn, onClickLogoutSpan }) => {
+const Presenter = ({
+  top,
+  isLoggedIn,
+  onClickLogoutSpan,
+  clickMenuIcon,
+  visiable
+}) => {
   return (
     <div className={cx("nav-var", !top && "has-background")}>
       <div className={cx("column-outer")}>
@@ -87,7 +95,57 @@ const Presenter = ({ top, isLoggedIn, onClickLogoutSpan }) => {
             )}
           </div>
         </div>
+        <div className={cx("column")}>
+          <i onClick={clickMenuIcon} class="fas fa-list" />
+        </div>
       </div>
+      <Fade top>
+        <div
+          className={cx(
+            "hidden-menu-bar",
+            !top && "has-background",
+            visiable && "visiable"
+          )}
+        >
+          <div className={cx("menu-container")}>
+            <Link to={"/about-us"} style={{ textDecoration: "none" }}>
+              <span className={cx("item", "testtest")}>
+                <div>
+                  블럭셀은? <i class="fas fa-caret-down" />
+                </div>
+              </span>
+            </Link>
+          </div>
+          <div className={cx("menu-container")}>
+            <Link to={"/business-model"} style={{ textDecoration: "none" }}>
+              <span className={cx("item")}>
+                <div>
+                  사업모델 <i class="fas fa-caret-down" />
+                </div>
+              </span>
+            </Link>
+          </div>
+          <div className={cx("menu-container")}>
+            <Link to={"/notice/1"} style={{ textDecoration: "none" }}>
+              <span className={cx("item")}>
+                <div>고객지원</div>
+              </span>
+            </Link>
+          </div>
+          <div className={cx("menu-container")}>
+            <Link to={"/way-to-blockcell"} style={{ textDecoration: "none" }}>
+              <span className={cx("item")}>
+                <div>오시는 길</div>
+              </span>
+            </Link>
+          </div>
+          <div className={cx("menu-container")}>
+            <Link to={"/recruit"} style={{ textDecoration: "none" }}>
+              <span className={cx("span-in-link")}>채용안내</span>
+            </Link>
+          </div>
+        </div>
+      </Fade>
     </div>
   );
 };
