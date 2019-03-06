@@ -1,3 +1,5 @@
+@import "../../../styles/index.scss";
+
 .container {
   width: 100%;
   display: flex;
@@ -45,6 +47,13 @@
     min-height: 1px;
     img {
       min-height: 1px;
+    }
+  }
+
+  .only-mobild {
+    display: none;
+    @media screen and (max-width: $break-point) {
+      display: flex;
     }
   }
 }

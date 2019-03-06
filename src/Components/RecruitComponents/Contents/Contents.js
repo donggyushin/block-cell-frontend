@@ -26,6 +26,9 @@ const Contents = () => {
           src={require("../../../media/images/recruit/recruitcontent.png")}
         />
       </div>
+      <div className={cx("only-mobild")}>
+        <span>더 나은 화면을 준비중입니다!</span>
+      </div>
     </div>
   );
 };

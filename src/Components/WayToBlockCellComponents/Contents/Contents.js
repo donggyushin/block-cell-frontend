@@ -26,6 +26,9 @@ const Contents = () => {
           src={require("../../../media/images/WayToBlockcell/map.png")}
         />
       </div>
+      <div className={cx("only-mobile")}>
+        <span>조금 더 나은 화면을 준비중입니다!</span>
+      </div>
     </div>
   );
 };
