@@ -1,8 +1,13 @@
+@import "../../../styles/index.scss";
+
 .container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: $break-point) {
+    width: 100vw;
+  }
   .header {
     width: 100%;
     display: flex;
@@ -114,9 +119,17 @@
 
 .comments-container {
   margin-bottom: 150px;
+  @media screen and (max-width: $break-point) {
+    width: 100%;
+  }
 }
 
 .delete-button-container {
   width: 800px;
   text-align: right;
+  @media screen and (max-width: $break-point) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

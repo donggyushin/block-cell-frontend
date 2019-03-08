@@ -1,5 +1,11 @@
+@import "../../../styles/index.scss";
+
 .container {
   width: 800px;
+
+  @media screen and (max-width: $break-point) {
+    width: 100vw;
+  }
 
   .header {
     width: 100%;
@@ -46,6 +52,9 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    @media screen and (max-width: $break-point) {
+      justify-content: center;
+    }
     button {
       background-color: #04183a;
       color: white;
