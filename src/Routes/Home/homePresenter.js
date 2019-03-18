@@ -5,7 +5,6 @@ import IntroBlockCell from "Components/IntroBlockCell";
 import BlockCellToken from "Components/BlockCellToken";
 import History from "Components/History";
 import Vision from "Components/Vision";
-import PartnerShip from "Components/PartnerShip";
 import CopyRight from "Components/CopyRight";
 import ButtonToTop from "Components/ButtonToTop";
 import BlockChainImage from "Components/AboutUsComponents/BlockChainImage";

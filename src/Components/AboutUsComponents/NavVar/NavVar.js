@@ -20,8 +20,12 @@ const NavVar = ({
   return (
     <div className={cx("nav-var", !top && "has-background")}>
       <div className={cx("column-outer")}>
-        <div className={cx("column")}>
-          <Link to={"/"} style={{ textDecoration: "none" }}>
+        <div className={cx("column", "img-container")}>
+          <Link
+            to={"/"}
+            className={cx("link")}
+            style={{ textDecoration: "none" }}
+          >
             <span className={cx("span-in-link")}>
               <img
                 alt={"blockcell logo"}

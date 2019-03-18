@@ -26,6 +26,13 @@
     width: 1007px;
     display: flex;
     justify-content: space-between;
+    .blockcell-logo-container {
+      position: relative;
+      .link {
+        position: absolute;
+        bottom: 0;
+      }
+    }
   }
 
   .column {

@@ -16,7 +16,11 @@ const NavVar2 = ({
     <div className={cx("nav-var")}>
       <div className={cx("column-outer")}>
         <div className={cx("column", "blockcell-logo-container")}>
-          <Link to={"/"} style={{ textDecoration: "none" }}>
+          <Link
+            to={"/"}
+            className={cx("link")}
+            style={{ textDecoration: "none" }}
+          >
             <img
               alt={"blockcell-logo"}
               width={"100%"}

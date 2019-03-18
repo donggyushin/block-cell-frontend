@@ -16,7 +16,7 @@ const Presenter = ({
   return (
     <div className={cx("nav-var", !top && "has-background")}>
       <div className={cx("column-outer")}>
-        <div className={cx("column")}>
+        <div className={cx("column", "img-container")}>
           <Link to={"/"} style={{ textDecoration: "none" }}>
             <span className={cx("span-in-link")}>
               <img
