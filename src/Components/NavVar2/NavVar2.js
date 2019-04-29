@@ -31,22 +31,22 @@ const NavVar2 = ({
         <div className={cx("column")}>
           <div className={cx("item-container-container")}>
             <div className={cx("item-container")}>
-              <Link to={"/about-us"} style={{ textDecoration: "none" }}>
-                <span className={cx("item")}>
-                  <div>
-                    블럭셀은? <i class="fas fa-caret-down" />
-                  </div>
-                </span>
-              </Link>
+              {/* <Link to={"/about-us"} style={{ textDecoration: "none" }}> */}
+              <span className={cx("item")}>
+                <div>
+                  코비텍이란? <i class="fas fa-caret-down" />
+                </div>
+              </span>
+              {/* </Link> */}
             </div>
             <div className={cx("item-container")}>
-              <Link to={"/business-model"} style={{ textDecoration: "none" }}>
-                <span className={cx("item")}>
-                  <div>
-                    사업모델 <i class="fas fa-caret-down" />
-                  </div>
-                </span>
-              </Link>
+              {/* <Link to={"/business-model"} style={{ textDecoration: "none" }}> */}
+              <span className={cx("item")}>
+                <div>
+                  사업모델 <i class="fas fa-caret-down" />
+                </div>
+              </span>
+              {/* </Link> */}
             </div>
             <div className={cx("item-container")}>
               <Link to={"/notice/1"} style={{ textDecoration: "none" }}>

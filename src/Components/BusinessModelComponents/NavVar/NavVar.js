@@ -39,7 +39,7 @@ const NavVar = ({
               <a href={"/about-us"}>
                 <span className={cx("item", "testtest")}>
                   <div>
-                    블럭셀은? <i class="fas fa-caret-down" />
+                    코비텍은? <i class="fas fa-caret-down" />
                   </div>
                 </span>
               </a>

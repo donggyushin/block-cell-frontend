@@ -40,7 +40,7 @@ const NavVar = ({
             <div className={cx("item-container")}>
               <span className={cx("item", "testtest")}>
                 <div>
-                  블럭셀은? <i class="fas fa-caret-down" />
+                  코비텍은? <i class="fas fa-caret-down" />
                 </div>
                 <div className={cx("dropdown-container")}>
                   <DropDownItems
@@ -54,13 +54,13 @@ const NavVar = ({
             </div>
             <div className={cx("item-container")}>
               {/* <Link to={"/business-model"} style={{ textDecoration: "none" }}> */}
-              <a href={"/business-model"}>
-                <span className={cx("item")}>
-                  <div>
-                    사업모델 <i class="fas fa-caret-down" />
-                  </div>
-                </span>
-              </a>
+              {/* <a href={"/business-model"}> */}
+              <span className={cx("item")}>
+                <div>
+                  사업모델 <i class="fas fa-caret-down" />
+                </div>
+              </span>
+              {/* </a> */}
               {/* </Link> */}
             </div>
             <div className={cx("item-container")}>

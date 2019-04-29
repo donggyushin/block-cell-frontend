@@ -35,7 +35,7 @@
 .caption-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   width: 948px;
   height: 214px;
@@ -47,8 +47,7 @@
   margin-top: -107px;
 
   .up {
-    font-size: 3rem;
-    margin-bottom: 7px;
+    font-size: 4rem;
 
     @media screen and (max-width: $break-point) {
       font-size: 1.6rem;
@@ -56,10 +55,10 @@
   }
 
   .down {
-    font-size: 6.5rem;
+    font-size: 4rem;
     text-shadow: 5px 5px 8px #05131c;
     font-weight: 900;
-    margin-top: 7px;
+
     @media screen and (max-width: $break-point) {
       font-size: 2rem;
     }
