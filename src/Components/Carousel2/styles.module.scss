@@ -45,12 +45,14 @@
   margin-left: -474px;
   top: 50%;
   margin-top: -107px;
-
+  @media screen and (max-width: $break-point) {
+    align-items: center;
+  }
   .up {
     font-size: 4rem;
 
     @media screen and (max-width: $break-point) {
-      font-size: 1.6rem;
+      font-size: 2rem;
     }
   }
 
