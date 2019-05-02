@@ -28,9 +28,15 @@
     justify-content: space-between;
     .blockcell-logo-container {
       position: relative;
+
       .link {
         position: absolute;
         bottom: 0;
+      }
+      .blockcell-logo {
+        max-width: 100%;
+        height: auto;
+        width: auto / 9;
       }
     }
   }
@@ -39,6 +45,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    width: 100%;
 
     &:first-child {
       width: 170px;
@@ -102,6 +110,7 @@
     .login-join {
       color: rgba($color: white, $alpha: 0.8);
 
+      width: 190px;
       .login-join--item {
         cursor: pointer;
         &:first-child {

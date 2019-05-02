@@ -23,7 +23,8 @@ const NavVar2 = ({
           >
             <img
               alt={"blockcell-logo"}
-              width={"80%"}
+              className={"blockcell-logo"}
+              width={"170px"}
               src={require("../../media/images/navvar/blockcelllogo.png")}
             />
           </Link>
