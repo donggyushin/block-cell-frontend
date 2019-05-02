@@ -22,7 +22,7 @@ const BlockChainImage = () => {
           <span className={cx("second-line")}>찾아오시는 길</span>
         </div>
         <div className={cx("row")}>
-          <span className={cx("third-line")}>Way to Blockcell</span>
+          <span className={cx("third-line")}>Way to Kovitech</span>
         </div>
       </div>
     </div>

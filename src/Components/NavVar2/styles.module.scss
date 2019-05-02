@@ -44,7 +44,7 @@
   .column {
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     width: 100%;
 
@@ -61,9 +61,9 @@
       }
     }
     &:nth-child(2) {
-      width: 580px;
+      width: 700px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       // margin-right: 15%;
       @media screen and (max-width: $break-point) {
         display: none;
@@ -110,7 +110,7 @@
     .login-join {
       color: rgba($color: white, $alpha: 0.8);
 
-      width: 190px;
+      width: 150px;
       .login-join--item {
         cursor: pointer;
         &:first-child {

@@ -26,7 +26,7 @@ const NavVar = ({
             <span className={cx("span-in-link")}>
               <img
                 alt={"blockcell logo"}
-                width={"60%"}
+                width={"230px"}
                 src={require("../../../media/images/navvar/blockcelllogo.png")}
               />
             </span>

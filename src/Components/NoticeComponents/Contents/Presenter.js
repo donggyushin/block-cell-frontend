@@ -36,7 +36,7 @@ const Presenter = ({ admin, notices }) => {
             <span>조회수</span>
           </div>
         </div>
-        <div className={cx("important-notice-container")}>
+        {/* <div className={cx("important-notice-container")}>
           <div className={cx("important-notice")}>
             <ImportantNotice
               title={"블럭셀은 어떤 회사인가요?"}
@@ -53,7 +53,7 @@ const Presenter = ({ admin, notices }) => {
               id={"as3"}
             />
           </div>
-        </div>
+        </div> */}
         <div className={cx("normal-notice-container")}>
           <div className={cx("normal-notice")}>
             {/* <NormalNotice

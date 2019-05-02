@@ -51,9 +51,9 @@
     }
     &:nth-child(2) {
       height: 85px;
-      width: 580px;
+      width: 700px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       @media screen and (max-width: $break-point) {
         display: none;
       }
@@ -95,6 +95,7 @@
     }
     .login-join {
       color: rgba($color: white, $alpha: 0.8);
+      width: 150px;
       .login-join--item {
         cursor: pointer;
         &:first-child {

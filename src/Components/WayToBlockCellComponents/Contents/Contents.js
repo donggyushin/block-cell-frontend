@@ -16,7 +16,7 @@ const Contents = () => {
           <span>찾아오시는 길</span>
         </div>
         <div className={cx("column-right")}>
-          <span>Way to Blockcell</span>
+          <span>Way to Kovitech</span>
         </div>
       </div>
       <div className={cx("under-row")}>
