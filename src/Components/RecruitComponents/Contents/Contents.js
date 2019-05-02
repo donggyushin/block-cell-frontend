@@ -2,8 +2,19 @@ import React from "react";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import Molding from "Components/Molding";
+import styled from "styled-components";
+import Colors from "../../../variables/Colors";
+import Sizes from "../../../variables/Sizes";
+import Weights from "../../../variables/Weights";
 
 const cx = classNames.bind(styles);
+
+const Text = styled.div`
+  color: ${Colors.greyFontColor};
+  font-size: ${Sizes.middleFontsize};
+  font-weight: ${Weights.middleBold};
+  margin-top: 30px;
+`;
 
 const Contents = () => {
   return (
@@ -25,9 +36,10 @@ const Contents = () => {
           width={"100%"}
           src={require("../../../media/images/recruit/recruitcontent.png")}
         />
+        <Text>- 채용관련 문의 : kovitech@naver.com</Text>
       </div>
       <div className={cx("only-mobild")}>
-        <span>더 나은 화면을 준비중입니다!</span>
+        <Text>- 채용관련 문의 : kovitech@naver.com</Text>
       </div>
     </div>
   );

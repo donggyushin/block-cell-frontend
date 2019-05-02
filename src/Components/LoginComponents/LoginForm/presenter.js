@@ -13,7 +13,7 @@ const LoginFormPresenter = ({
   return (
     <div className={cx("login-form")}>
       <div className={cx("title")}>
-        <span>BLOCK CELL</span>
+        <span>KOVITECH</span>
       </div>
       <div className={cx("input-container")}>
         <input
